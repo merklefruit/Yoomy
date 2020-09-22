@@ -7,7 +7,10 @@ const NotFound = () => {
   return (
     <Container>
       <h1 style={{ textAlign: "center" }}>
-        Errore 404: Questa pagina non esiste 😅
+        Errore 404: Questa pagina non esiste{" "}
+        <span role="img" aria-label="smile">
+          😅
+        </span>
       </h1>
       <div style={{ marginBottom: "150px" }}></div>
     </Container>

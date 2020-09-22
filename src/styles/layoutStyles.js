@@ -9,14 +9,15 @@ export const CustomHeader = styled(motion.header)`
 
 export const HeaderNav = styled.div`
   width: 100%;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   z-index: 99;
   margin-bottom: 30px;
   margin-left: 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transform: translateY(calc(1.9rem * 0.5));
 
   span {
     font-size: 1.9rem;
@@ -24,11 +25,6 @@ export const HeaderNav = styled.div`
     color: ${(props) => props.theme.text};
     letter-spacing: 1px;
     font-weight: 600;
-
-    @media (max-width: 650px) {
-    }
-    @media (max-width: 400px) {
-    }
   }
 
   a {
@@ -38,6 +34,9 @@ export const HeaderNav = styled.div`
       font-weight: 500;
       color: ${(props) => props.theme.gray};
     }
+  }
+
+  @media (max-width: 650px) {
   }
 `;
 

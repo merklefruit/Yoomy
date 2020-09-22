@@ -30,7 +30,7 @@ function Navigation({ toggleMenu, setToggleMenu }) {
               <NavList>
                 <ul>
                   <motion.li>
-                    <Link to="/">
+                    <Link to="/" onClick={() => setToggleMenu(!toggleMenu)}>
                       <motion.div
                         className="link"
                         initial={{ x: -108 }}
@@ -58,7 +58,10 @@ function Navigation({ toggleMenu, setToggleMenu }) {
                   </motion.li>
 
                   <motion.li>
-                    <Link to="/prenota">
+                    <Link
+                      to="/prenota"
+                      onClick={() => setToggleMenu(!toggleMenu)}
+                    >
                       <motion.div
                         className="link"
                         initial={{ x: -108 }}
@@ -86,7 +89,10 @@ function Navigation({ toggleMenu, setToggleMenu }) {
                   </motion.li>
 
                   <motion.li>
-                    <Link to="/contatti">
+                    <Link
+                      to="/contatti"
+                      onClick={() => setToggleMenu(!toggleMenu)}
+                    >
                       <motion.div
                         className="link"
                         initial={{ x: -108 }}
@@ -114,7 +120,10 @@ function Navigation({ toggleMenu, setToggleMenu }) {
                   </motion.li>
 
                   <motion.li>
-                    <Link to="/login">
+                    <Link
+                      to="/login"
+                      onClick={() => setToggleMenu(!toggleMenu)}
+                    >
                       <motion.div
                         className="link"
                         initial={{ x: -108 }}
@@ -142,7 +151,10 @@ function Navigation({ toggleMenu, setToggleMenu }) {
                   </motion.li>
 
                   <motion.li>
-                    <Link to="/registrati">
+                    <Link
+                      to="/registrati"
+                      onClick={() => setToggleMenu(!toggleMenu)}
+                    >
                       <motion.div
                         className="link"
                         initial={{ x: -108 }}

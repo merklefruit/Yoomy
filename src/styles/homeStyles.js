@@ -53,6 +53,11 @@ export const Content = styled.div`
   margin-left: 10%;
   margin-bottom: 40px;
 
+  @media (max-width: 650px) {
+    margin-left: 0;
+    margin-bottom: 30px;
+  }
+
   h2 {
     font-size: 1.5rem;
     font-weight: 300;
@@ -127,13 +132,6 @@ export const FeaturesSection = styled.div`
 
     &:focus {
       outline: none;
-    }
-    @media (max-width: 650px) {
-      font-size: 1rem;
-      padding-left: 20px;
-      padding-right: 20px;
-      padding-top: 7px;
-      padding-bottom: 7px;
     }
   }
 `;
