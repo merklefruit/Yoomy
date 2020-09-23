@@ -30,7 +30,10 @@ function Navigation({ toggleMenu, setToggleMenu }) {
               <NavList>
                 <ul>
                   <motion.li>
-                    <Link to="/" onClick={() => setToggleMenu(!toggleMenu)}>
+                    <Link
+                      to="/scopri"
+                      onClick={() => setToggleMenu(!toggleMenu)}
+                    >
                       <motion.div
                         className="link"
                         initial={{ x: -108 }}
@@ -59,7 +62,7 @@ function Navigation({ toggleMenu, setToggleMenu }) {
 
                   <motion.li>
                     <Link
-                      to="/prenota"
+                      to="/ispirazione"
                       onClick={() => setToggleMenu(!toggleMenu)}
                     >
                       <motion.div
@@ -83,7 +86,7 @@ function Navigation({ toggleMenu, setToggleMenu }) {
                             ></path>
                           </svg>
                         </span>
-                        Prenota
+                        Ispirazione
                       </motion.div>
                     </Link>
                   </motion.li>

@@ -21,13 +21,13 @@ function Footer() {
               <span style={{ visibility: "hidden" }}>Yooga.</span>
             </div>
             <LinkSection>
-              <Link to="/">
+              <Link to="/scopri">
                 <p>Scopri</p>
               </Link>
-              <Link to="/">
-                <p>Prenota</p>
+              <Link to="/ispirazione">
+                <p>Ispirazione</p>
               </Link>
-              <Link to="/">
+              <Link to="/contatti">
                 <p>Contatti</p>
               </Link>
             </LinkSection>

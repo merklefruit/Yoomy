@@ -5,13 +5,8 @@ import { Container } from "../styles/globalStyles";
 
 const NotFound = () => {
   return (
-    <Container>
-      <h1 style={{ textAlign: "center" }}>
-        Errore 404: Questa pagina non esiste{" "}
-        <span role="img" aria-label="smile">
-          😅
-        </span>
-      </h1>
+    <Container style={{ marginTop: "60px", textAlign: "center" }}>
+      <h1>Errore 404: Questa pagina non esiste</h1>
       <div style={{ marginBottom: "150px" }}></div>
     </Container>
   );

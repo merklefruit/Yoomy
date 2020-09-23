@@ -58,7 +58,8 @@ const Layout = ({ children }) => {
     secondary: "#A9CAD9",
     yellow: "#FBE064",
     orange: "#f4a261",
-    red: "#f4a261",
+    darkblue: "#1d3557",
+    blue: "#457b9d",
     text: "#3C3838",
     background: "#ffffff",
   };

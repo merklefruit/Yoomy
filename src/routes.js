@@ -4,15 +4,21 @@ import Layout from "./components/layout";
 
 // Routes
 import homePage from "./pages/homePage";
-import NotFound from "./pages/404";
+import notFound from "./pages/404";
+import scopriPage from "./pages/scopriPage";
+import ispirazionePage from "./pages/ispirazionePage";
+import contattiPage from "./pages/contattiPage";
 
 function Routes() {
   return (
     <Layout>
       <Switch>
         <Route exact path="/" component={homePage} />
+        <Route exact path="/scopri" component={scopriPage} />
+        <Route exact path="/ispirazione" component={ispirazionePage} />
+        <Route exact path="/contatti" component={contattiPage} />
 
-        <Route component={NotFound} />
+        <Route component={notFound} />
       </Switch>
     </Layout>
   );

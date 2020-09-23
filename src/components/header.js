@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 // Styled components
 import { Container, FlexRow } from "../styles/globalStyles";
@@ -20,29 +21,29 @@ function Header({ toggleMenu, setToggleMenu }) {
       <Container>
         <HeaderNav>
           <FlexRow>
-            <div>
+            <motion.div whileHover={{ scale: 0.95 }} whileTap={{ scale: 0.9 }}>
               <Link to="/">
                 <span>Yooga.</span>
               </Link>
-            </div>
+            </motion.div>
             <LinkSection>
-              <Link to="/">
+              <Link to="/scopri">
                 <p>Scopri</p>
               </Link>
-              <Link to="/">
-                <p>Prenota</p>
+              <Link to="/ispirazione">
+                <p>Ispirazione</p>
               </Link>
-              <Link to="/">
+              <Link to="/contatti">
                 <p>Contatti</p>
               </Link>
             </LinkSection>
           </FlexRow>
           <FlexRow>
             <LinkSection>
-              <Link to="/">
+              <Link to="/login">
                 <p>Login</p>
               </Link>
-              <Link to="/">
+              <Link to="/registrati">
                 <p>Registrati</p>
               </Link>
             </LinkSection>

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 // Header styles
 
 export const CustomHeader = styled(motion.header)`
+  z-index: 1;
   background-color: ${(props) => props.theme.secondary};
 `;
 
@@ -12,12 +13,11 @@ export const HeaderNav = styled.div`
   padding-top: 20px;
   padding-bottom: 20px;
   z-index: 99;
-  margin-bottom: 30px;
   margin-left: 0px;
+  margin-bottom: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transform: translateY(calc(1.9rem * 0.5));
 
   span {
     font-size: 1.9rem;

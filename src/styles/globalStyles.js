@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components";
+import { motion } from "framer-motion";
 
 export const Container = styled.div`
+  z-index: 1;
   flex-grow: 1;
   margin: 0 auto;
   padding: 0 25px;
@@ -57,4 +59,27 @@ export const Flex = styled.div`
 export const FlexRow = styled.div`
   display: flex;
   align-items: center;
+`;
+
+export const Button = styled(motion.button)`
+  background-color: ${(props) => props.theme.yellow};
+  color: black;
+  border: none;
+  margin-top: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border-radius: 20px;
+
+  -webkit-box-shadow: 5px 5px 22px -1px rgba(186, 186, 186, 0.72);
+  -moz-box-shadow: 5px 5px 22px -1px rgba(186, 186, 186, 0.72);
+  box-shadow: 5px 5px 22px -1px rgba(186, 186, 186, 0.72);
+
+  &:focus {
+    outline: none;
+  }
 `;
