@@ -11,6 +11,9 @@ import {
   Menu,
 } from "../styles/layoutStyles";
 
+// Hamburger Menu
+import { Spiral as Hamburger } from "hamburger-react";
+
 function Header({ toggleMenu, setToggleMenu }) {
   return (
     <CustomHeader
@@ -48,11 +51,11 @@ function Header({ toggleMenu, setToggleMenu }) {
               </Link>
             </LinkSection>
             <Menu>
-              <button onClick={() => setToggleMenu(!toggleMenu)}>
-                <span></span>
-                <span className="middle-dash"></span>
-                <span></span>
-              </button>
+              <Hamburger
+                direction="right"
+                toggled={toggleMenu}
+                toggle={setToggleMenu}
+              />
             </Menu>
           </FlexRow>
         </HeaderNav>

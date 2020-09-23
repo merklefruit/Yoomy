@@ -1,5 +1,6 @@
 import React from "react";
 
+// Styled components
 import { Container, Button } from "../../styles/globalStyles";
 import { Banner2 } from "../../styles/homeStyles";
 

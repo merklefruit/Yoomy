@@ -52,29 +52,6 @@ export const LinkSection = styled.div`
 export const Menu = styled.div`
   display: none;
 
-  button {
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    padding: 0;
-
-    &:focus {
-      outline: none;
-    }
-
-    span {
-      width: 30px;
-      height: 2px;
-      display: block;
-      background: ${(props) => props.theme.text};
-      margin-bottom: 6px;
-
-      &.middle-dash {
-        width: 22px;
-      }
-    }
-  }
-
   @media (max-width: 650px) {
     display: block;
   }

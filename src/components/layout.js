@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { normalize } from "styled-normalize";
 import { motion, AnimatePresence } from "framer-motion";
 
-// components
+// Components
 import Header from "./header";
 import Navigation from "./navigation";
 import Footer from "./footer";

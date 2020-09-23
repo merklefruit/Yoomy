@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Styled components
 import { Container, Flex } from "../styles/globalStyles";
 import { Nav, NavHeader, CloseNav, NavList } from "../styles/layoutStyles";
 

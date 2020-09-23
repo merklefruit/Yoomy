@@ -337,11 +337,14 @@ export const BannerCard = styled.div`
     border-radius: 100%;
 
     svg {
-      width: 20px;
-      height: 20px;
+      position: absolute;
+      top: 17px;
+      left: 17px;
+      width: 30px;
+      height: 30px;
 
       path {
-        fill: #fff;
+        fill: #ffffff;
       }
     }
   }
