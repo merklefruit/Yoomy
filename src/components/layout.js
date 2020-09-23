@@ -54,13 +54,13 @@ const variants = {
 
 const Layout = ({ children }) => {
   const lightTheme = {
-    background: "#fff",
+    primary: "#264653",
+    secondary: "#A9CAD9",
+    yellow: "#FBE064",
+    orange: "#f4a261",
+    red: "#f4a261",
     text: "#3C3838",
-    blue: "#A9CAD9",
-    darkblue: "#1C58D4",
-    red: "#ea291e",
-    gray: "#3C3838",
-    violet: "#bfb6fa",
+    background: "#ffffff",
   };
 
   const [toggleMenu, setToggleMenu] = useState(false);

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 // Header styles
 
 export const CustomHeader = styled(motion.header)`
-  background-color: ${(props) => props.theme.blue};
+  background-color: ${(props) => props.theme.secondary};
 `;
 
 export const HeaderNav = styled.div`
@@ -32,7 +32,7 @@ export const HeaderNav = styled.div`
       margin-left: 30px;
       font-size: 0.9375rem;
       font-weight: 500;
-      color: ${(props) => props.theme.gray};
+      color: ${(props) => props.theme.primary};
     }
   }
 
@@ -89,7 +89,7 @@ export const Nav = styled(motion.div)`
   width: 100%;
   height: 100%;
   display: block;
-  background: ${(props) => props.theme.blue};
+  background: ${(props) => props.theme.secondary};
   color: #000;
   z-index: 100;
   overflow: hidden;
@@ -137,6 +137,7 @@ export const CloseNav = styled.div`
     }
   }
 `;
+
 export const NavList = styled.div`
   height: 100%;
   width: 100%;
@@ -160,7 +161,7 @@ export const NavList = styled.div`
         align-items: center;
 
         &:hover {
-          background: ${(props) => props.theme.blue};
+          background: ${(props) => props.theme.secondary};
         }
 
         .arrow {
@@ -239,7 +240,7 @@ export const FooterNav = styled.div`
       margin-left: 30px;
       font-size: 0.9375rem;
       font-weight: 500;
-      color: ${(props) => props.theme.gray};
+      color: ${(props) => props.theme.primary};
     }
   }
 `;

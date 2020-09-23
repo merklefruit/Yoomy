@@ -11,9 +11,9 @@ function homePage() {
     <>
       <HomeHero />
       <HomeContent />
-      <HomeBanner color="#1C58D4" />
+      <HomeBanner color="#264653" />
       <HomeFeatures />
-      <HomeBanner color="#3C3838" />
+      <HomeBanner color="#f4a261" />
     </>
   );
 }

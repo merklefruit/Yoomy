@@ -8,15 +8,16 @@ function HomeHero() {
   return (
     <>
       <Container>
-        <Row>
+        <Row flex>
           <HeroCol1>
             <h1>Pratica lo Yoga ovunque e in qualsiasi momento.</h1>
+            <button>Prova gratis per 7 giorni</button>
           </HeroCol1>
           <HeroCol2>
-            {/* <img
+            <img
               src={require("../../assets/images/hero-image.jpg")}
               alt="Yooga."
-            /> */}
+            />
           </HeroCol2>
         </Row>
       </Container>

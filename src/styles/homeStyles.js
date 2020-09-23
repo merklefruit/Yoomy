@@ -1,46 +1,84 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 // Hero section
 
 export const Row = styled.div`
   display: block;
-  margin-top: 60px;
+  margin-top: 100px;
+
+  ${(props) =>
+    props.flex &&
+    css`
+      position: relative;
+      display: flex;
+
+      @media (max-width: 850px) {
+        display: block;
+      }
+    `}
 `;
 
 export const HeroCol1 = styled.div`
+  width: 65%;
+
   h1 {
-    width: 60%;
+    width: 100%;
     font-size: 3rem;
+    margin-bottom: 20px;
     color: ${(props) => props.theme.text};
 
     @media (max-width: 1000px) {
-      width: 70%;
     }
 
     @media (max-width: 800px) {
-      width: 75%;
     }
 
     @media (max-width: 650px) {
-      width: 100%;
       font-size: 2.5rem;
     }
 
     @media (max-width: 450px) {
-      width: 100%;
       font-size: 2rem;
+    }
+  }
+
+  button {
+    background-color: ${(props) => props.theme.yellow};
+    color: ${(props) => props.theme.text};
+    border: none;
+    margin-top: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    font-size: 1.15rem;
+    font-weight: 400;
+    border-radius: 20px;
+
+    -webkit-box-shadow: 5px 5px 22px -1px rgba(186, 186, 186, 0.72);
+    -moz-box-shadow: 5px 5px 22px -1px rgba(186, 186, 186, 0.72);
+    box-shadow: 5px 5px 22px -1px rgba(186, 186, 186, 0.72);
+
+    &:focus {
+      outline: none;
     }
   }
 `;
 
 export const HeroCol2 = styled.div`
-  width: 65%;
+  width: 35%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 70px;
+
+  @media (max-width: 650px) {
+    margin-top: 35px;
+  }
 
   img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 20px;
     -webkit-box-shadow: 5px 5px 22px -1px rgba(186, 186, 186, 0.72);
     -moz-box-shadow: 5px 5px 22px -1px rgba(186, 186, 186, 0.72);
     box-shadow: 5px 5px 22px -1px rgba(186, 186, 186, 0.72);
@@ -60,13 +98,18 @@ export const Content = styled.div`
 
   h2 {
     font-size: 1.5rem;
+    width: 90%;
     font-weight: 300;
     color: ${(props) => props.theme.text};
     letter-spacing: 1px;
+
+    @media (max-width: 650px) {
+      font-size: 1.35rem;
+    }
   }
 
   button {
-    background-color: ${(props) => props.theme.blue};
+    background-color: ${(props) => props.theme.secondary};
     color: black;
     border: none;
     margin-top: 0;
@@ -108,12 +151,12 @@ export const FeaturesSection = styled.div`
     width: 90%;
 
     @media (max-width: 750px) {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
     }
   }
 
   button {
-    background-color: ${(props) => props.theme.blue};
+    background-color: ${(props) => props.theme.yellow};
     color: black;
     border: none;
     margin-top: 0;
