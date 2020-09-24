@@ -21,7 +21,10 @@ const Login = () => {
       <Container>
         <AuthCard>
           <BackgroundImage>
-            <img src={require("../../assets/images/hero-image.jpg")} />
+            <img
+              src={require("../../assets/images/hero-image.jpg")}
+              alt="login-hero"
+            />
           </BackgroundImage>
           <LoginForm>
             <h2>Login</h2>

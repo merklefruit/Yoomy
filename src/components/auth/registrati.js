@@ -22,7 +22,10 @@ const Registrati = () => {
       <Container>
         <AuthCard>
           <BackgroundImage>
-            <img src={require("../../assets/images/login-image.jpg")} />
+            <img
+              src={require("../../assets/images/login-image.jpg")}
+              alt="register-hero"
+            />
           </BackgroundImage>
           <LoginForm>
             <h2>Registrati</h2>

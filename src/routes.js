@@ -1,6 +1,5 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Layout from "./components/layout";
 
 // Marketing Routes
 import homePage from "./pages/homePage";
