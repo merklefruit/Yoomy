@@ -1,17 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
-import Routes from "./routes";
+import App from "./App";
+import { Provider } from "react-redux";
+import store from "./helpers/store";
 
 // Additional entry point imports
 import "typeface-roboto";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -1,11 +1,10 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 import Layout from "./components/layout";
 
 // Marketing Routes
 import homePage from "./pages/homePage";
-import notFound from "./pages/404";
 import scopriPage from "./pages/scopriPage";
 import ispirazionePage from "./pages/ispirazionePage";
 import contattiPage from "./pages/contattiPage";
@@ -13,6 +12,8 @@ import contattiPage from "./pages/contattiPage";
 // Auth Routes
 import Login from "./components/auth/login";
 import Registrati from "./components/auth/registrati";
+
+import notFound from "./pages/404";
 
 function Routes() {
   return (
@@ -26,7 +27,9 @@ function Routes() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/registrati" component={Registrati} />
 
-        <Route component={notFound} />
+        <Route>
+          <Redirect to="/" />
+        </Route>
       </Switch>
     </Layout>
   );

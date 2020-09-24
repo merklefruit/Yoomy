@@ -2,19 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { logout } from "../../actions/auth";
+
 // Styled components
-import { Container, FlexRow } from "../styles/globalStyles";
+import { Container, FlexRow } from "../../styles/globalStyles";
 import {
   CustomHeader,
   HeaderNav,
   LinkSection,
   Menu,
-} from "../styles/layoutStyles";
+} from "../../styles/_app/appLayoutStyles";
 
 // Hamburger Menu
 import { Spiral as Hamburger } from "hamburger-react";
 
-function Header({ toggleMenu, setToggleMenu }) {
+function AppHeader({ toggleMenu, setToggleMenu, logout, isAuthenticated }) {
   return (
     <CustomHeader
       animate={{ y: 0, opacity: 1 }}
@@ -29,28 +33,24 @@ function Header({ toggleMenu, setToggleMenu }) {
                 <span>Yooga.</span>
               </Link>
             </motion.div>
-            <LinkSection>
-              <Link to="/scopri">
-                <p>Scopri</p>
-              </Link>
-              <Link to="/ispirazione">
-                <p>Ispirazione</p>
-              </Link>
-              <Link to="/contatti">
-                <p>Contatti</p>
-              </Link>
-              <Link to="/app/per-te">
-                <p>Per Te</p>
-              </Link>
-            </LinkSection>
+            <LinkSection></LinkSection>
           </FlexRow>
           <FlexRow>
             <LinkSection>
-              <Link to="/login">
-                <p>Login</p>
+              <Link to="/app/per-te">
+                <p>Per Te</p>
               </Link>
-              <Link to="/registrati">
-                <p>Registrati</p>
+              <Link to="/app/istruttori">
+                <p>Istruttori</p>
+              </Link>
+              <Link to="/app/calendario">
+                <p>Calendario</p>
+              </Link>
+              <Link to="/app/account">
+                <p>Account</p>
+              </Link>
+              <Link to="/" onClick={() => logout()}>
+                <p>Logout</p>
               </Link>
             </LinkSection>
             <Menu>
@@ -67,4 +67,13 @@ function Header({ toggleMenu, setToggleMenu }) {
   );
 }
 
-export default Header;
+AppHeader.propTypes = {
+  logout: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
+};
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { logout })(AppHeader);

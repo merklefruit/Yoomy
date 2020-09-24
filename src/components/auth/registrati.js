@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
-import Layout from "../layout";
+import { Link, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import { register } from "../../actions/auth";
+import PropTypes from "prop-types";
 
 // Styled components
 import {
@@ -16,7 +17,11 @@ import { Container } from "../../styles/globalStyles";
 // Form Handling
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
-const Registrati = () => {
+const Registrati = ({ register, isAuthenticated }) => {
+  if (isAuthenticated) {
+    return <Redirect to="/app/per-te" />;
+  }
+
   return (
     <>
       <Container>
@@ -61,10 +66,12 @@ const Registrati = () => {
                 return errors;
               }}
               onSubmit={(values, { setSubmitting }) => {
-                setTimeout(() => {
-                  alert(JSON.stringify(values, null, 2));
-                  setSubmitting(false);
-                }, 400);
+                setSubmitting(false);
+                register({
+                  username: values.name,
+                  email: values.email,
+                  password: values.password,
+                });
               }}
             >
               {({ isSubmitting }) => (
@@ -138,4 +145,13 @@ const Registrati = () => {
   );
 };
 
-export default Registrati;
+Registrati.propTypes = {
+  register: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
+};
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { register })(Registrati);
