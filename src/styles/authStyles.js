@@ -1,12 +1,29 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
+export const BackgroundImage = styled.div`
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  margin-bottom: 25px;
+
+  img {
+    opacity: 0.9;
+    z-index: 0;
+    width: 100%;
+    border-radius: 7px;
+    height: auto;
+    object-fit: contain;
+  }
+`;
+
 export const AuthCard = styled.div`
+  position: relative;
+  z-index: 2;
   max-width: 400px;
   margin: 40px auto;
   text-align: center;
   border-radius: 7px;
-  border: 1px solid ${(props) => props.theme.text};
   background-color: ${(props) => props.theme.background};
   color: ${(props) => props.theme.text};
 
@@ -24,6 +41,10 @@ export const AuthCard = styled.div`
 
   p {
     font-size: 0.9rem;
+
+    &.extra {
+      padding-bottom: 20px;
+    }
 
     a {
       color: ${(props) => props.theme.text};
@@ -132,7 +153,7 @@ export const Terms = styled.div`
     margin-left: 0;
     margin-right: 0;
   }
-  p {
+  .discrete {
     width: 400px;
     margin: 0;
   }

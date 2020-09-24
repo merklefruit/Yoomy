@@ -9,6 +9,7 @@ import {
   LoginForm,
   LoginButton,
   Terms,
+  BackgroundImage,
 } from "../../styles/authStyles";
 import { Container } from "../../styles/globalStyles";
 
@@ -20,8 +21,11 @@ const Registrati = () => {
     <Layout>
       <Container>
         <AuthCard>
-          <h2>Registrati a Yooga.</h2>
+          <BackgroundImage>
+            <img src={require("../../assets/images/login-image.jpg")} />
+          </BackgroundImage>
           <LoginForm>
+            <h2>Registrati</h2>
             <Formik
               initialValues={{
                 nome: "",
@@ -102,7 +106,7 @@ const Registrati = () => {
                     <div className="checkbox">
                       <Field type="checkbox" name="terms" />
                     </div>
-                    <p>Accetto i termini e condizioni</p>
+                    <p className="discrete">Accetto i termini e condizioni</p>
                     <ErrorMessage
                       name="terms"
                       component="div"
@@ -122,7 +126,7 @@ const Registrati = () => {
               )}
             </Formik>
           </LoginForm>
-          <p>
+          <p className="extra">
             Hai già un account? <Link to="/login">Accedi</Link>
           </p>
         </AuthCard>

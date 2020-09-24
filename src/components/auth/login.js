@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 import Layout from "../layout";
 
 // Styled components
-import { AuthCard, LoginForm, LoginButton } from "../../styles/authStyles";
+import {
+  AuthCard,
+  LoginForm,
+  LoginButton,
+  BackgroundImage,
+} from "../../styles/authStyles";
 import { Container } from "../../styles/globalStyles";
 
 // Form Handling
@@ -15,8 +20,12 @@ const Login = () => {
     <Layout>
       <Container>
         <AuthCard>
-          <h2>Accedi a Yooga.</h2>
+          <BackgroundImage>
+            <img src={require("../../assets/images/hero-image.jpg")} />
+          </BackgroundImage>
           <LoginForm>
+            <h2>Login</h2>
+
             <Formik
               initialValues={{ email: "", password: "" }}
               validate={(values) => {
@@ -70,7 +79,7 @@ const Login = () => {
               )}
             </Formik>
           </LoginForm>
-          <p>
+          <p className="extra">
             Non hai un account? <Link to="/registrati">Registrati</Link>
           </p>
         </AuthCard>
