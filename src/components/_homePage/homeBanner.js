@@ -27,7 +27,7 @@ const HomeBanner = () => {
                 <IoMdRose />
               </span>
               <h4>Professionale</h4>
-              <p>Istruttori professionali con qualifiche in tutto il mondo</p>
+              <p>Istruttori con qualifiche internazionali</p>
             </BannerCard>
             <BannerCard>
               <span>

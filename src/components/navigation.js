@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Styled components
-import { Container, Flex } from "../styles/globalStyles";
-import { Nav, NavHeader, CloseNav, NavList } from "../styles/layoutStyles";
+import { Container } from "../styles/globalStyles";
+import { Nav, NavList } from "../styles/layoutStyles";
 
 function Navigation({ toggleMenu, setToggleMenu }) {
   return (
@@ -18,16 +18,6 @@ function Navigation({ toggleMenu, setToggleMenu }) {
             transition={{ duration: 0.75, ease: [0.6, 0.05, -0.01, 0.9] }}
           >
             <Container>
-              <NavHeader>
-                <Flex spaceBetween noHeight>
-                  <CloseNav onClick={() => setToggleMenu(!toggleMenu)}>
-                    <button>
-                      <span className="x-1"></span>
-                      <span className="x-2"></span>
-                    </button>
-                  </CloseNav>
-                </Flex>
-              </NavHeader>
               <NavList>
                 <ul>
                   <motion.li>

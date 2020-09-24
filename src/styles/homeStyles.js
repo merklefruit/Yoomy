@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { motion } from "framer-motion";
 
 // Hero section
 
@@ -237,7 +238,7 @@ export const FeaturesSection = styled.div`
   }
 `;
 
-export const Card = styled.div`
+export const Card = styled(motion.div)`
   width: 50%;
 
   ${(props) =>

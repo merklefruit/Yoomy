@@ -1,15 +1,47 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // Styled components
 import { Container, Button } from "../../styles/globalStyles";
 import { FeaturesSection, Card } from "../../styles/homeStyles";
 
+// Scroll behavior
+import { useInView } from "react-intersection-observer";
+import { useAnimation } from "framer-motion";
+
 const HomeFeatures = () => {
+  const animation = useAnimation();
+  const [featuresRef, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-200px",
+  });
+
+  useEffect(() => {
+    if (inView) {
+      animation.start("visible");
+    }
+  }, [animation, inView]);
+
   return (
     <>
       <Container fluid>
         <FeaturesSection>
-          <Card text>
+          <Card
+            text
+            ref={featuresRef}
+            animate={animation}
+            initial="hidden"
+            variants={{
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 1.2, ease: [0.6, 0.05, -0.01, 0.9] },
+              },
+              hidden: {
+                opacity: 0,
+                y: 72,
+              },
+            }}
+          >
             <h3>
               I nostri istruttori professionisti effettuano tante lezioni ogni
               settimana. Scegli quella che si addice di più alla tua routine!

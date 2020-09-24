@@ -1,5 +1,7 @@
 import React from "react";
 
+import Layout from "../components/layout";
+
 // Components
 import HomeHero from "../components/_homePage/homeHero";
 import HomeContent from "../components/_homePage/homeContent";
@@ -9,13 +11,13 @@ import HomeBanner2 from "../components/_homePage/homeBanner2";
 
 function homePage() {
   return (
-    <>
+    <Layout>
       <HomeHero />
       <HomeContent />
       <HomeBanner />
       <HomeFeatures />
       <HomeBanner2 />
-    </>
+    </Layout>
   );
 }
 

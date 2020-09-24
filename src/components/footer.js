@@ -20,7 +20,7 @@ function Footer() {
             <div>
               <span style={{ visibility: "hidden" }}>Yooga.</span>
             </div>
-            <LinkSection>
+            <LinkSection footer>
               <Link to="/scopri">
                 <p>Scopri</p>
               </Link>

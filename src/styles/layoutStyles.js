@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
 
 // Header styles
@@ -25,6 +25,10 @@ export const HeaderNav = styled.div`
     color: ${(props) => props.theme.text};
     letter-spacing: 1px;
     font-weight: 600;
+
+    &:hover {
+      border-bottom: 3px solid ${(props) => props.theme.text};
+    }
   }
 
   a {
@@ -33,10 +37,11 @@ export const HeaderNav = styled.div`
       font-size: 0.9375rem;
       font-weight: 500;
       color: ${(props) => props.theme.primary};
-    }
-  }
 
-  @media (max-width: 650px) {
+      &:hover {
+        color: black;
+      }
+    }
   }
 `;
 
@@ -47,6 +52,14 @@ export const LinkSection = styled.div`
   @media (max-width: 650px) {
     display: none;
   }
+
+  ${(props) =>
+    props.footer &&
+    css`
+      @media (max-width: 650px) {
+        display: flex !important;
+      }
+    `}
 `;
 
 export const Menu = styled.div`
@@ -61,7 +74,7 @@ export const Menu = styled.div`
 
 export const Nav = styled(motion.div)`
   position: fixed;
-  top: 0;
+  top: 88px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -72,54 +85,13 @@ export const Nav = styled(motion.div)`
   overflow: hidden;
 `;
 
-export const NavHeader = styled.div`
-  top: 100px;
-  position: relative;
-  width: 55%;
-
-  h2 {
-    font-family: "Roboto";
-    font-weight: 600;
-    letter-spacing: 2px;
-    font-size: 2rem;
-    color: ${(props) => props.theme.background};
-  }
-`;
-
-export const CloseNav = styled.div`
-  color: ${(props) => props.theme.background};
-  font-size: 1.4rem;
-  font-weight: 600;
-
-  button {
-    cursor: pointer;
-    transform-origin: center;
-    border: none;
-    margin: 0 20px;
-    background: none;
-    outline: none;
-
-    span {
-      width: 40px;
-      height: 6px;
-      display: block;
-      background: ${(props) => props.theme.background};
-
-      &.x-1 {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
-      &.x-2 {
-        transform: rotate(-45deg) translate(-2px, 0px);
-      }
-    }
-  }
-`;
-
 export const NavList = styled.div`
   height: 100%;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: top;
+  margin-top: 30px;
+
   ul {
     padding: 0;
     li {
@@ -185,7 +157,7 @@ export const NavList = styled.div`
 // Footer styles
 
 export const CustomFooter = styled(motion.footer)`
-  margin-top: 30px;
+  margin-top: 75px;
 `;
 
 export const FooterNav = styled.div`
