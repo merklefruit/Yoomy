@@ -18,7 +18,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const Registrati = () => {
   return (
-    <Layout>
+    <>
       <Container>
         <AuthCard>
           <BackgroundImage>
@@ -134,7 +134,7 @@ const Registrati = () => {
           </p>
         </AuthCard>
       </Container>
-    </Layout>
+    </>
   );
 };
 

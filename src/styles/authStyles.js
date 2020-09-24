@@ -96,6 +96,7 @@ export const LoginForm = styled.div`
       border-right: none;
       border-bottom: 1px solid gray;
       background: transparent;
+      padding-top: 3px;
       padding-bottom: 4px;
 
       &:focus {

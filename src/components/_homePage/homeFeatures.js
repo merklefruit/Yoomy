@@ -33,12 +33,11 @@ const HomeFeatures = () => {
             variants={{
               visible: {
                 opacity: 1,
-                y: 0,
+
                 transition: { duration: 1.2, ease: [0.6, 0.05, -0.01, 0.9] },
               },
               hidden: {
                 opacity: 0,
-                y: 72,
               },
             }}
           >

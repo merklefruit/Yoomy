@@ -1,6 +1,8 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
+import Layout from "./components/layout";
+
 // Marketing Routes
 import homePage from "./pages/homePage";
 import notFound from "./pages/404";
@@ -14,7 +16,7 @@ import Registrati from "./components/auth/registrati";
 
 function Routes() {
   return (
-    <>
+    <Layout>
       <Switch>
         <Route exact path="/" component={homePage} />
         <Route exact path="/scopri" component={scopriPage} />
@@ -26,7 +28,7 @@ function Routes() {
 
         <Route component={notFound} />
       </Switch>
-    </>
+    </Layout>
   );
 }
 

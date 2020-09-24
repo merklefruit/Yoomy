@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Layout from "../layout";
-
 // Styled components
 import {
   AuthCard,
@@ -17,7 +15,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const Login = () => {
   return (
-    <Layout>
+    <>
       <Container>
         <AuthCard>
           <BackgroundImage>
@@ -87,7 +85,7 @@ const Login = () => {
           </p>
         </AuthCard>
       </Container>
-    </Layout>
+    </>
   );
 };
 
