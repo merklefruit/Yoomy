@@ -5,17 +5,17 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 // Components
-import PerTeHero from "../../components/_app/_perTePage/perTeHero";
+import AccountHero from "../../components/_app/_accountPage/accountHero";
 
-const PerTePage = ({ user }) => {
+const AccountPage = ({ user }) => {
   return (
     <>
-      <PerTeHero user={user}></PerTeHero>
+      <AccountHero user={user} />
     </>
   );
 };
 
-PerTePage.propTypes = {
+AccountPage.propTypes = {
   user: PropTypes.object.isRequired,
 };
 
@@ -23,4 +23,4 @@ const mapStateToProps = (state) => ({
   user: state.auth.user,
 });
 
-export default connect(mapStateToProps)(PerTePage);
+export default connect(mapStateToProps)(AccountPage);

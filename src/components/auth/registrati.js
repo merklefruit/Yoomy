@@ -54,9 +54,6 @@ const Registrati = ({ register, isAuthenticated }) => {
                 if (!values.nome) {
                   errors.nome = "Campo richiesto";
                 }
-                if (!values.cognome) {
-                  errors.cognome = "Campo richiesto";
-                }
                 if (!values.password) {
                   errors.password = "Campo richiesto";
                 }
@@ -66,31 +63,24 @@ const Registrati = ({ register, isAuthenticated }) => {
                 return errors;
               }}
               onSubmit={(values, { setSubmitting }) => {
-                setSubmitting(false);
-                register({
-                  username: values.name,
-                  email: values.email,
-                  password: values.password,
-                });
+                setTimeout(() => {
+                  setSubmitting(false);
+                  const { nome, email, password } = values;
+                  register({
+                    username: nome,
+                    email,
+                    password,
+                  });
+                }, 300);
               }}
             >
               {({ isSubmitting }) => (
                 <Form>
                   <div className="label-div">
-                    <label>Nome:</label>
+                    <label>Username:</label>
                   </div>
                   <Field type="text" name="nome" />
                   <ErrorMessage name="nome" component="div" className="error" />
-
-                  <div className="label-div">
-                    <label>Cognome:</label>
-                  </div>
-                  <Field type="text" name="cognome" />
-                  <ErrorMessage
-                    name="cognome"
-                    component="div"
-                    className="error"
-                  />
 
                   <div className="label-div">
                     <label>Email:</label>

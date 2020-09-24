@@ -39,9 +39,6 @@ function Header({ toggleMenu, setToggleMenu }) {
               <Link to="/contatti">
                 <p>Contatti</p>
               </Link>
-              <Link to="/app/per-te">
-                <p>Per Te</p>
-              </Link>
             </LinkSection>
           </FlexRow>
           <FlexRow>

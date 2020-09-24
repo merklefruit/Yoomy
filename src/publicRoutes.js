@@ -13,7 +13,7 @@ import contattiPage from "./pages/contattiPage";
 import Login from "./components/auth/login";
 import Registrati from "./components/auth/registrati";
 
-import notFound from "./pages/404";
+// import notFound from "./pages/404";
 
 function Routes() {
   return (
