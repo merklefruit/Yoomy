@@ -1,28 +1,29 @@
-import React from "react";
-import { FaSpinner } from "react-icons/fa";
+import React, { Fragment } from "react";
+import { ImSpinner2 } from "react-icons/im";
 import { motion } from "framer-motion";
 
 const FullPageSpinner = () => {
   return (
-    <div
-      style={{
-        fontSize: "4em",
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <motion.FaSpinner
-        animate={{ rotate: 180 }}
-        transition={{ repeat: Infinity, duration: 0.5 }}
-      />
-    </div>
+    <Fragment>
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{ repeat: Infinity, duration: 0.2 }}
+        style={{
+          fontSize: "2rem",
+          height: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <ImSpinner2 />
+      </motion.div>
+    </Fragment>
   );
 };
 
-FaSpinner.defaultProps = {
+ImSpinner2.defaultProps = {
   "aria-label": "loading",
 };
 

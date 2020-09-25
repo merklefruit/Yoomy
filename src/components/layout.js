@@ -9,6 +9,10 @@ import Header from "./header";
 import Navigation from "./navigation";
 import Footer from "./footer";
 
+// Toast notifications (dispatched directly in actions -> alert )
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 // Global style definition
 const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -79,6 +83,7 @@ const Layout = ({ children }) => {
           animate="enter"
           exit="exit"
         >
+          <ToastContainer />
           {children}
         </motion.main>
       </AnimatePresence>
