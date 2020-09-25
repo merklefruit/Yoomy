@@ -1,12 +1,20 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
+
+// Redux
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import store from "./helpers/store";
+
+// Helpers
 import setAuthToken from "./helpers/setAuthToken";
 import { loadUser } from "./actions/auth";
-import FullPageSpinner from "./components/fullPageSpinner";
 import { Helmet } from "react-helmet";
+import FullPageSpinner from "./components/fullPageSpinner";
+
+// Toast notifications (dispatched directly in actions -> alert )
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const PrivateRoutes = React.lazy(() =>
   import(/* webpackPrefetch: true */ "./privateRoutes")
@@ -29,6 +37,7 @@ const App = ({ isAuthenticated }) => {
         <meta charSet="utf-8" />
       </Helmet>
       <React.Suspense fallback={<FullPageSpinner />}>
+        <ToastContainer />
         {isAuthenticated ? <PrivateRoutes /> : <PublicRoutes />}
       </React.Suspense>
     </Router>

@@ -5,13 +5,20 @@ import { motion } from "framer-motion";
 
 export const CustomHeader = styled(motion.header)`
   z-index: 1;
-  background-color: ${(props) => props.theme.darkblue};
+  ${"" /* background-color: ${(props) => props.theme.darkblue}; */}
+  background:
+        linear-gradient(to left top, rgba(255,243,217,1) 0%, rgba(216,227,232,0.5) 50% , rgba(216,227,232,1) 100% ),
+        linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
 `;
 
 export const HeaderNav = styled.div`
   width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 35px;
+  padding-bottom: 50px;
+  ${"" /* padding-bottom: 20px; 
+          padding-top: 20px;
+    */}
+
   z-index: 99;
   margin-left: 0px;
   margin-bottom: 0;
@@ -22,24 +29,23 @@ export const HeaderNav = styled.div`
   span {
     font-size: 1.9rem;
     text-transform: uppercase;
-    color: ${(props) => props.theme.background};
+    color: ${(props) => props.theme.text};
     letter-spacing: 1px;
     font-weight: 600;
-
-    &:hover {
-      border-bottom: 3px solid ${(props) => props.theme.background};
-    }
+    opacity: 0.9;
   }
 
   a {
     p {
       margin-left: 30px;
       font-size: 0.9375rem;
-      font-weight: 500;
-      color: ${(props) => props.theme.background};
+      font-weight: 400;
+      color: ${(props) => props.theme.text};
+      opacity: 0.9;
 
       &:hover {
-        color: ${(props) => props.theme.orange};
+        color: black;
+        opacity: 1;
       }
     }
   }

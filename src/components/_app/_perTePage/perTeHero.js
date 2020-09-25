@@ -8,10 +8,10 @@ const PerTeHero = ({ user }) => {
   return (
     <Container>
       <PerTeHeadline>
-        <h1>Novità per te</h1>
+        <h1>Per te</h1>
         <h3>
           Ciao {user ? user.username : ""}! <br />
-          Ecco cosa abbiamo preparato per te:
+          Dai un'occhiata ai corsi selezionati apposta per te.
         </h3>
       </PerTeHeadline>
     </Container>

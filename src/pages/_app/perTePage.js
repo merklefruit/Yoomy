@@ -6,11 +6,13 @@ import PropTypes from "prop-types";
 
 // Components
 import PerTeHero from "../../components/_app/_perTePage/perTeHero";
+import PerTeGridSection from "../../components/_app/_perTePage/perTeGridSection";
 
 const PerTePage = ({ user }) => {
   return (
     <>
-      <PerTeHero user={user}></PerTeHero>
+      <PerTeHero user={user} />
+      <PerTeGridSection />
     </>
   );
 };

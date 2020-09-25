@@ -51,7 +51,9 @@ export const register = ({ username, email, password }) => async (dispatch) => {
     });
     dispatch(loadUser());
   } catch (err) {
-    const error = err.response.data.message;
+    const error = err.response
+      ? err.response.data.message
+      : "Errore Interno. Riprova più tardi.";
     dispatch(setAlert(error, "", "error"));
     dispatch({
       type: REGISTER_FAIL,
@@ -80,7 +82,7 @@ export const login = (email, password) => async (dispatch) => {
   } catch (err) {
     const error = err.response
       ? err.response.data.message
-      : "Generic Login Fail";
+      : "Errore Interno. Riprova più tardi.";
     dispatch(setAlert(error, "", "error"));
     dispatch({
       type: LOGIN_FAIL,
