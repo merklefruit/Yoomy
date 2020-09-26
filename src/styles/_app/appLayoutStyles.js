@@ -19,6 +19,11 @@ export const HeaderNav = styled.div`
           padding-top: 20px;
     */}
 
+  @media (max-width: 650px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
   z-index: 99;
   margin-left: 0px;
   margin-bottom: 0;

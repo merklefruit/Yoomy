@@ -25,10 +25,6 @@ export const HeaderNav = styled.div`
     color: ${(props) => props.theme.text};
     letter-spacing: 1px;
     font-weight: 600;
-
-    &:hover {
-      border-bottom: 3px solid ${(props) => props.theme.text};
-    }
   }
 
   a {

@@ -12,10 +12,10 @@ function Navigation({ toggleMenu, setToggleMenu }) {
       <AnimatePresence>
         {toggleMenu && (
           <Nav
-            initial={{ x: "100%" }}
-            exit={{ x: "100%" }}
-            animate={{ x: toggleMenu ? 0 : "100%" }}
-            transition={{ duration: 0.75, ease: [0.6, 0.05, -0.01, 0.9] }}
+            initial={{ y: "100%" }}
+            exit={{ y: "100%" }}
+            animate={{ y: toggleMenu ? 0 : "100%" }}
+            transition={{ duration: 0.65, ease: [0.6, 0.05, -0.01, 0.9] }}
           >
             <Container>
               <NavList>

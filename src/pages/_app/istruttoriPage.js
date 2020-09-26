@@ -1,12 +1,15 @@
 import React from "react";
 
-import { Container } from "../../styles/globalStyles";
+// Components
+import IstruttoriHero from "../../components/_app/_istruttoriPage/istruttoriHero";
+import IstruttoriList from "../../components/_app/_istruttoriPage/istruttoriList";
 
 const IstruttoriPage = () => {
   return (
-    <Container>
-      <h1>Istruttori</h1>
-    </Container>
+    <>
+      <IstruttoriHero />
+      <IstruttoriList />
+    </>
   );
 };
 

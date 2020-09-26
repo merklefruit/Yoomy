@@ -23,10 +23,6 @@ export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: calc(100% - 150px) 150px;
 
-  ${"" /* @media (max-width: 900px) {
-    grid-template-columns: 70% 30%;
-  } */}
-
   @media (max-width: 700px) {
     display: block;
   }
@@ -51,6 +47,13 @@ export const SideBarSection = styled.div`
 
     h3 {
       margin-top: 2px;
+    }
+
+    p {
+      &:hover {
+        font-weight: 600;
+        cursor: pointer;
+      }
     }
   }
 `;

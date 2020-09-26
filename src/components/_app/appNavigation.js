@@ -12,17 +12,17 @@ function AppNavigation({ toggleMenu, setToggleMenu }) {
       <AnimatePresence>
         {toggleMenu && (
           <Nav
-            initial={{ x: "100%" }}
-            exit={{ x: "100%" }}
-            animate={{ x: toggleMenu ? 0 : "100%" }}
-            transition={{ duration: 0.75, ease: [0.6, 0.05, -0.01, 0.9] }}
+            initial={{ y: "100%" }}
+            exit={{ y: "100%" }}
+            animate={{ y: toggleMenu ? 0 : "100%" }}
+            transition={{ duration: 0.65, ease: [0.6, 0.05, -0.01, 0.9] }}
           >
             <Container>
               <NavList>
                 <ul>
                   <motion.li>
                     <Link
-                      to="/scopri"
+                      to="/app/per-te"
                       onClick={() => setToggleMenu(!toggleMenu)}
                     >
                       <motion.div
@@ -46,14 +46,14 @@ function AppNavigation({ toggleMenu, setToggleMenu }) {
                             ></path>
                           </svg>
                         </span>
-                        Scopri
+                        Per te
                       </motion.div>
                     </Link>
                   </motion.li>
 
                   <motion.li>
                     <Link
-                      to="/ispirazione"
+                      to="/app/istruttori"
                       onClick={() => setToggleMenu(!toggleMenu)}
                     >
                       <motion.div
@@ -77,14 +77,14 @@ function AppNavigation({ toggleMenu, setToggleMenu }) {
                             ></path>
                           </svg>
                         </span>
-                        Ispirazione
+                        Istruttori
                       </motion.div>
                     </Link>
                   </motion.li>
 
                   <motion.li>
                     <Link
-                      to="/contatti"
+                      to="/app/calendario"
                       onClick={() => setToggleMenu(!toggleMenu)}
                     >
                       <motion.div
@@ -108,14 +108,14 @@ function AppNavigation({ toggleMenu, setToggleMenu }) {
                             ></path>
                           </svg>
                         </span>
-                        Contatti
+                        Calendario
                       </motion.div>
                     </Link>
                   </motion.li>
 
                   <motion.li>
                     <Link
-                      to="/login"
+                      to="/app/account"
                       onClick={() => setToggleMenu(!toggleMenu)}
                     >
                       <motion.div
@@ -139,16 +139,13 @@ function AppNavigation({ toggleMenu, setToggleMenu }) {
                             ></path>
                           </svg>
                         </span>
-                        Login
+                        Account
                       </motion.div>
                     </Link>
                   </motion.li>
 
                   <motion.li>
-                    <Link
-                      to="/registrati"
-                      onClick={() => setToggleMenu(!toggleMenu)}
-                    >
+                    <Link to="/" onClick={() => setToggleMenu(!toggleMenu)}>
                       <motion.div
                         className="link"
                         initial={{ x: -108 }}
@@ -170,7 +167,7 @@ function AppNavigation({ toggleMenu, setToggleMenu }) {
                             ></path>
                           </svg>
                         </span>
-                        Registrati
+                        Logout
                       </motion.div>
                     </Link>
                   </motion.li>
