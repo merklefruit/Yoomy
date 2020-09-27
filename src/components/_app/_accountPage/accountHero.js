@@ -1,16 +1,20 @@
 import React from "react";
 
 // Styled components
-import { Container } from "../../../styles/globalStyles";
+import { Container, Headline } from "../../../styles/globalStyles";
 
 const ContactHero = ({ user }) => {
   return (
     <Container>
-      <h1>Il tuo Account</h1>
-      <p>
-        Username: {user ? user.username : ""} <br />
-        Email: {user ? user.email : ""} <br />
-      </p>
+      <Headline>
+        <h1>Il tuo Account</h1>
+      </Headline>
+      {user && (
+        <p>
+          Username: {user.username} <br />
+          Email: {user.email} <br />
+        </p>
+      )}
     </Container>
   );
 };

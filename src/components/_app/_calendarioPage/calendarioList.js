@@ -9,30 +9,28 @@ import { fetchEvents } from "../../../actions";
 
 // Styled components
 import { Container } from "../../../styles/globalStyles";
-import { ListContainer } from "../../../styles/_app/istruttoriStyles.js";
+import { CalendarContainer } from "../../../styles/_app/calendarStyles.js";
 
 const CalendarioList = ({ isLoadingEvents, events, fetchEvents }) => {
   useEffect(() => {
     fetchEvents();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [fetchEvents]);
 
   return (
     <Container>
-      <ListContainer>
+      <CalendarContainer>
         <ul>
           {events
             ? events.map((event) => (
                 <li key={event.id}>
-                  <h3>Evento ID: {event.id} </h3>
-                  <p>Corso ID: {event.course}</p>
-                  <p>Partecipanti ID: {event.participants}</p>
+                  <h3>Corso: {event.course.name} </h3>
                   <p>Data di inizio: {event.startDate}</p>
-                  <p>Durata (min): {event.duration}</p>
+                  <p>Durata: {event.duration} minuti</p>
                 </li>
               ))
             : ""}
         </ul>
-      </ListContainer>
+      </CalendarContainer>
     </Container>
   );
 };

@@ -1,12 +1,14 @@
 import React from "react";
 
-import { Container } from "../../../styles/globalStyles";
+import { Container, Headline } from "../../../styles/globalStyles";
 
 const CalendarioHero = () => {
   return (
     <Container>
-      <h1>Visualizza tutti i corsi (TODO):</h1>
-      <p>Ecco una lista completa delle ultime lezioni:</p>
+      <Headline>
+        <h1>I prossimi eventi:</h1>
+        <h3>Ecco una lista completa delle prossime lezioni:</h3>
+      </Headline>
     </Container>
   );
 };

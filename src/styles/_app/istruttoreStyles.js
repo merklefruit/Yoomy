@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const TeacherBio = styled.div`
-  width: 100%;
   color: ${(props) => props.theme.text};
   display: flex;
   justify-content: space-evenly;
@@ -11,7 +10,7 @@ export const TeacherBio = styled.div`
   margin: 0 auto;
   padding: 0 25px;
   position: relative;
-  width: auto;
+
   height: 100%;
 
   @media (min-width: 1024px) {
@@ -29,6 +28,12 @@ export const TeacherBio = styled.div`
   }
   @media (max-width: 500px) {
     padding: 0;
+  }
+
+  .bio-container {
+    @media (max-width: 500px) {
+      padding: 0 25px;
+    }
   }
 
   img {
@@ -58,10 +63,6 @@ export const TeacherBio = styled.div`
       width: 100%;
       font-size: 1.3rem;
       margin-right: 24px;
-    }
-    @media (max-width: 500px) {
-      padding-left: 25px;
-      padding-right: 25px;
     }
   }
 `;

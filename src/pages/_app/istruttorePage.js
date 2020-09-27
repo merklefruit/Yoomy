@@ -53,7 +53,9 @@ const IstruttorePage = ({ teachers, match }) => {
           </Container>
 
           <TeacherBio>
-            <p>{teacher.biography}</p>
+            <div className="bio-container">
+              <p>{teacher.biography}</p>
+            </div>
             <img src={teacher.picture} alt="profile" />
           </TeacherBio>
         </div>
