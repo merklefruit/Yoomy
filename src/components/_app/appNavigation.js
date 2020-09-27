@@ -2,11 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Redux
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { logout } from "../../actions/auth";
+
 // Styled components
 import { Container } from "../../styles/globalStyles";
 import { Nav, NavList } from "../../styles/_app/appLayoutStyles";
 
-function AppNavigation({ toggleMenu, setToggleMenu }) {
+function AppNavigation({ toggleMenu, setToggleMenu, logout }) {
   return (
     <>
       <AnimatePresence>
@@ -145,7 +150,13 @@ function AppNavigation({ toggleMenu, setToggleMenu }) {
                   </motion.li>
 
                   <motion.li>
-                    <Link to="/" onClick={() => setToggleMenu(!toggleMenu)}>
+                    <Link
+                      to="/"
+                      onClick={() => {
+                        setToggleMenu(!toggleMenu);
+                        logout();
+                      }}
+                    >
                       <motion.div
                         className="link"
                         initial={{ x: -108 }}
@@ -181,4 +192,12 @@ function AppNavigation({ toggleMenu, setToggleMenu }) {
   );
 }
 
-export default AppNavigation;
+AppNavigation.propTypes = {
+  logout: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { logout })(AppNavigation);

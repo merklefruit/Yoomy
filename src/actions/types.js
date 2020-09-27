@@ -23,3 +23,5 @@ export const FETCH_TEACHERS = "FETCH_TEACHERS";
 export const SET_TEACHERS = "SET_TEACHERS";
 export const FETCH_COURSES = "FETCH_COURSES";
 export const SET_COURSES = "SET_COURSES";
+export const FETCH_EVENTS = "FETCH_EVENTS";
+export const SET_EVENTS = "SET_EVENTS";

@@ -4,8 +4,10 @@ import {
   FETCH_TEACHERS,
   SET_COURSES,
   FETCH_COURSES,
+  SET_EVENTS,
+  FETCH_EVENTS,
 } from "./types";
-import { TEACHERS_URL, COURSES_URL } from "../helpers/config";
+import { TEACHERS_URL, COURSES_URL, EVENTS_URL } from "../helpers/config";
 
 function apiAction({
   url = "",
@@ -63,6 +65,22 @@ export function fetchCourses() {
 function setCourses(data) {
   return {
     type: SET_COURSES,
+    payload: data,
+  };
+}
+
+// fetch all events
+export function fetchEvents() {
+  return apiAction({
+    url: EVENTS_URL,
+    onSuccess: setEvents,
+    onFailure: () => console.log("Error fetching events"),
+    label: FETCH_EVENTS,
+  });
+}
+function setEvents(data) {
+  return {
+    type: SET_EVENTS,
     payload: data,
   };
 }

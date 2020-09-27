@@ -5,6 +5,8 @@ import {
   FETCH_TEACHERS,
   SET_COURSES,
   FETCH_COURSES,
+  SET_EVENTS,
+  FETCH_EVENTS,
 } from "../actions/types";
 
 const initialState = [];
@@ -24,6 +26,11 @@ export default function (state = initialState, action) {
         ...state,
         courses: payload,
       };
+    case SET_EVENTS:
+      return {
+        ...state,
+        events: payload,
+      };
 
     // API LOGIC ::
     case API_START:
@@ -36,6 +43,11 @@ export default function (state = initialState, action) {
         return {
           ...state,
           isLoadingCourses: true,
+        };
+      } else if (payload === FETCH_EVENTS) {
+        return {
+          ...state,
+          isLoadingEvents: true,
         };
       }
       break;
@@ -50,6 +62,11 @@ export default function (state = initialState, action) {
         return {
           ...state,
           isLoadingCourses: false,
+        };
+      } else if (payload === FETCH_EVENTS) {
+        return {
+          ...state,
+          isLoadingEvents: false,
         };
       }
       break;
