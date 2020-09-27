@@ -1,11 +1,13 @@
 import React from "react";
 
-import { Container } from "../../../styles/globalStyles";
+import { Container, Headline } from "../../../styles/globalStyles";
 
 const IstruttoriHero = () => {
   return (
     <Container>
-      <h1>Istruttori (TODO):</h1>
+      <Headline>
+        <h1>Istruttori</h1>
+      </Headline>
     </Container>
   );
 };

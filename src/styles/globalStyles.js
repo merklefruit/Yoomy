@@ -83,3 +83,30 @@ export const Button = styled(motion.button)`
     outline: none;
   }
 `;
+
+export const Headline = styled.div`
+  color: ${(props) => props.theme.text};
+  h1 {
+    font-size: 3rem;
+    font-weight: 600;
+
+    @media (max-width: 900px) {
+      font-size: 2.7rem;
+      font-weight: 500;
+    }
+    @media (max-width: 650px) {
+      font-size: 2.4rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    width: 70%;
+
+    @media (max-width: 650px) {
+      font-size: 1rem;
+      width: 100%;
+    }
+  }
+`;

@@ -7,9 +7,10 @@ const FullPageSpinner = () => {
     <Fragment>
       <motion.div
         animate={{ rotate: 360 }}
-        transition={{ repeat: Infinity, duration: 0.2 }}
+        transition={{ repeat: Infinity, duration: 0.4 }}
         style={{
-          fontSize: "2rem",
+          fontSize: "3rem",
+          color: "#A9CAD9",
           height: "100vh",
           display: "flex",
           flexDirection: "column",

@@ -3,20 +3,6 @@ import { motion } from "framer-motion";
 
 // PerTe Hero
 
-export const PerTeHeadline = styled.div`
-  color: ${(props) => props.theme.text};
-  h1 {
-    font-size: 3rem;
-    font-weight: 600;
-  }
-
-  h3 {
-    font-size: 1.2rem;
-    font-weight: 400;
-    width: 70%;
-  }
-`;
-
 // PerTe GridSection
 
 export const GridContainer = styled.div`
