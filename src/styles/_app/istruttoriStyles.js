@@ -15,10 +15,14 @@ export const ListContainer = styled.div`
   }
 
   .card {
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 2px;
     margin: 10px;
-    text-align: center;
+    text-align: left;
+
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 2px 2px rgba(0, 0, 0, 0.04),
+      0 3px 3px rgba(0, 0, 0, 0.04), 0 5px 5px rgba(0, 0, 0, 0.04),
+      0 8px 8px rgba(0, 0, 0, 0.03);
 
     a {
       color: ${(props) => props.theme.text};
@@ -31,21 +35,52 @@ export const ListContainer = styled.div`
         object-fit: cover;
         border-radius: 2px;
 
+        @media (max-width: 650px) {
+          height: 275px;
+        }
+
         &:hover {
           cursor: pointer;
         }
       }
+    }
 
-      h3 {
-        margin-top: 10px;
-        margin-bottom: 5px;
-        font-weight: 400;
-        font-size: 1.2rem;
+    h3 {
+      font-family: "Montserrat";
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 0;
+      margin-bottom: 0px;
+      font-weight: 500;
+      font-size: 1.15rem;
+      letter-spacing: 1px;
+    }
+
+    .courses {
+      padding-bottom: 20px;
+      padding-top: 5px;
+      a {
+        color: ${(props) => props.theme.text};
+
+        p {
+          font-size: 0.95rem;
+          margin-top: 7px;
+          margin-bottom: 7px;
+          opacity: 0.7;
+
+          &:hover {
+            color: black;
+            opacity: 0.85;
+          }
+        }
       }
-      p {
-        margin-top: 5px;
-        margin-bottom: 10px;
-      }
+    }
+
+    .card-content {
+      margin-left: 25px;
+      margin-right: 25px;
+      margin-top: 10px;
+      min-height: 80px;
     }
   }
 `;

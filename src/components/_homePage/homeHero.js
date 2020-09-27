@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Styled components
 import { Container, Button } from "../../styles/globalStyles";
@@ -14,9 +15,11 @@ function HomeHero() {
         <HomeRow flex>
           <HeroCol1>
             <h1>Pratica lo Yoga ovunque e in qualsiasi momento.</h1>
-            <Button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
-              Prova per 7 giorni
-            </Button>
+            <Link to="/scopri">
+              <Button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
+                Scopri di più
+              </Button>
+            </Link>
           </HeroCol1>
           <HeroCol2>
             <HeroImg />

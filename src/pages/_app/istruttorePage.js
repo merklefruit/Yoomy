@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // Redux
 import { connect } from "react-redux";
@@ -7,6 +8,8 @@ import PropTypes from "prop-types";
 // Styled components
 import { Container, Headline } from "../../styles/globalStyles";
 import { TeacherBio } from "../../styles/_app/istruttoreStyles";
+
+import { AiOutlineHome } from "react-icons/ai";
 
 const IstruttorePage = ({ teachers, match }) => {
   const [teacher, setTeacher] = useState(null);
@@ -33,17 +36,23 @@ const IstruttorePage = ({ teachers, match }) => {
       {teacher ? (
         <div>
           <Container>
-            <Headline>
+            <Headline withHr>
+              <small>
+                <AiOutlineHome />
+                <Link to="/app/per-te">Home</Link> /{" "}
+                <Link to="/app/istruttori">Istruttori</Link> /{" "}
+                <Link to={`/app/istruttore/${teacher.id}`}>
+                  {teacher.name} {teacher.surname}
+                </Link>
+              </small>
               <h1>
                 {teacher.name} {teacher.surname}
               </h1>
-              {/* <h3>ID: {teacher.id}</h3>
-            <h3>Email: {teacher.email}</h3> */}
+              <hr />
             </Headline>
           </Container>
 
           <TeacherBio>
-            {/* MEGLIO BIO SOPRA O FOTO SOPRA? */}
             <p>{teacher.biography}</p>
             <img src={teacher.picture} alt="profile" />
           </TeacherBio>

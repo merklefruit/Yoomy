@@ -42,6 +42,7 @@ export const HeaderNav = styled.div`
 `;
 
 export const LinkSection = styled.div`
+  font-family: "Montserrat";
   margin-left: 20px;
   display: flex;
 
@@ -76,7 +77,6 @@ export const Nav = styled(motion.div)`
   height: 100%;
   display: block;
   background: ${(props) => props.theme.secondary};
-  color: #000;
   z-index: 100;
   overflow: hidden;
 `;
@@ -100,7 +100,7 @@ export const NavList = styled.div`
       overflow: hidden;
 
       .link {
-        color: ${(props) => props.theme.background};
+        color: ${(props) => props.theme.text};
         position: relative;
         display: flex;
         align-items: center;
@@ -116,7 +116,7 @@ export const NavList = styled.div`
           svg {
             width: 100px;
             path {
-              fill: ${(props) => props.theme.background};
+              fill: ${(props) => props.theme.text};
             }
           }
         }
@@ -161,7 +161,7 @@ export const FooterNav = styled.div`
   padding-top: 0px;
   padding-bottom: 25px;
   z-index: 99;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   margin-left: 0px;
   display: flex;
   align-items: center;

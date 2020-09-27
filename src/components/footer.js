@@ -15,11 +15,7 @@ function Footer() {
       <Container>
         <hr />
         <FooterNav>
-          <div />
           <FlexRow>
-            <div>
-              <span style={{ visibility: "hidden" }}>Yooga.</span>
-            </div>
             <LinkSection footer>
               <Link to="/scopri">
                 <p>Scopri</p>

@@ -26,11 +26,21 @@ const IstruttoriList = ({ isLoadingTeachers, teachers }) => {
                 >
                   <Link to={`/app/istruttore/${teacher.id}`}>
                     <img src={teacher.picture} alt="profile" />
-                    <h3>
-                      {teacher.name} {teacher.surname}
-                    </h3>
-                    <p>{teacher.email}</p>
                   </Link>
+                  <div className="card-content">
+                    <Link to={`/app/istruttore/${teacher.id}`}>
+                      <h3>
+                        {teacher.name} {teacher.surname}
+                      </h3>
+                    </Link>
+                    <div className="courses">
+                      {teacher.courses.map((course) => (
+                        <Link to="/">
+                          <p key={course.id}>{course.name}</p>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 </motion.div>
               ))
             : "Errore nel caricamento ... "

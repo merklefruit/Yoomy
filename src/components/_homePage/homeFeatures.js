@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // Styled components
 import { Container, Button } from "../../styles/globalStyles";
@@ -46,9 +47,11 @@ const HomeFeatures = () => {
               settimana. Scegli quella che si addice di più alla tua routine!
             </h3>
 
-            <Button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
-              Registrati gratis
-            </Button>
+            <Link to="/registrati">
+              <Button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
+                Registrati gratis
+              </Button>
+            </Link>
             <ul>
               <li>
                 <p>

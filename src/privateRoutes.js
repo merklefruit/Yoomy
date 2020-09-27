@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 // API calls
-import { fetchTeachers } from "./actions";
+import { fetchCourses, fetchTeachers } from "./actions";
 
 // App Routes (should be protected)
 import PerTePage from "./pages/_app/perTePage";
@@ -17,9 +17,10 @@ import AccountPage from "./pages/_app/accountPage";
 import CalendarioPage from "./pages/_app/calendarioPage";
 import IstruttorePage from "./pages/_app/istruttorePage";
 
-function PrivateRoutes({ fetchTeachers }) {
+function PrivateRoutes({ fetchTeachers, fetchCourses }) {
   useEffect(() => {
     fetchTeachers();
+    fetchCourses();
   });
 
   return (
@@ -42,8 +43,11 @@ function PrivateRoutes({ fetchTeachers }) {
 
 PrivateRoutes.propTypes = {
   fetchTeachers: PropTypes.func.isRequired,
+  fetchCourses: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({});
 
-export default connect(mapStateToProps, { fetchTeachers })(PrivateRoutes);
+export default connect(mapStateToProps, { fetchTeachers, fetchCourses })(
+  PrivateRoutes
+);

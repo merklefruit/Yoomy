@@ -11,8 +11,8 @@ function HomeContent() {
         <Content>
           <h2>
             Lo yoga è progettato per aiutarti a sentirti meglio nel corpo e
-            nella mente. Ottieni accesso illimitato alle migliori lezioni live
-            di yoga, meditazione e Pilates.
+            nella mente. Con Yooga, ottieni accesso illimitato alle migliori
+            lezioni live di yoga, meditazione e Pilates.
           </h2>
         </Content>
       </Row>

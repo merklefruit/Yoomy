@@ -24,7 +24,7 @@ export const AuthCard = styled.div`
   margin: 40px auto;
   text-align: center;
   border-radius: 7px;
-  background-color: ${(props) => props.theme.background};
+  background-color: white;
   color: ${(props) => props.theme.text};
 
   -webkit-box-shadow: 5px 5px 22px -1px rgba(186, 186, 186, 0.72);
@@ -63,6 +63,10 @@ export const LoginForm = styled.div`
   margin-right: 29px;
   text-align: center;
   background-color: ${(props) => props.theme.background};
+
+  h2 {
+    font-family: "Montserrat";
+  }
 
   form {
     text-align: left;

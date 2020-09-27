@@ -86,6 +86,31 @@ export const Button = styled(motion.button)`
 
 export const Headline = styled.div`
   color: ${(props) => props.theme.text};
+  margin-top: 25px;
+  small {
+    display: flex;
+    margin-bottom: 0;
+    color: ${(props) => props.theme.lightgray};
+
+    a  {
+      color: ${(props) => props.theme.lightgray};
+      margin: 0 4px;
+
+      &:hover {
+        color: black;
+      }
+      &:active {
+        color: black;
+      }
+    }
+
+    svg {
+      display: block;
+      align-items: center;
+      margin-right: 0;
+    }
+  }
+
   h1 {
     font-size: 3rem;
     font-weight: 600;
@@ -98,6 +123,32 @@ export const Headline = styled.div`
       font-size: 2.4rem;
     }
   }
+
+  hr {
+    display: none;
+  }
+
+  ${(props) =>
+    props.withHr &&
+    css`
+      h1 {
+        margin-bottom: 0;
+      }
+
+      hr {
+        display: block;
+        width: 45%;
+        height: 2px;
+        border: none;
+        background-color: ${(props) => props.theme.text};
+        margin-left: 0;
+        margin-bottom: 25px;
+
+        @media (max-width: 650px) {
+          width: 70%;
+        }
+      }
+    `}
 
   h3 {
     font-size: 1.2rem;

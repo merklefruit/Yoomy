@@ -62,8 +62,14 @@ export const HeroCol1 = styled.div`
   h1 {
     width: 65%;
     font-size: 3rem;
+    opacity: 0.95;
     margin-bottom: 20px;
     color: ${(props) => props.theme.text};
+
+    span {
+      font-weight: 600;
+      color: ${(props) => props.theme.primary};
+    }
 
     @media (max-width: 1000px) {
       width: 75%;
@@ -149,6 +155,7 @@ export const HeroCol2 = styled.div`
 
 export const Content = styled.div`
   margin-bottom: 40px;
+  font-family: "Montserrat";
 
   @media (max-width: 650px) {
     margin-left: 0;
@@ -240,6 +247,7 @@ export const FeaturesSection = styled.div`
 
 export const Card = styled(motion.div)`
   width: 50%;
+  color: ${(props) => props.theme.text};
 
   ${(props) =>
     props.text &&
@@ -334,7 +342,7 @@ export const BannerCard = styled.div`
     margin-right: auto;
     width: 65px;
     height: 65px;
-    background-color: ${(props) => props.theme.primary};
+    background-color: ${(props) => props.theme.orange};
     border-radius: 100%;
 
     svg {
@@ -366,12 +374,12 @@ export const BannerCard = styled.div`
 // Banner2 section
 
 export const Banner2 = styled.div`
-  height: 120px;
+  height: 150px;
   background-color: ${(props) => props.theme.darkblue};
   color: white;
   text-align: center;
 
   button {
-    margin-top: 39px;
+    margin-top: 52px;
   }
 `;

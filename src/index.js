@@ -5,8 +5,9 @@ import App from "./App";
 import { Provider } from "react-redux";
 import store from "./helpers/store";
 
-// Additional entry point imports
+// Additional entry point imports (e.g. Fonts)
 import "typeface-roboto";
+import "typeface-montserrat";
 
 ReactDOM.render(
   <Provider store={store}>
