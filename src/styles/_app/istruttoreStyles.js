@@ -59,5 +59,9 @@ export const TeacherBio = styled.div`
       font-size: 1.3rem;
       margin-right: 24px;
     }
+    @media (max-width: 500px) {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
   }
 `;
