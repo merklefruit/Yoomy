@@ -63,7 +63,7 @@ const AppLayout = ({ children }) => {
     background: "#fbfefb",
     violet: "#2A265F",
     lightgray: "#737373",
-    beige: "#fff4e9",
+    beige: "#fff7f0",
   };
 
   const [toggleMenu, setToggleMenu] = useState(false);

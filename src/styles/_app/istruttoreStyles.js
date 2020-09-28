@@ -23,7 +23,7 @@ export const TeacherBio = styled.div`
     max-width: 1244px;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1216px) {
     display: block;
   }
   @media (max-width: 500px) {
@@ -31,6 +31,7 @@ export const TeacherBio = styled.div`
   }
 
   .bio-container {
+    min-width: 250px;
     @media (max-width: 500px) {
       padding: 0 25px;
     }
@@ -41,7 +42,7 @@ export const TeacherBio = styled.div`
     height: 500px;
     object-fit: cover;
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1216px) {
       width: 100%;
       height: 400px;
       display: block;
@@ -58,7 +59,7 @@ export const TeacherBio = styled.div`
     margin-left: 0;
     font-size: 1.5rem;
     margin-right: 18px;
-    width: 80%;
+    width: 95%;
     @media (max-width: 800px) {
       width: 100%;
       font-size: 1.3rem;

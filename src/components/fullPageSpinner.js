@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { ImSpinner2 } from "react-icons/im";
+import { AiOutlineLoading } from "react-icons/ai";
 import { motion } from "framer-motion";
 
 const FullPageSpinner = () => {
@@ -10,7 +10,7 @@ const FullPageSpinner = () => {
         transition={{ repeat: Infinity, duration: 0.4 }}
         style={{
           fontSize: "3rem",
-          color: "#A9CAD9",
+          color: "black",
           height: "100vh",
           display: "flex",
           flexDirection: "column",
@@ -18,13 +18,13 @@ const FullPageSpinner = () => {
           alignItems: "center",
         }}
       >
-        <ImSpinner2 />
+        <AiOutlineLoading />
       </motion.div>
     </Fragment>
   );
 };
 
-ImSpinner2.defaultProps = {
+AiOutlineLoading.defaultProps = {
   "aria-label": "loading",
 };
 
