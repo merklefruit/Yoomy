@@ -48,27 +48,31 @@ const HomeFeatures = () => {
             </h3>
 
             <Link to="/registrati">
-              <Button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
+              <Button
+                style={{ marginLeft: "25px" }}
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+              >
                 Registrati gratis
               </Button>
             </Link>
-            <ul>
-              <li>
+            <div className="ul">
+              <div className="li">
                 <p>
                   <span>200+</span> ore di corsi registrati
                 </p>
-              </li>
-              <li>
+              </div>
+              <div className="li">
                 <p>
                   <span>15+</span> classi ogni settimana
                 </p>
-              </li>
-              <li>
+              </div>
+              <div className="li">
                 <p>
                   <span>12</span> istruttori professionisti
                 </p>
-              </li>
-            </ul>
+              </div>
+            </div>
           </Card>
           <Card style={{ textAlign: "center" }}>
             <img

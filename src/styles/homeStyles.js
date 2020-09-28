@@ -252,7 +252,9 @@ export const Card = styled(motion.div)`
   ${(props) =>
     props.text &&
     css`
-      margin-left: 25px;
+      h3 {
+        padding-left: 25px;
+      }
     `}
 
   @media (max-width: 900px) {
@@ -273,14 +275,13 @@ export const Card = styled(motion.div)`
     }
   }
 
-  ul {
+  .ul {
     margin-top: 35px;
-    list-style: none;
-    margin-left: 0;
+    padding-left: 25px;
 
     color: ${(props) => props.theme.text};
 
-    li {
+    .li {
       margin: 10px 0;
 
       p {

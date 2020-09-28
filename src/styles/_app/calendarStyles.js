@@ -11,6 +11,7 @@ export const EventCard = styled.div`
   padding-right: 30px;
   padding-top: 10px;
   padding-bottom: 10px;
+
   max-width: 550px;
 
   display: flex;
@@ -35,6 +36,7 @@ export const EventCard = styled.div`
     text-align: left;
 
     h3 {
+      font-family: "Montserrat";
       margin: 10px 0;
       font-size: 1.3rem;
     }
@@ -50,8 +52,17 @@ export const EventCard = styled.div`
       font-weight: 400;
       font-family: "Montserrat";
 
-      span {
-        border-bottom: 1px solid ${(props) => props.theme.text};
+      a {
+        color: ${(props) => props.theme.text};
+
+        &:hover {
+          color: black;
+          border-color: black;
+        }
+
+        span {
+          border-bottom: 1px solid ${(props) => props.theme.text};
+        }
       }
     }
 
