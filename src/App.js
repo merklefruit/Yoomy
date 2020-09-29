@@ -25,31 +25,41 @@ if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
-const App = ({ isAuthenticated }) => {
+const App = ({ isAuthenticated, loading }) => {
   useEffect(() => {
     store.dispatch(loadUser());
   }, []);
 
   return (
-    <Router>
+    <>
       <Helmet>
         <title>Yooga.</title>
         <meta charSet="utf-8" />
       </Helmet>
       <React.Suspense fallback={<FullPageSpinner />}>
         <ToastContainer />
-        {isAuthenticated ? <PrivateRoutes /> : <PublicRoutes />}
+        <Router>
+          {loading ? (
+            <FullPageSpinner />
+          ) : isAuthenticated ? (
+            <PrivateRoutes />
+          ) : (
+            <PublicRoutes />
+          )}
+        </Router>
       </React.Suspense>
-    </Router>
+    </>
   );
 };
 
 App.propTypes = {
   isAuthenticated: PropTypes.bool,
+  loading: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
+  loading: state.auth.loading,
 });
 
 export default connect(mapStateToProps)(App);

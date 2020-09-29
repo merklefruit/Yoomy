@@ -17,7 +17,7 @@ function HomeHero() {
             <h1>Pratica lo Yoga ovunque e in qualsiasi momento.</h1>
             <Link to="/scopri">
               <Button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
-                Scopri di più
+                Prova gratis
               </Button>
             </Link>
           </HeroCol1>

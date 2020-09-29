@@ -145,6 +145,7 @@ export const HeroCol2 = styled.div`
           stroke: #000000;
           stroke-width: 7.1997;
           stroke-miterlimit: 2.6131;
+          fill: ${(props) => props.theme.secondary};
         }
       }
     }
