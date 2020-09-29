@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 // Styled components
+import Head from "../../components/head";
 import { Container, Headline } from "../../styles/globalStyles";
 import { TeacherBio } from "../../styles/_app/istruttoreStyles";
 
@@ -32,9 +33,10 @@ const IstruttorePage = ({ teachers, match }) => {
   }, [teachers, match.params.id]);
 
   return (
-    <div>
+    <>
       {teacher ? (
         <div>
+          <Head title={`${teacher.name} ${teacher.surname}`} />
           <Container>
             <Headline withHr>
               <small>
@@ -62,7 +64,7 @@ const IstruttorePage = ({ teachers, match }) => {
       ) : (
         ""
       )}
-    </div>
+    </>
   );
 };
 

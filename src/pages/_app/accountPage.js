@@ -5,11 +5,13 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 // Components
+import Head from "../../components/head";
 import AccountHero from "../../components/_app/_accountPage/accountHero";
 
 const AccountPage = ({ user }) => {
   return (
     <>
+      <Head title="Account" />
       <AccountHero user={user} />
     </>
   );
