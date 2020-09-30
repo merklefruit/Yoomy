@@ -16,37 +16,60 @@ import IstruttoriPage from "./pages/_app/istruttoriPage";
 import AccountPage from "./pages/_app/accountPage";
 import CalendarioPage from "./pages/_app/calendarioPage";
 import IstruttorePage from "./pages/_app/istruttorePage";
+import FullPageSpinner from "./components/fullPageSpinner";
+import TeachersHome from "./pages/_teachers/teachersHome";
 
-function PrivateRoutes({ fetchTeachers, fetchCourses }) {
+function PrivateRoutes({ fetchTeachers, fetchCourses, user }) {
   useEffect(() => {
     fetchTeachers();
     fetchCourses();
   });
 
   return (
-    <AppLayout>
-      <Switch>
-        <Route exact path="/app/per-te" component={PerTePage} />
-        <Route exact path="/app/istruttori" component={IstruttoriPage} />
-        <Route path="/app/istruttore/:id" component={IstruttorePage} />
+    <>
+      {/* USERS ROUTES */}
+      {user && user.role !== "teacher" && (
+        <AppLayout>
+          <Switch>
+            <Route exact path="/app/per-te" component={PerTePage} />
+            <Route exact path="/app/istruttori" component={IstruttoriPage} />
+            <Route path="/app/istruttore/:id" component={IstruttorePage} />
 
-        <Route exact path="/app/calendario" component={CalendarioPage} />
-        <Route exact path="/app/account" component={AccountPage} />
+            <Route exact path="/app/calendario" component={CalendarioPage} />
+            <Route exact path="/app/account" component={AccountPage} />
 
-        <Route>
-          <Redirect to="/app/per-te" />
-        </Route>
-      </Switch>
-    </AppLayout>
+            <Route>
+              <Redirect to="/app/per-te" />
+            </Route>
+          </Switch>
+        </AppLayout>
+      )}
+
+      {/* TEACHER ROUTES */}
+      {user && user.role === "teacher" && (
+        <Switch>
+          <Route exact path="/teachers/home" component={TeachersHome} />
+
+          <Route>
+            <Redirect to="/teachers/home" />
+          </Route>
+        </Switch>
+      )}
+
+      {!user && <FullPageSpinner />}
+    </>
   );
 }
 
 PrivateRoutes.propTypes = {
   fetchTeachers: PropTypes.func.isRequired,
   fetchCourses: PropTypes.func.isRequired,
+  user: PropTypes.object,
 };
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  user: state.auth.user,
+});
 
 export default connect(mapStateToProps, { fetchTeachers, fetchCourses })(
   PrivateRoutes

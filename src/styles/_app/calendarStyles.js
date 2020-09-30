@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 export const CalendarContainer = styled.div``;
 
+export const Picker = styled.div`
+  max-width: 610px;
+  margin-bottom: 25px;
+`;
+
 export const EventCard = styled.div`
   margin-bottom: 1.5rem;
   background: ${(props) => props.theme.beige};

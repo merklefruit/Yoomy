@@ -1,9 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 // DayJS
 import DayJS from "react-dayjs";
+
+// Nice dates
+import { format } from "date-fns";
+import { it } from "date-fns/locale";
+import { DatePickerCalendar } from "react-nice-dates";
+import "react-nice-dates/build/style.css";
 
 // Redux
 import { connect } from "react-redux";
@@ -17,12 +23,14 @@ import { Container } from "../../../styles/globalStyles";
 import {
   CalendarContainer,
   EventCard,
+  Picker,
 } from "../../../styles/_app/calendarStyles.js";
 
 // Loading icon
 import { AiOutlineLoading } from "react-icons/ai";
 
-const CalendarioList = ({ isLoadingEvents, events, fetchEvents }) => {
+const CalendarioList = ({ events, fetchEvents }) => {
+  const [date, setDate] = useState();
   useEffect(() => {
     fetchEvents();
   }, [fetchEvents]);
@@ -30,6 +38,10 @@ const CalendarioList = ({ isLoadingEvents, events, fetchEvents }) => {
   return (
     <Container>
       <CalendarContainer>
+        <Picker>
+          <DatePickerCalendar date={date} onDateChange={setDate} locale={it} />
+          <p>{date && format(date, "dd MMMM yyyy", { locale: it })}</p>
+        </Picker>
         {events ? (
           events.map((event) => (
             <EventCard key={event.id}>
@@ -58,15 +70,10 @@ const CalendarioList = ({ isLoadingEvents, events, fetchEvents }) => {
                   Dalle{" "}
                   <DayJS date={event.startDate} element="span" format="HH:mm" />{" "}
                   alle{" "}
-                  <DayJS
-                    date={event.startDate}
-                    element="span"
-                    add={{ minutes: event.duration }}
-                    format="HH:mm"
-                  />
+                  <DayJS date={event.endDate} element="span" format="HH:mm" />
                 </p>
                 <p>
-                  Durata: <span>{event.duration}</span> minuti
+                  Durata: <span>{event.duration} </span> minuti
                 </p>
               </div>
               <div className="card-buttons">
@@ -82,6 +89,7 @@ const CalendarioList = ({ isLoadingEvents, events, fetchEvents }) => {
           ))
         ) : (
           <motion.div
+            id="spinner"
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 0.4 }}
             style={{
@@ -103,13 +111,11 @@ const CalendarioList = ({ isLoadingEvents, events, fetchEvents }) => {
 };
 
 CalendarioList.propTypes = {
-  isLoadingEvents: PropTypes.bool,
   fetchEvents: PropTypes.func.isRequired,
   events: PropTypes.array,
 };
 
 const mapStateToProps = (state) => ({
-  isLoadingEvents: state.api.isLoadingEvents,
   events: state.api.events,
 });
 

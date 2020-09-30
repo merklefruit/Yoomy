@@ -25,7 +25,7 @@ if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
-const App = ({ isAuthenticated, loading }) => {
+const App = ({ isAuthenticated, loading, user }) => {
   useEffect(() => {
     store.dispatch(loadUser());
   }, []);
@@ -55,11 +55,13 @@ const App = ({ isAuthenticated, loading }) => {
 App.propTypes = {
   isAuthenticated: PropTypes.bool,
   loading: PropTypes.bool,
+  user: PropTypes.object,
 };
 
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
   loading: state.auth.loading,
+  user: state.auth.user,
 });
 
 export default connect(mapStateToProps)(App);

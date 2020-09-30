@@ -35,7 +35,7 @@ const IstruttoriList = ({ isLoadingTeachers, teachers }) => {
                     </Link>
                     <div className="courses">
                       {teacher.courses.map((course) => (
-                        <Link to="/">
+                        <Link to="/" key={course.id}>
                           <p key={course.id}>{course.name}</p>
                         </Link>
                       ))}
