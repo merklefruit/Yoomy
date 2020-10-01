@@ -1,10 +1,52 @@
 import styled from "styled-components";
 
-export const CalendarContainer = styled.div``;
+export const CalendarSection = styled.div`
+  display: flex;
+  position: relative;
+  @media (max-width: 800px) {
+    display: block;
+  }
+
+  .horizontal {
+    border-left: 1px solid ${(props) => props.theme.lightgray};
+    padding-left: 15px;
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 0;
+    margin-left: 15px;
+    @media (max-width: 800px) {
+      display: none;
+    }
+
+    h3 {
+      margin: 0;
+      font-weight: 400;
+      font-size: 1.3rem;
+      width: 85%;
+      line-height: 125%;
+    }
+  }
+`;
 
 export const Picker = styled.div`
-  max-width: 610px;
-  margin-bottom: 25px;
+  width: 500px;
+  margin-bottom: 50px;
+
+  @media (max-width: 800px) {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (max-width: 650px) {
+    width: 100%;
+  }
+`;
+
+export const EventGridSection = styled.div`
+  h2 {
+    font-family: "Montserrat";
+    font-weight: 500;
+  }
 `;
 
 export const EventCard = styled.div`

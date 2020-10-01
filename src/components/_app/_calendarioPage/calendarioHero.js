@@ -7,7 +7,6 @@ const CalendarioHero = () => {
     <Container>
       <Headline>
         <h1>I prossimi eventi</h1>
-        <h3>Ecco una lista completa dei prossimi eventi live:</h3>
       </Headline>
     </Container>
   );

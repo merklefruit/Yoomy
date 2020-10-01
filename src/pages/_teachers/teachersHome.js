@@ -51,6 +51,7 @@ const TeachersHome = ({ user, logout }) => {
         </Buttons>
         <hr />
         <Picker>
+          {/* Insert date picker UI when done in user Calendar area... */}
           <DatePickerCalendar locale={it} />
         </Picker>
         <Lessons>

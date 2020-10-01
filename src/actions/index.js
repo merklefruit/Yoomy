@@ -6,6 +6,8 @@ import {
   FETCH_COURSES,
   SET_EVENTS,
   FETCH_EVENTS,
+  SET_DAILY_EVENTS,
+  FETCH_DAILY_EVENTS,
 } from "./types";
 import { TEACHERS_URL, COURSES_URL, EVENTS_URL } from "../helpers/config";
 
@@ -69,7 +71,7 @@ function setCourses(data) {
   };
 }
 
-// fetch all events
+// fetch all future events
 export function fetchEvents() {
   return apiAction({
     url: EVENTS_URL,
@@ -81,6 +83,22 @@ export function fetchEvents() {
 function setEvents(data) {
   return {
     type: SET_EVENTS,
+    payload: data,
+  };
+}
+
+// fetch all daily events
+export function fetchDailyEvents(date) {
+  return apiAction({
+    url: `${EVENTS_URL}/day/${date}`,
+    onSuccess: setDailyEvents,
+    onFailure: () => console.log("Error fetching daily events"),
+    label: FETCH_DAILY_EVENTS,
+  });
+}
+function setDailyEvents(data) {
+  return {
+    type: SET_DAILY_EVENTS,
     payload: data,
   };
 }

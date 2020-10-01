@@ -7,6 +7,8 @@ import {
   FETCH_COURSES,
   SET_EVENTS,
   FETCH_EVENTS,
+  SET_DAILY_EVENTS,
+  FETCH_DAILY_EVENTS,
 } from "../actions/types";
 
 const initialState = [];
@@ -31,6 +33,11 @@ export default function (state = initialState, action) {
         ...state,
         events: payload,
       };
+    case SET_DAILY_EVENTS:
+      return {
+        ...state,
+        dailyEvents: payload,
+      };
 
     // API LOGIC ::
     case API_START:
@@ -48,6 +55,11 @@ export default function (state = initialState, action) {
         return {
           ...state,
           isLoadingEvents: true,
+        };
+      } else if (payload === FETCH_DAILY_EVENTS) {
+        return {
+          ...state,
+          isLoadingDailyEvents: true,
         };
       }
       break;
@@ -67,6 +79,11 @@ export default function (state = initialState, action) {
         return {
           ...state,
           isLoadingEvents: false,
+        };
+      } else if (payload === FETCH_DAILY_EVENTS) {
+        return {
+          ...state,
+          isLoadingDailyEvents: false,
         };
       }
       break;
