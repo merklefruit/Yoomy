@@ -64,23 +64,36 @@ const Layout = ({ children }) => {
   //   lightgray: "#737373",
   // };
 
-  const warmTheme = {
-    primary: "#5e6472",
-    secondary: "#efe5dc",
-    yellow: "#FBE064",
-    orange: "#d69f7e",
-    darkblue: "#efe5dc",
-    blue: "#d0b8ac",
-    text: "#454545",
+  // const warmTheme = {
+  //   primary: "#5e6472",
+  //   secondary: "#efe5dc",
+  //   yellow: "#FBE064",
+  //   orange: "#d69f7e",
+  //   darkblue: "#efe5dc",
+  //   blue: "#d0b8ac",
+  //   text: "#454545",
+  //   background: "#fbfefb",
+  //   violet: "#2A265F",
+  //   lightgray: "#737373",
+  // };
+
+  const lightTheme = {
+    primary: "#264653",
+    primaryDarker: "#1d3557",
+    secondary: "#e9ecef",
+    banners: "#457b9d",
+    buttons: "#FBE064",
+    accent: "#2b2d42",
+    accent_variant: "#8d99ae",
     background: "#fbfefb",
-    violet: "#2A265F",
-    lightgray: "#737373",
+    text: "#454545",
+    lightgray: "#D4D6D5",
   };
 
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
-    <ThemeProvider theme={warmTheme}>
+    <ThemeProvider theme={lightTheme}>
       <GlobalStyle />
 
       <Header toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />

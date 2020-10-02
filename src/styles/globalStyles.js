@@ -62,7 +62,7 @@ export const FlexRow = styled.div`
 `;
 
 export const Button = styled(motion.button)`
-  background-color: ${(props) => props.theme.yellow};
+  background-color: ${(props) => props.theme.buttons};
   color: black;
   border: none;
   margin-top: 0;

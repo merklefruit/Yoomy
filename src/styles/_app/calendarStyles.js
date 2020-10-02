@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const CalendarSection = styled.div`
   display: flex;
@@ -14,8 +15,12 @@ export const CalendarSection = styled.div`
     margin-bottom: 50px;
     margin-top: 0;
     margin-left: 15px;
+
     @media (max-width: 800px) {
-      display: none;
+      display: block;
+      border: none;
+      padding: 0;
+      margin-left: 0;
     }
 
     h3 {
@@ -29,6 +34,10 @@ export const CalendarSection = styled.div`
 `;
 
 export const Picker = styled.div`
+  .nice-dates-day:before {
+    background-color: ${(props) => props.theme.secondary};
+  }
+
   width: 500px;
   margin-bottom: 50px;
 
@@ -44,12 +53,13 @@ export const Picker = styled.div`
 
 export const EventGridSection = styled.div`
   h2 {
+    margin-top: 0;
     font-family: "Montserrat";
     font-weight: 500;
   }
 `;
 
-export const EventCard = styled.div`
+export const EventCard = styled(motion.div)`
   margin-bottom: 1.5rem;
   background: ${(props) => props.theme.beige};
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -86,6 +96,7 @@ export const EventCard = styled.div`
       font-family: "Montserrat";
       margin: 10px 0;
       font-size: 1.3rem;
+      width: 100%;
     }
 
     h4 {

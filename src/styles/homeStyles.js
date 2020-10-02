@@ -59,6 +59,24 @@ export const HeroCol1 = styled.div`
     margin-left: 0;
   }
 
+  .under-hero {
+    left: 0;
+    margin-top: 20px;
+
+    .bullet {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+
+      p {
+        margin: 0;
+        margin-left: 8px;
+        color: ${(props) => props.theme.text};
+        opacity: 0.7;
+      }
+    }
+  }
+
   h1 {
     width: 65%;
     font-size: 3rem;
@@ -89,10 +107,10 @@ export const HeroCol1 = styled.div`
     @media (max-width: 450px) {
       font-size: 2rem;
     }
-  }
+
 
   button {
-    background-color: ${(props) => props.theme.yellow};
+    background-color: ${(props) => props.theme.buttons};
     color: black;
     border: none;
     margin-top: 0;
@@ -118,14 +136,17 @@ export const HeroCol1 = styled.div`
 export const HeroCol2 = styled.div`
   width: 50%;
   position: absolute;
+
   top: 0;
   right: 0;
-  z-index: 0;
+  z-index: 1;
+  height: 0;
 
-  transform: translate(-10%, -20%);
+  ${"" /* transform: translate(-10%, -20%); */}
+  transform: translateY(-100px) translateX(-20px) scale(0.9);
 
   @media (max-width: 1000px) {
-    transform: translate(-5%, -20%) scale(0.9);
+    transform: translateY(-50px) scale(0.9);
   }
 
   @media (max-width: 830px) {
@@ -145,7 +166,7 @@ export const HeroCol2 = styled.div`
           stroke: #000000;
           stroke-width: 7.1997;
           stroke-miterlimit: 2.6131;
-          fill: ${(props) => props.theme.secondary};
+          fill: none;
         }
       }
     }
@@ -154,7 +175,7 @@ export const HeroCol2 = styled.div`
 
 // Content section
 
-export const Content = styled.div`
+export const Content = styled(motion.div)`
   margin-bottom: 40px;
   font-family: "Montserrat";
 
@@ -165,13 +186,17 @@ export const Content = styled.div`
 
   h2 {
     font-size: 1.5rem;
-    width: 90%;
+    width: 85%;
     font-weight: 300;
     color: ${(props) => props.theme.text};
     letter-spacing: 1px;
 
     @media (max-width: 650px) {
       font-size: 1.35rem;
+      width: 90%;
+    }
+    @media (max-width: 450px) {
+      width: 100%;
     }
   }
 
@@ -223,7 +248,7 @@ export const FeaturesSection = styled.div`
   }
 
   button {
-    background-color: ${(props) => props.theme.yellow};
+    background-color: ${(props) => props.theme.buttons};
     color: black;
     border: none;
     margin-top: 0;
@@ -291,7 +316,7 @@ export const Card = styled(motion.div)`
         span {
           font-size: 2.5rem;
           font-weight: 900;
-          color: ${(props) => props.theme.orange};
+          color: ${(props) => props.theme.accent};
         }
       }
     }
@@ -304,7 +329,7 @@ export const Banner = styled.div`
   margin: 0;
   z-index: 1;
   position: relative;
-  background-color: ${(props) => props.theme.blue};
+  background-color: ${(props) => props.theme.banners};
 `;
 
 export const InnerBannerSection = styled.div`
@@ -344,7 +369,7 @@ export const BannerCard = styled.div`
     margin-right: auto;
     width: 65px;
     height: 65px;
-    background-color: ${(props) => props.theme.orange};
+    background-color: ${(props) => props.theme.accent};
     border-radius: 100%;
 
     svg {
@@ -377,7 +402,7 @@ export const BannerCard = styled.div`
 
 export const Banner2 = styled.div`
   height: 150px;
-  background-color: ${(props) => props.theme.darkblue};
+  background-color: ${(props) => props.theme.primaryDarker};
   color: white;
   text-align: center;
 

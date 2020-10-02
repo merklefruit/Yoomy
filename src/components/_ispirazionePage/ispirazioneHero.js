@@ -1,13 +1,15 @@
 import React from "react";
 
 // Styled components
-import { Container } from "../../styles/globalStyles";
+import { Container, Headline } from "../../styles/globalStyles";
 
 const IspirazioneHero = () => {
   return (
     <Container>
-      <h1>Ispirazione.</h1>
-      <p>Pagina in costruzione.</p>
+      <Headline>
+        <h1>Ispirazione.</h1>
+        <p>Pagina in costruzione.</p>
+      </Headline>
     </Container>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 // Styled components
 import { Container, Button } from "../../styles/globalStyles";
@@ -15,11 +16,21 @@ function HomeHero() {
         <HomeRow flex>
           <HeroCol1>
             <h1>Pratica lo Yoga ovunque e in qualsiasi momento.</h1>
-            <Link to="/scopri">
+            <Link to="/registrati">
               <Button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
-                Prova gratis
+                Iscriviti gratis
               </Button>
             </Link>
+            <motion.div
+              animate={{ y: 0, opacity: 1 }}
+              initial={{ y: 72, opacity: 0 }}
+              transition={{ duration: 2, ease: [0.6, 0.05, -0.01, 0.9] }}
+              className="under-hero"
+            >
+              <div className="bullet">
+                <p>Prova per 7 giorni senza carta di credito</p>
+              </div>
+            </motion.div>
           </HeroCol1>
           <HeroCol2>
             <HeroImg />

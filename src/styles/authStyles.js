@@ -115,7 +115,7 @@ export const LoginForm = styled.div`
 `;
 
 export const LoginButton = styled(motion.button)`
-  background-color: ${(props) => props.theme.yellow};
+  background-color: ${(props) => props.theme.buttons};
   color: black;
   border: none;
   margin-top: 30px;

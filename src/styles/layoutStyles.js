@@ -32,7 +32,7 @@ export const HeaderNav = styled.div`
       margin-left: 30px;
       font-size: 0.9375rem;
       font-weight: 500;
-      color: ${(props) => props.theme.primary};
+      color: ${(props) => props.theme.text};
 
       &:hover {
         color: black;
