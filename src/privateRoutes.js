@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 
-// Layout
+// Layouts
 import AppLayout from "./components/_app/appLayout";
 import TeachersLayout from "./components/_teachers/teachersLayout";
 
@@ -21,6 +21,9 @@ import IstruttorePage from "./pages/_app/istruttorePage";
 import FullPageSpinner from "./components/fullPageSpinner";
 import TeachersHome from "./pages/_teachers/teachersHome";
 import TeachersEvents from "./pages/_teachers/teachersEvents";
+import TeachersPagamenti from "./pages/_teachers/teachersPagamenti";
+import TeachersSettings from "./pages/_teachers/teachersSettins";
+import TeachersSupport from "./pages/_teachers/teachersSupport";
 
 function PrivateRoutes({ fetchTeachers, fetchCourses, user }) {
   useEffect(() => {
@@ -54,7 +57,22 @@ function PrivateRoutes({ fetchTeachers, fetchCourses, user }) {
         <TeachersLayout>
           <Switch>
             <Route exact path="/teachers/home" component={TeachersHome} />
-            <Route exact path="/teachers/events" component={TeachersEvents} />
+            <Route exact path="/teachers/eventi" component={TeachersEvents} />
+            <Route
+              exact
+              path="/teachers/pagamenti"
+              component={TeachersPagamenti}
+            />
+            <Route
+              exact
+              path="/teachers/preferenze"
+              component={TeachersSettings}
+            />
+            <Route
+              exact
+              path="/teachers/supporto"
+              component={TeachersSupport}
+            />
 
             {/* Fallback */}
             <Route>

@@ -8,12 +8,18 @@ export const TeacherSection = styled.div`
   display: block;
   margin-bottom: 30px;
 
+  p {
+    color: ${(props) => props.theme.text};
+    margin-top: 10px;
+    padding-left: 25px;
+  }
+
   h2 {
     padding-left: 25px;
     margin-top: 0;
     margin-bottom: 0;
-    font-weight: 400;
-    font-size: 1.3rem;
+    font-weight: 500;
+    font-size: 1.4rem;
   }
 `;
 
@@ -27,7 +33,7 @@ export const CardsContainer = styled.div`
 
   .card {
     position: relative;
-    width: 230px;
+    width: 300px;
     height: 120px;
     border-radius: 10px;
     background-color: ${(props) => props.theme.white};
@@ -93,28 +99,29 @@ export const CardsContainer = styled.div`
 // Shortcuts
 
 export const ShortcutsContainer = styled.div`
-  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+  margin-left: 25px;
+  margin-right: 25px;
+  background: ${(props) => props.theme.beige};
+  border-radius: 20px;
+  border: 1px solid lightgray;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  max-width: 1000px;
 
-  button {
-    font-size: 1rem;
-    border-radius: 10px;
-    padding: 15px 20px;
-    background: ${(props) => props.theme.white};
-    border: 1px solid lightgray;
-    margin: 1rem;
-    &:hover {
-      cursor: pointer;
-    }
+  h3 {
+    line-height: 1.5rem;
+    width: 90%;
+    font-weight: 400;
+    font-size: 1.1rem;
   }
-`;
-
-// New Event
-
-export const EventForm = styled.div`
-  padding: 25px;
-  margin-bottom: 800px;
-
-  .nice-dates-popover {
-    max-width: 300px;
+  svg {
+    margin-right: 15px;
+    font-size: 2.6rem;
   }
 `;

@@ -2,15 +2,13 @@ import React from "react";
 
 // Components
 import Head from "../../components/head";
-import TeachersCards from "../../components/_teachers/_teachersHome/teachersCards";
-import TeachersShortcuts from "../../components/_teachers/_teachersHome/teachersShortcuts";
+import TeachersHero from "../../components/_teachers/_teachersHome/teachersHero";
 
 const TeachersHome = () => {
   return (
     <>
       <Head title="Area Istruttore" />
-      <TeachersCards />
-      <TeachersShortcuts />
+      <TeachersHero />
     </>
   );
 };

@@ -132,7 +132,7 @@ const CalendarioList = ({ fetchDailyEvents, dailyEvents }) => {
 
 CalendarioList.propTypes = {
   fetchDailyEvents: PropTypes.func.isRequired,
-  dailyevents: PropTypes.array,
+  dailyEvents: PropTypes.array,
 };
 
 const mapStateToProps = (state) => ({

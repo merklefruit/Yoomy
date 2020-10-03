@@ -100,6 +100,12 @@ export const Menu = styled.div`
     display: none;
   }
 
+  .active {
+    background-color: ${(props) => props.theme.lightblue};
+    border-radius: 10px;
+    padding: 0 15px;
+  }
+
   a {
     svg {
       margin-right: 1rem;

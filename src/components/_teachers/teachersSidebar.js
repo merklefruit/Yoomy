@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // Styled components
 import { Container } from "../../styles/globalStyles";
@@ -18,27 +18,27 @@ const TeachersSidebar = () => {
         <h1>Yooga.</h1>
       </Logo>
       <Menu>
-        <Link to="/teachers/home">
+        <NavLink to="/teachers/home">
           <AiOutlineHome />
           <p>Home</p>
-        </Link>
-        <Link to="/teachers/pagamenti">
-          <MdPayment />
-          <p>Pagamenti</p>
-        </Link>
-        <Link to="/teachers/eventi">
+        </NavLink>
+        <NavLink to="/teachers/eventi">
           <MdEventNote />
           <p>Eventi</p>
-        </Link>
+        </NavLink>
+        <NavLink to="/teachers/pagamenti">
+          <MdPayment />
+          <p>Pagamenti</p>
+        </NavLink>
         <hr />
-        <Link to="/teachers/preferenze">
+        <NavLink to="/teachers/preferenze">
           <FiSettings />
           <p>Preferenze</p>
-        </Link>
-        <Link to="/teachers/supporto">
+        </NavLink>
+        <NavLink to="/teachers/supporto">
           <BiSupport />
           <p>Supporto</p>
-        </Link>
+        </NavLink>
       </Menu>
     </Container>
   );

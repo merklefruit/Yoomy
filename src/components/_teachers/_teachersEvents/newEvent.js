@@ -15,10 +15,8 @@ import PropTypes from "prop-types";
 import { createEvent } from "../../../actions";
 
 // Styled components
-import {
-  TeacherSection,
-  EventForm,
-} from "../../../styles/_teachers/teachersHomeStyles";
+import { TeacherSection } from "../../../styles/_teachers/teachersHomeStyles";
+import { EventForm } from "../../../styles/_teachers/teacherEventStyles";
 
 const NewEvent = ({ user, teachers, courses, createEvent }) => {
   const [startDate, setStartDate] = useState(null);
@@ -87,56 +85,78 @@ const NewEvent = ({ user, teachers, courses, createEvent }) => {
   return (
     <TeacherSection>
       <h2>Crea un evento</h2>
+      <p>
+        Ricordati che le informazioni dell'evento saranno rese pubbliche sul
+        sito!
+      </p>
       <EventForm>
         {user && teachers && courses ? (
           <form>
-            <h3>Corso:</h3>
-            <Select
-              options={selectCourses}
-              name="course"
-              onChange={setSelectedCourse}
-            />
+            <hr />
+            <div className="flex">
+              <h3>Corso:</h3>
+              <div className="wrapper">
+                <Select
+                  options={selectCourses}
+                  placeholder="Seleziona..."
+                  isClearable
+                  name="course"
+                  onChange={setSelectedCourse}
+                />
+              </div>
+            </div>
+            <hr />
 
-            <h3>Data e ora:</h3>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <p>Il giorno </p>
-              <DatePicker
-                date={startDate}
-                onDateChange={setDate}
-                locale={it}
-                format="dd/MM/yyyy"
-              >
-                {({ inputProps, focused }) => (
-                  <input
-                    required
-                    className={"input" + (focused ? " -focused" : "")}
-                    style={{ width: 150 }}
-                    {...inputProps}
-                  />
-                )}
-              </DatePicker>
-              <p>Dalle </p>
-              <input
-                required
-                className="input"
-                style={{ marginLeft: 16, width: 80 }}
-                {...startTimeInputProps}
-              />
-              <p>Alle </p>
-              <input
-                required
-                className="input"
-                style={{ marginLeft: 16, width: 80 }}
-                {...endTimeInputProps}
-              />
+            <div className="flex">
+              <h3>Data e ora:</h3>
+              <div className="dataeora">
+                <label>Il giorno </label>
+                <DatePicker
+                  date={startDate}
+                  onDateChange={setDate}
+                  locale={it}
+                  format="dd/MM/yyyy"
+                >
+                  {({ inputProps, focused }) => (
+                    <input
+                      required
+                      className={"input" + (focused ? " -focused" : "")}
+                      {...inputProps}
+                    />
+                  )}
+                </DatePicker>
+              </div>
             </div>
-            <div>
-              <h3>Descrizione:</h3>
-              <textarea
-                name="description"
-                onChange={(e) => setDescription(e.target.value)}
-              />
+
+            <div className="flex">
+              <div className="dataeora">
+                <label className="lab1">Dalle </label>
+                <div className="flex">
+                  <input required className="dalle" {...startTimeInputProps} />
+                </div>
+              </div>
             </div>
+            <div className="flex">
+              <div className="dataeora">
+                <label className="lab2">Alle </label>
+                <div className="flex">
+                  <input required className="alle" {...endTimeInputProps} />
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div className="flex">
+              <h3 style={{ position: "absolute" }}>Descrizione:</h3>
+
+              <div className="wrapper">
+                <textarea
+                  name="description"
+                  placeholder="Scrivi..."
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+              </div>
+            </div>
+            <hr />
             <button type="submit" onClick={handleSubmit}>
               Crea Evento
             </button>
