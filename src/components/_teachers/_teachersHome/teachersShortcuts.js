@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Styled components
 import {
@@ -12,7 +13,9 @@ const TeachersShortcuts = () => {
       <h2>Azioni rapide</h2>
       <ShortcutsContainer>
         <div>
-          <button>Crea un nuovo evento</button>
+          <Link to="/teachers/events">
+            <button>Crea un nuovo evento</button>
+          </Link>
           <button>Visualizza tutti i tuoi eventi</button>
           <button>Visualizza le tue ultime fatture</button>
         </div>

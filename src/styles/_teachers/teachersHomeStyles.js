@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const TeacherSection = styled.div`
+  @media (max-width: 768px) {
+    margin-top: 55px;
+  }
+
   display: block;
   margin-bottom: 30px;
 
@@ -101,5 +105,16 @@ export const ShortcutsContainer = styled.div`
     &:hover {
       cursor: pointer;
     }
+  }
+`;
+
+// New Event
+
+export const EventForm = styled.div`
+  padding: 25px;
+  margin-bottom: 800px;
+
+  .nice-dates-popover {
+    max-width: 300px;
   }
 `;

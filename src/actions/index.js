@@ -8,6 +8,8 @@ import {
   FETCH_EVENTS,
   SET_DAILY_EVENTS,
   FETCH_DAILY_EVENTS,
+  CREATE_EVENT,
+  EVENT_CREATION_SUCCESS,
 } from "./types";
 import { TEACHERS_URL, COURSES_URL, EVENTS_URL } from "../helpers/config";
 
@@ -99,6 +101,24 @@ export function fetchDailyEvents(date) {
 function setDailyEvents(data) {
   return {
     type: SET_DAILY_EVENTS,
+    payload: data,
+  };
+}
+
+// create a new event (requires event object)
+export function createEvent(event) {
+  return apiAction({
+    url: `${EVENTS_URL}/new`,
+    method: "POST",
+    data: event,
+    onSuccess: newEventSuccess,
+    onFailure: (error) => console.log(`Error creating event: ${error}`),
+    label: CREATE_EVENT,
+  });
+}
+function newEventSuccess(data) {
+  return {
+    type: EVENT_CREATION_SUCCESS,
     payload: data,
   };
 }

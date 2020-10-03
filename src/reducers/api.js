@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import {
   API_START,
   API_END,
@@ -9,6 +10,8 @@ import {
   FETCH_EVENTS,
   SET_DAILY_EVENTS,
   FETCH_DAILY_EVENTS,
+  CREATE_EVENT,
+  EVENT_CREATION_SUCCESS,
 } from "../actions/types";
 
 const initialState = [];
@@ -38,10 +41,19 @@ export default function (state = initialState, action) {
         ...state,
         dailyEvents: payload,
       };
+    case EVENT_CREATION_SUCCESS:
+      toast.success("Evento creato correttamente");
+      return {
+        ...state,
+      };
 
     // API LOGIC ::
     case API_START:
-      if (payload === FETCH_TEACHERS) {
+      if (payload === CREATE_EVENT) {
+        return {
+          ...state,
+        };
+      } else if (payload === FETCH_TEACHERS) {
         return {
           ...state,
           isLoadingTeachers: true,
@@ -65,7 +77,11 @@ export default function (state = initialState, action) {
       break;
 
     case API_END:
-      if (payload === FETCH_TEACHERS) {
+      if (payload === CREATE_EVENT) {
+        return {
+          ...state,
+        };
+      } else if (payload === FETCH_TEACHERS) {
         return {
           ...state,
           isLoadingTeachers: false,

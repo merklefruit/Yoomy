@@ -20,6 +20,7 @@ import CalendarioPage from "./pages/_app/calendarioPage";
 import IstruttorePage from "./pages/_app/istruttorePage";
 import FullPageSpinner from "./components/fullPageSpinner";
 import TeachersHome from "./pages/_teachers/teachersHome";
+import TeachersEvents from "./pages/_teachers/teachersEvents";
 
 function PrivateRoutes({ fetchTeachers, fetchCourses, user }) {
   useEffect(() => {
@@ -40,6 +41,7 @@ function PrivateRoutes({ fetchTeachers, fetchCourses, user }) {
             <Route exact path="/app/calendario" component={CalendarioPage} />
             <Route exact path="/app/account" component={AccountPage} />
 
+            {/* Fallback */}
             <Route>
               <Redirect to="/app/per-te" />
             </Route>
@@ -52,7 +54,9 @@ function PrivateRoutes({ fetchTeachers, fetchCourses, user }) {
         <TeachersLayout>
           <Switch>
             <Route exact path="/teachers/home" component={TeachersHome} />
+            <Route exact path="/teachers/events" component={TeachersEvents} />
 
+            {/* Fallback */}
             <Route>
               <Redirect to="/teachers/home" />
             </Route>
@@ -60,6 +64,7 @@ function PrivateRoutes({ fetchTeachers, fetchCourses, user }) {
         </TeachersLayout>
       )}
 
+      {/* Only shown if isAuthenticated AND we don't have user object yet. */}
       {!user && <FullPageSpinner />}
     </>
   );

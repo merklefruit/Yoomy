@@ -27,7 +27,7 @@ import {
 } from "../../../styles/_app/calendarStyles.js";
 
 const CalendarioList = ({ fetchDailyEvents, dailyEvents }) => {
-  const [date, setDate] = useState(null);
+  const [date, setDate] = useState(new Date());
 
   useEffect(() => {
     if (date !== null) {

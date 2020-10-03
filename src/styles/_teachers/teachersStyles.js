@@ -4,9 +4,6 @@ import styled from "styled-components";
 
 export const TeacherHeaderContainer = styled.div`
   margin-bottom: 30px;
-  @media (max-width: 768px) {
-    margin-bottom: 0;
-  }
 `;
 
 export const HeaderFlex = styled.div`
