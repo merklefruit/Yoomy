@@ -3,6 +3,11 @@ import PropTypes from "prop-types";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { normalize } from "styled-normalize";
 import { motion, AnimatePresence } from "framer-motion";
+import styled from "styled-components";
+
+// Components
+import Header from "./teachersHeader";
+import Sidebar from "./teachersSidebar";
 
 // Global style definition
 const GlobalStyle = createGlobalStyle`
@@ -59,22 +64,36 @@ const TeachersLayout = ({ children }) => {
     violet: "#2A265F",
     lightgray: "#737373",
     beige: "#fff7f0",
+    white: "#ffffff",
+    black: "#000000",
   };
 
   return (
     <ThemeProvider theme={lightTheme}>
       <GlobalStyle />
 
-      <AnimatePresence>
-        <motion.main
-          variants={variants}
-          initial="initial"
-          animate="enter"
-          exit="exit"
-        >
-          {children}
-        </motion.main>
-      </AnimatePresence>
+      <Grid>
+        <nav>
+          <Sidebar />
+        </nav>
+
+        <header>
+          <Header />
+        </header>
+
+        <AnimatePresence>
+          <motion.main
+            variants={variants}
+            initial="initial"
+            animate="enter"
+            exit="exit"
+          >
+            {children}
+          </motion.main>
+        </AnimatePresence>
+
+        <footer></footer>
+      </Grid>
     </ThemeProvider>
   );
 };
@@ -84,3 +103,53 @@ TeachersLayout.propTypes = {
 };
 
 export default TeachersLayout;
+
+const Grid = styled.div`
+  display: grid;
+  height: 100vh;
+
+  grid-template-areas:
+    "side header"
+    "side content"
+    "side footer";
+
+  grid-template-columns: 280px 1fr;
+  grid-template-rows: auto 1fr 50px;
+
+  nav {
+    grid-area: side;
+    background: ${(props) => props.theme.blue};
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: content;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-areas:
+      "side"
+      "header"
+      "content"
+      "footer";
+
+    grid-template-columns: 1fr;
+    grid-template-rows:
+      auto
+      minmax(75px, auto)
+      1fr
+      auto;
+
+    nav,
+    aside {
+      margin: 0;
+    }
+  }
+`;

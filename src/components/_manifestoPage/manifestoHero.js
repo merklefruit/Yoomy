@@ -28,13 +28,13 @@ const ScopriHero = () => {
         <h2>PERCHÉ?</h2>
         <p>
           La piattaforma <b>semplifica</b> il processo di <b>marketing</b> e{" "}
-          <b>prenotazione</b>
-          delle lezioni, e lascia <b>totale libertà</b> ai singoli istruttori
-          per quanto riguarda lo svolgimento effettivo delle classi. <br />{" "}
-          L'enfasi della piattaforma è sul creare una vera e propria community
-          di istruttori e praticanti di Yoga, che diventi il punto di
-          riferimento sia per coloro che vogliono provare una disciplina nuova,
-          sia per coloro che effettuano le lezioni tutti i giorni.
+          <b>prenotazione</b> delle lezioni, e lascia <b>totale libertà</b> ai
+          singoli istruttori per quanto riguarda lo svolgimento effettivo delle
+          classi. <br /> L'enfasi della piattaforma è sul creare una vera e
+          propria community di istruttori e praticanti di Yoga, che diventi il
+          punto di riferimento sia per coloro che vogliono provare una
+          disciplina nuova, sia per coloro che effettuano le lezioni tutti i
+          giorni.
         </p>
         <h2> QUANTO COSTA?</h2>
         <p>
@@ -69,6 +69,6 @@ const ManifestoContent = styled.div`
   p {
     line-height: 2rem;
     font-size: 1.25rem;
-    font-weight: 300;
+    font-weight: 400;
   }
 `;

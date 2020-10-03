@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 
+// Layout
 import AppLayout from "./components/_app/appLayout";
+import TeachersLayout from "./components/_teachers/teachersLayout";
 
 // Redux
 import { connect } from "react-redux";
@@ -47,13 +49,15 @@ function PrivateRoutes({ fetchTeachers, fetchCourses, user }) {
 
       {/* TEACHER ROUTES */}
       {user && user.role === "teacher" && (
-        <Switch>
-          <Route exact path="/teachers/home" component={TeachersHome} />
+        <TeachersLayout>
+          <Switch>
+            <Route exact path="/teachers/home" component={TeachersHome} />
 
-          <Route>
-            <Redirect to="/teachers/home" />
-          </Route>
-        </Switch>
+            <Route>
+              <Redirect to="/teachers/home" />
+            </Route>
+          </Switch>
+        </TeachersLayout>
       )}
 
       {!user && <FullPageSpinner />}

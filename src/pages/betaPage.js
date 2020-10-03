@@ -87,6 +87,7 @@ const BetaForm = styled.div`
     width: 100%;
     background-color: ${(props) => props.theme.buttons};
     border: 1px solid gray;
+    margin-top: 20px;
     padding-top: 6px;
     padding-bottom: 6px;
     margin-left: 3px;

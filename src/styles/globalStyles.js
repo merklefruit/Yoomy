@@ -150,6 +150,14 @@ export const Headline = styled.div`
       }
     `}
 
+  h2 {
+    font-size: 1.7rem;
+    font-weight: 500;
+    @media (max-width: 650px) {
+      font-size: 1.15rem;
+    }
+  }
+
   h3 {
     font-size: 1.2rem;
     font-weight: 400;
