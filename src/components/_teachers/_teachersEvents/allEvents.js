@@ -25,7 +25,7 @@ const AllEvents = ({ user, events, fetchEvents }) => {
         </p>
       </TeacherSection>
       <EventList>
-        {events && user ? (
+        {events && user && (
           <table>
             <thead>
               <tr>
@@ -39,9 +39,11 @@ const AllEvents = ({ user, events, fetchEvents }) => {
             <tbody>
               {events
                 .filter((event) => event.teacher.id === user.teacher_id)
+                .reverse()
                 .map((event) => (
                   <tr key={event.id}>
                     <td>{event.course.name}</td>
+
                     <td>
                       <DayJS
                         date={event.startDate}
@@ -49,8 +51,11 @@ const AllEvents = ({ user, events, fetchEvents }) => {
                         format="D/MM/YYYY HH:mm"
                       ></DayJS>
                     </td>
+
                     <td>{event.duration} min</td>
+
                     <td>{event.participants.length}</td>
+
                     <td style={{ color: "blue" }}>
                       <Link to={`/teachers/eventi/edit/${event.id}`}>
                         Edita
@@ -60,8 +65,6 @@ const AllEvents = ({ user, events, fetchEvents }) => {
                 ))}
             </tbody>
           </table>
-        ) : (
-          "Caricamento..."
         )}
       </EventList>
     </>
