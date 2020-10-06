@@ -1,67 +1,51 @@
-# Yooga. Client
+<h1 align="center">Yoomy 🧘‍♂️ </h1>
 
-## API Creation Documentation
+> Yoomy is a full-fledged web platform for _high quality Online Yoga_.
 
-- To create a new API Action, do the following:
+## Features
 
-  1. Create a new action type in /actions/types under "specific api calls"
+- **Marketing & Landing pages:** each page's design was crafted individually and optimized for conversion.
 
-  2. Create a new API CALL function in /actions/index
+- **Web App:** when the user creates an account, he can access the private web app which is protected with JWT authentication. Users can view a list of all the yoga teachers, view the next events and subscribe to events using their "credits".
 
-  3. Add a CASE for the specific endpoint on the /reducers/api reducer.
+- **Payment System:** users can buy Credits that can be used to subscribe to yoga lessons. They can access a customer portal to add, change, remove their payment options, as well as top up their account with credits.
 
-  4. Call the function created in step (2) somewhere.
+- **Beautiful UI design:** the wep app uses custom React _styled components_ that are highly reusable across the website.
 
-### Example
+- **Teachers private UI:** teachers can login with the same authentication flow as normal users, but they access a different part of the web app, which is called the "teacher dashboard", where they can create new events and consult a list of their upcoming lessons, as well as viewing specific information about each lesson.
 
-```javascript
-// 1 - actions/types
-export const FETCH_COURSES = "FETCH_COURSES";
-export const SET_COURSES = "SET_COURSES";
+## Stack
 
-// 2 - actions/index
-export function fetchCourses() {
-  return apiAction({
-    url: COURSES_URL,
-    onSuccess: setCourses,
-    onFailure: () => console.log("Error fetching courses"),
-    label: FETCH_COURSES,
-  });
-}
-function setCourses(data) {
-  return {
-    type: SET_TEACHERS,
-    payload: data,
-  };
-}
+### Frontend: ReactJS
 
-// 3 - reducers/api
-//...
-case SET_COURSES:
-      return {
-        ...state,
-        courses: payload,
-      };
-// ...
-else if (payload === FETCH_COURSES) {
-        return {
-          ...state,
-          isLoadingCourses: true,
-        };
-      }
-      break;
-// ...
-else if (payload === FETCH_COURSES) {
-        return {
-          ...state,
-          isLoadingCourses: false,
-        };
-      }
-// ...
+- Create-React-App boilerplate
 
-// 4 - privateRoutes
-useEffect(() => {
-    fetchCourses();
-  });
+- React-redux for state management (with redux-thunk)
 
-```
+- Custom API middleware for handling API actions
+
+- Animations with Framer Motion
+
+- CSSinJS with Styled Components
+
+- Formik for better form handling and Joy for validation
+
+### Backend: NodeJS (Express)
+
+- Basic express starter
+
+- MongoDB as database with Mongoose
+
+- Admin-bro as Admin Dashboard
+
+- Express-jwt for JWT handling
+
+- Nodemailer for as SMTP email service provider
+
+## Documentation
+
+<a href="./DOCUMENTATION.md">View Documentation</a>
+
+## Authors
+
+⚒ _Nicolas Racchi_: [Website](www.nicolasracchi.com) - [Linkedin](https://www.linkedin.com/in/nicolas-racchi/)
