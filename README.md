@@ -12,7 +12,7 @@
 
 - **Beautiful UI design:** the wep app uses custom React _styled components_ that are highly reusable across the website.
 
-- **Teachers private UI:** teachers can login with the same authentication flow as normal users, but they access a different part of the web app, which is called the "teacher dashboard", where they can create new events and consult a list of their upcoming lessons, as well as viewing specific information about each lesson.
+- **Teachers private UI:** teachers can login with the same authentication flow as normal users, but they access a different part of the web app, which is called the "teacher dashboard", where they can create new events and consult a list of their upcoming lessons, as well as view specific information about each lesson.
 
 ## Stack
 
