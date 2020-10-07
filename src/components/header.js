@@ -26,7 +26,7 @@ function Header({ toggleMenu, setToggleMenu }) {
           <FlexRow>
             <motion.div whileHover={{ scale: 0.95 }} whileTap={{ scale: 0.9 }}>
               <Link to="/">
-                <span>Yooga.</span>
+                <span>Yoomy.</span>
               </Link>
             </motion.div>
             <LinkSection>
@@ -36,8 +36,8 @@ function Header({ toggleMenu, setToggleMenu }) {
               <Link to="/beta">
                 <p>Beta</p>
               </Link>
-              <Link to="/ispirazione">
-                <p>Ispirazione</p>
+              <Link to="/prezzi">
+                <p>Prezzi</p>
               </Link>
               <Link to="/contatti">
                 <p>Contatti</p>

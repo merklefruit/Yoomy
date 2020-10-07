@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 
 const Head = ({ title, desc }) => {
   return (
-    <Helmet title={title ? `${title} | Yooga.` : "Yooga."}>
+    <Helmet title={title ? `${title} | Yoomy.` : "Yoomy."}>
       <meta name="Description" content={desc} />
     </Helmet>
   );

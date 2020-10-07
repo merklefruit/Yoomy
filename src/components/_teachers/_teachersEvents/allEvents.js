@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import DayJS from "react-dayjs";
 
 // Redux
@@ -8,10 +7,10 @@ import PropTypes from "prop-types";
 import { fetchEvents } from "../../../actions";
 
 // Styled components
-import { EventList } from "../../../styles/_teachers/teacherEventStyles";
 import { TeacherSection } from "../../../styles/_teachers/teachersHomeStyles";
+import { EventList } from "../../../styles/_teachers/teacherEventStyles";
 
-const AllEvents = ({ user, events, fetchEvents }) => {
+const AllEvents = ({ user, events, fetchEvents, setCurrentlyEditing }) => {
   useEffect(() => {
     fetchEvents();
   }, [fetchEvents]);
@@ -19,9 +18,13 @@ const AllEvents = ({ user, events, fetchEvents }) => {
   return (
     <>
       <TeacherSection>
-        <h2>Tutti i tuoi eventi</h2>
+        <h2>Tutti i tuoi prossimi eventi</h2>
         <p>
-          Premi sul pulsante "Edita" per modificare le informazioni di un evento
+          Premi sul pulsante{" "}
+          <span role="img" aria-label="lens">
+            🔍
+          </span>
+          per vedere e modificare le informazioni di un evento.
         </p>
       </TeacherSection>
       <EventList>
@@ -56,10 +59,17 @@ const AllEvents = ({ user, events, fetchEvents }) => {
 
                     <td>{event.participants.length}</td>
 
-                    <td style={{ color: "blue" }}>
-                      <Link to={`/teachers/eventi/edit/${event.id}`}>
-                        Edita
-                      </Link>
+                    <td>
+                      <button
+                        onClick={() => {
+                          setCurrentlyEditing(null);
+                          setCurrentlyEditing(event);
+                        }}
+                      >
+                        <span role="img" aria-label="lens">
+                          🔍
+                        </span>
+                      </button>
                     </td>
                   </tr>
                 ))}

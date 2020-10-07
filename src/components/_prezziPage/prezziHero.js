@@ -3,15 +3,14 @@ import React from "react";
 // Styled components
 import { Container, Headline } from "../../styles/globalStyles";
 
-const IspirazioneHero = () => {
+const PrezziHero = () => {
   return (
     <Container>
       <Headline>
-        <h1>Ispirazione.</h1>
-        <p>Pagina in costruzione.</p>
+        <h1>1 Credito in più gratis col primo acquisto</h1>
       </Headline>
     </Container>
   );
 };
 
-export default IspirazioneHero;
+export default PrezziHero;

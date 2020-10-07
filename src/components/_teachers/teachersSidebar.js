@@ -15,7 +15,7 @@ const TeachersSidebar = () => {
   return (
     <Container>
       <Logo>
-        <h1>Yooga.</h1>
+        <h1>Yoomy.</h1>
       </Logo>
       <Menu>
         <NavLink to="/teachers/home">

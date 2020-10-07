@@ -28,7 +28,7 @@ function HomeHero() {
               className="under-hero"
             >
               <div className="bullet">
-                <p>Prova per 7 giorni senza carta di credito</p>
+                <p>Prova senza carta di credito</p>
               </div>
             </motion.div>
           </HeroCol1>

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
-import { formatISO } from "date-fns";
 
 // UI Components
 import Select from "react-select";
+import { formatISO } from "date-fns";
 import { it } from "date-fns/locale";
 import { DatePicker } from "react-nice-dates";
 import { useDateInput } from "react-nice-dates";
@@ -18,7 +18,13 @@ import { createEvent } from "../../../actions";
 import { TeacherSection } from "../../../styles/_teachers/teachersHomeStyles";
 import { EventForm } from "../../../styles/_teachers/teacherEventStyles";
 
-const NewEvent = ({ user, teachers, courses, createEvent }) => {
+const NewEvent = ({
+  user,
+  teachers,
+  courses,
+  createEvent,
+  setShowNewEvent,
+}) => {
   const [startDate, setStartDate] = useState(null);
   const [endTime, setEndTime] = useState(null);
   const [selectCourses, setSelectCourses] = useState(null);
@@ -80,6 +86,7 @@ const NewEvent = ({ user, teachers, courses, createEvent }) => {
     };
 
     createEvent(new_event);
+    setShowNewEvent(false);
   };
 
   return (

@@ -88,6 +88,7 @@ const Layout = ({ children }) => {
     background: "#fbfefb",
     text: "#454545",
     lightgray: "#D4D6D5",
+    pastelBlue: "#caf0f8",
   };
 
   const [toggleMenu, setToggleMenu] = useState(false);

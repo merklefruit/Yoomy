@@ -1,7 +1,14 @@
 import React from "react";
 
+// Components
+import Head from "../../components/head";
+
 const TeachersSettings = () => {
-  return <div></div>;
+  return (
+    <>
+      <Head title="Preferenze" />
+    </>
+  );
 };
 
 export default TeachersSettings;

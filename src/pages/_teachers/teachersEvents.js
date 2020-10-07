@@ -1,15 +1,23 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+// Components
+import Head from "../../components/head";
 import NewEvent from "../../components/_teachers/_teachersEvents/newEvent";
 import AllEvents from "../../components/_teachers/_teachersEvents/allEvents";
+import EditEvent from "../../components/_teachers/_teachersEvents/editEvent";
 
 const TeachersEvents = () => {
+  // conditional functionality :: aka buttons to expose different functionality
   const [showNewEvent, setShowNewEvent] = useState(false);
   const [showAllEvents, setShowAllEvents] = useState(false);
 
+  // ID of the event in "editing mode"
+  const [currentlyEditing, setCurrentlyEditing] = useState(null);
+
   return (
     <div>
+      <Head title="Eventi" />
       <div style={{ paddingLeft: "25px", marginBottom: "30px" }}>
         <Button
           onClick={() => {
@@ -25,11 +33,17 @@ const TeachersEvents = () => {
             setShowNewEvent(false);
           }}
         >
-          Visualizza tutti gli eventi
+          Visualizza i tuoi prossimi eventi
         </Button>
       </div>
-      {showNewEvent && <NewEvent />}
-      {showAllEvents && <AllEvents />}
+      {showNewEvent && <NewEvent setShowNewEvent={setShowNewEvent} />}
+      {showAllEvents && <AllEvents setCurrentlyEditing={setCurrentlyEditing} />}
+      {showAllEvents && currentlyEditing !== null && (
+        <EditEvent
+          currentlyEditing={currentlyEditing}
+          setCurrentlyEditing={setCurrentlyEditing}
+        />
+      )}
     </div>
   );
 };

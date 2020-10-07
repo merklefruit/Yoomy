@@ -109,7 +109,7 @@ function Navigation({ toggleMenu, setToggleMenu }) {
 
                   <motion.li>
                     <Link
-                      to="/ispirazione"
+                      to="/prezzi"
                       onClick={() => setToggleMenu(!toggleMenu)}
                     >
                       <motion.div
@@ -133,7 +133,7 @@ function Navigation({ toggleMenu, setToggleMenu }) {
                             ></path>
                           </svg>
                         </span>
-                        Ispirazione
+                        Prezzi
                       </motion.div>
                     </Link>
                   </motion.li>

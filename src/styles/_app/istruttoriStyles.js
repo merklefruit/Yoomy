@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-// Istruttori Hero
-
 // Istruttori List
 
 export const ListContainer = styled.div`

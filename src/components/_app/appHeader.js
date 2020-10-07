@@ -31,7 +31,7 @@ function AppHeader({ toggleMenu, setToggleMenu, logout, isAuthenticated }) {
           <FlexRow>
             <motion.div whileHover={{ scale: 0.95 }} whileTap={{ scale: 0.9 }}>
               <Link to="/">
-                <span>Yooga.</span>
+                <span>Yoomy.</span>
               </Link>
             </motion.div>
             <LinkSection></LinkSection>

@@ -6,7 +6,7 @@ import Layout from "./components/layout";
 // Marketing Routes
 import homePage from "./pages/homePage";
 import manifestoPage from "./pages/manifestoPage";
-import ispirazionePage from "./pages/ispirazionePage";
+import prezziPage from "./pages/prezziPage";
 import contattiPage from "./pages/contattiPage";
 import BetaPage from "./pages/betaPage";
 
@@ -20,7 +20,7 @@ function Routes() {
       <Switch>
         <Route exact path="/" component={homePage} />
         <Route exact path="/manifesto" component={manifestoPage} />
-        <Route exact path="/ispirazione" component={ispirazionePage} />
+        <Route exact path="/prezzi" component={prezziPage} />
         <Route exact path="/contatti" component={contattiPage} />
 
         <Route exact path="/beta" component={BetaPage} />

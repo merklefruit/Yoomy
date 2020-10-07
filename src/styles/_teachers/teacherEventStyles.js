@@ -134,5 +134,20 @@ export const EventList = styled.div`
       border-top: 1px solid rgba(0, 0, 0, 0.2);
       background: ${(props) => props.theme.white};
     }
+
+    button {
+      background: transparent;
+      border: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
+`;
+
+// Edit event
+
+export const EditContainer = styled.div`
+  margin-left: 25px;
 `;
