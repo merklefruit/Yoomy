@@ -4,7 +4,7 @@
 
 ## Features
 
-Cony sei un tacchino
+
 
 - **Marketing & Landing pages:** each page's design was crafted individually and optimized for conversion.
 
