@@ -80,12 +80,13 @@ export const EventCard = styled(motion.div)`
   align-items: center;
 
   .card-photo {
-    svg {
-      transform: scale(2);
-
-      path {
-        color: red;
-      }
+    margin: 0;
+    img {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      object-fit: cover;
+      overflow: hidden;
     }
   }
 

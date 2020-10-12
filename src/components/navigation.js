@@ -48,7 +48,7 @@ function Navigation({ toggleMenu, setToggleMenu }) {
                     </Link>
                   </motion.li>
 
-                  <motion.li>
+                  {/* <motion.li>
                     <Link
                       to="/manifesto"
                       onClick={() => setToggleMenu(!toggleMenu)}
@@ -77,7 +77,7 @@ function Navigation({ toggleMenu, setToggleMenu }) {
                         Manifesto
                       </motion.div>
                     </Link>
-                  </motion.li>
+                  </motion.li> */}
 
                   <motion.li>
                     <Link to="/beta" onClick={() => setToggleMenu(!toggleMenu)}>

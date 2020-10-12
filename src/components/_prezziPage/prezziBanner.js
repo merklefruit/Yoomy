@@ -1,25 +1,43 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 // Styled components
 import { Container } from "../../styles/globalStyles";
 import { Banner } from "../../styles/priceStyles";
 
+import Feat1Img from "../../assets/svg/Feat1Img";
+
 const PrezziBanner = () => {
   return (
-    <Container>
-      <Banner>
-        <div className="cta">
-          <p>Solo per il periodo di Beta: </p>
-          <motion.button
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.99 }}
-          >
-            Prova 1 lezione gratis{" "}
-          </motion.button>
-        </div>
-      </Banner>
-    </Container>
+    <Banner>
+      <Container>
+        <section className="features">
+          <div class="feature">
+            <div className="feat-part image">
+              <Feat1Img />
+            </div>
+            <div className="feat-part text">
+              <h2>È tutto pronto. Manchi solo tu!</h2>
+              <h3>Lesghere</h3>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div className="feat-part text">
+              <h2>LOL!</h2>
+              <h3>
+                Ciao questo è il testo che deve spiegare la prima feature
+                interessante della pagina dei prezzi. Ciao questo è il testo che
+                deve spiegare la prima feature interessante della pagina dei
+                prezzi.
+              </h3>
+            </div>
+            <div className="feat-part image">
+              <Feat1Img />
+            </div>
+          </div>
+        </section>
+      </Container>
+    </Banner>
   );
 };
 

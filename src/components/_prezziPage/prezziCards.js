@@ -17,7 +17,7 @@ const PrezziCards = () => {
           <div className="inner">
             <span className="span-1">OCCASIONALE</span>
             <p>1 Credito</p>
-            <h2>20€</h2>
+            <h2>19€</h2>
             <small>
               Un credito spendibile per una lezione Live Online di 1 ora con uno
               dei nostri istruttori
@@ -52,9 +52,9 @@ const PrezziCards = () => {
 
         <div className="price-card">
           <div className="inner">
-            <span className="span-1">BUON AFFARE</span>
+            <span className="span-2">BUON AFFARE</span>
             <p>3 Crediti</p>
-            <h2>50€</h2>
+            <h2>49€</h2>
             <h2 className="discount">-16%</h2>
             <small>
               Tre crediti spendibili su tutta la piattaforma, senza nessuna
@@ -63,7 +63,7 @@ const PrezziCards = () => {
             <div className="features">
               <div className="feature">
                 <GrYoga />
-                <p>Perfetto per principianti</p>
+                <p>Per tutti i livelli</p>
               </div>
               <div className="feature">
                 <GrGrow />
@@ -90,26 +90,26 @@ const PrezziCards = () => {
 
         <div className="price-card">
           <div className="inner">
-            <span className="span-1">IL MIGLIORE</span>
+            <span className="span-3">IL MIGLIORE</span>
             <p>10 Crediti</p>
             <h2>95€</h2>
             <h2 className="discount">-53%</h2>
             <small>
-              Dieci crediti per avere la massima offerta di Yoga Online in
-              Italia. Garantito.
+              Dieci crediti per avere la massima offerta di Yoga Live in Italia.
+              Garantito.
             </small>
             <div className="features">
               <div className="feature">
                 <GrYoga />
-                <p>Perfetto per principianti</p>
+                <p>Per gli appassionati</p>
               </div>
               <div className="feature">
                 <GrGrow />
-                <p>Crescita garantita al 100%</p>
+                <p>Bonus Yoomy esclusivi</p>
               </div>
               <div className="feature">
                 <GrSync />
-                <p>Scegli tu la data e l'ora</p>
+                <p>1 annullamento gratuito</p>
               </div>
             </div>
             <div className="cta">
