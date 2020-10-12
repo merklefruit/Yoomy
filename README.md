@@ -4,6 +4,8 @@
 
 ## Features
 
+
+
 - **Marketing & Landing pages:** each page's design was crafted individually and optimized for conversion.
 
 - **Web App:** when the user creates an account, he can access the private web app which is protected with JWT authentication. Users can view a list of all the yoga teachers, view the next events and subscribe to events using their "credits".
