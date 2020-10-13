@@ -61,126 +61,94 @@ export const EventGridSection = styled.div`
 
 export const EventCard = styled(motion.div)`
   margin-bottom: 1.5rem;
-  background: ${(props) => props.theme.beige};
+  margin-left: 50px;
+  background: white;
   border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
   color: ${(props) => props.theme.text};
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-
-  max-width: 550px;
-
+  padding: 10px;
+  max-width: 100%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   @media (max-width: 550px) {
     display: block;
   }
 
-  justify-content: space-between;
-  align-items: center;
+  .left {
+    width: 80%;
 
-  .card-photo {
-    margin: 0;
-    img {
-      width: 75px;
-      height: 75px;
-      border-radius: 50%;
-      object-fit: cover;
-      overflow: hidden;
-    }
-  }
-
-  .card-info {
-    text-align: left;
-
-    h3 {
-      font-family: "Montserrat";
-      margin: 10px 0;
-      font-size: 1.3rem;
+    .upper {
+      padding-top: 3px;
+      display: flex;
       width: 100%;
-    }
 
-    h4 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      margin-left: 0;
-      margin-right: 0;
-
-      font-size: 1rem;
-      opacity: 0.8;
-      font-weight: 400;
-      font-family: "Montserrat";
-
-      a {
-        color: ${(props) => props.theme.text};
-
-        &:hover {
-          color: black;
-          border-color: black;
+      .photo {
+        padding-left: 5px;
+        img {
+          border: 2px solid rgba(0, 0, 0, 0.1);
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          object-fit: cover;
         }
+      }
+      .info {
+        width: 80%;
+        display: block;
+        margin-left: 15px;
 
-        span {
-          border-bottom: 1px solid ${(props) => props.theme.text};
+        h4 {
+          font-family: "Montserrat";
+          letter-spacing: 1px;
+          font-weight: 400;
+          font-size: 1rem;
+          margin-top: 2px;
+          margin-bottom: 8px;
+        }
+        h3 {
+          font-size: 1.3rem;
+          font-weight: 500;
+          margin: 0;
         }
       }
     }
+    .lower {
+      width: 100%;
+      display: flex;
+      margin-top: 8px;
 
-    p {
-      font-size: 1.2rem;
-      margin-left: 0;
-      margin-right: 0;
-      margin-top: 0;
-      margin-bottom: 5px;
-      font-weight: 300;
+      p {
+        background: ${(props) => props.theme.beige};
+        font-size: 0.8rem;
+        margin: 0 5px;
+        padding: 2px 10px;
+        border-radius: 40px;
+      }
+    }
+  }
+  .right {
+    width: 20%;
+
+    .time-square {
+      margin-left: auto;
+      margin-right: 10px;
+      position: relative;
+
+      width: 80px;
+      height: 80px;
+      display: block;
+      background: ${(props) => props.theme.beige};
+      border-radius: 4px;
 
       span {
-        font-weight: 400;
-      }
-    }
-  }
-
-  .card-buttons {
-    @media (max-width: 550px) {
-      display: flex;
-    }
-
-    width: 95px;
-    padding-left: 10px;
-
-    .b1 {
-      margin-bottom: 20px;
-      @media (max-width: 550px) {
-        margin-bottom: 10px;
-      }
-    }
-    .b2 {
-    }
-
-    display: block;
-
-    button {
-      background-color: ${(props) => props.theme.beige};
-      border-radius: 5px;
-      border: 1px solid ${(props) => props.theme.lightgray};
-      width: 100%;
-      padding-top: 5px;
-      padding-bottom: 5px;
-
-      @media (max-width: 550px) {
-        width: 100px;
-        margin-top: 10px;
-        margin-right: 20px;
-      }
-
-      &:hover {
-        cursor: pointer;
-        background-color: ${(props) => props.theme.yellow};
-        transform: scale(1.04);
-        transition: transform 0.2s ease-in-out;
-      }
-
-      &:focus {
-        outline: none;
+        font-size: 1.4rem;
+        position: absolute;
+        font-weight: 600;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     }
   }

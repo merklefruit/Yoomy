@@ -72,9 +72,62 @@ const CalendarioList = ({ fetchDailyEvents, dailyEvents }) => {
                     }}
                     key={event.id}
                   >
+                    <div className="left">
+                      <div className="upper">
+                        <div className="photo">
+                          <img
+                            src={event.teacher.picture}
+                            alt={event.teacher.name}
+                          />
+                        </div>
+                        <div className="info">
+                          <h4>{event.course.name}</h4>
+                          <h3>
+                            Con {event.teacher.name} {event.teacher.surname}
+                          </h3>
+                        </div>
+                      </div>
+                      <div className="lower">
+                        <p>Livello {event.course.level}</p>
+                        <p>Intensità {event.course.intensity}</p>
+                        <p>Durata {event.duration} min</p>
+                      </div>
+                    </div>
+                    <div className="right">
+                      <div className="time-square">
+                        <DayJS
+                          date={event.startDate}
+                          element="span"
+                          format="HH:mm"
+                        />
+                      </div>
+                    </div>
+                  </EventCard>
+                ))
+              : " "}
+          </EventGridSection>
+        </div>
+      </CalendarSection>
+    </Container>
+  );
+};
+
+CalendarioList.propTypes = {
+  fetchDailyEvents: PropTypes.func.isRequired,
+  dailyEvents: PropTypes.array,
+};
+
+const mapStateToProps = (state) => ({
+  dailyEvents: state.api.dailyEvents,
+});
+
+export default connect(mapStateToProps, { fetchDailyEvents })(CalendarioList);
+
+/*
                     <div className="card-photo">
                       <img src={event.teacher.picture} alt="profile" />
                     </div>
+
                     <div className="card-info">
                       <h3>{event.course.name} </h3>
                       <h4>
@@ -111,6 +164,7 @@ const CalendarioList = ({ fetchDailyEvents, dailyEvents }) => {
                         Durata: <span>{event.duration} </span> minuti
                       </p>
                     </div>
+                    
                     <div className="card-buttons">
                       <Link to="/app/">
                         <button className="b1">Più info</button>
@@ -120,23 +174,4 @@ const CalendarioList = ({ fetchDailyEvents, dailyEvents }) => {
                         <button className="b2">Iscriviti</button>
                       </Link>
                     </div>
-                  </EventCard>
-                ))
-              : " "}
-          </EventGridSection>
-        </div>
-      </CalendarSection>
-    </Container>
-  );
-};
-
-CalendarioList.propTypes = {
-  fetchDailyEvents: PropTypes.func.isRequired,
-  dailyEvents: PropTypes.array,
-};
-
-const mapStateToProps = (state) => ({
-  dailyEvents: state.api.dailyEvents,
-});
-
-export default connect(mapStateToProps, { fetchDailyEvents })(CalendarioList);
+*/
