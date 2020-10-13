@@ -73,7 +73,7 @@ const CalendarioList = ({ fetchDailyEvents, dailyEvents }) => {
                     key={event.id}
                   >
                     <div className="card-photo">
-                      <img src={event.teacher.picture} />
+                      <img src={event.teacher.picture} alt="profile" />
                     </div>
                     <div className="card-info">
                       <h3>{event.course.name} </h3>
