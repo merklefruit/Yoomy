@@ -63,62 +63,45 @@ const CalendarioList = ({ fetchDailyEvents, dailyEvents }) => {
 
             {dailyEvents && date
               ? dailyEvents.map((event) => (
-                  <EventCard
-                    animate={{ opacity: 1 }}
-                    initial={{ opacity: 0 }}
-                    transition={{
-                      duration: 0.6,
-                      ease: [0.6, 0.05, -0.01, 0.9],
-                    }}
-                    key={event.id}
-                  >
-                    <div className="card-photo">
-                      <img src={event.teacher.picture} alt="profile" />
+                  <EventCard key={event.id}>
+                    <div className="card-time">
+                      <div className="time-square">
+                        <DayJS
+                          date={event.startDate}
+                          element="span"
+                          format="HH:mm"
+                        />
+                      </div>
                     </div>
                     <div className="card-info">
-                      <h3>{event.course.name} </h3>
-                      <h4>
-                        Con{" "}
-                        <Link to={`/app/istruttore/${event.teacher.id}`}>
-                          <span>
-                            {event.teacher.name} {event.teacher.surname}
-                          </span>
-                        </Link>
-                      </h4>
-                      <p>
-                        Quando: il{" "}
-                        <DayJS
-                          date={event.startDate}
-                          element="span"
-                          format="D/MM/YYYY"
-                        />
-                      </p>
-                      <p>
-                        Dalle{" "}
-                        <DayJS
-                          date={event.startDate}
-                          element="span"
-                          format="HH:mm"
-                        />{" "}
-                        alle{" "}
-                        <DayJS
-                          date={event.endDate}
-                          element="span"
-                          format="HH:mm"
-                        />
-                      </p>
-                      <p>
-                        Durata: <span>{event.duration} </span> minuti
-                      </p>
+                      <div className="upper">
+                        <div className="photo">
+                          <img
+                            src={event.teacher.picture}
+                            alt={event.teacher.name}
+                          />
+                        </div>
+                        <div className="info">
+                          <h4>{event.course.name}</h4>
+                          <h3>
+                            Con{" "}
+                            <Link to={`/app/istruttore/${event.teacher.id}`}>
+                              {event.teacher.name} {event.teacher.surname}
+                            </Link>
+                          </h3>
+                        </div>
+                      </div>
+                      <div className="lower">
+                        <p>Livello {event.course.level}</p>
+                        <p>Intensità {event.course.intensity}</p>
+                        <p>Durata {event.duration} minuti</p>
+                      </div>
                     </div>
                     <div className="card-buttons">
-                      <Link to="/app/">
-                        <button className="b1">Più info</button>
-                      </Link>{" "}
-                      <br />
-                      <Link to="/app/">
-                        <button className="b2">Iscriviti</button>
-                      </Link>
+                      <div className="buttons">
+                        <button className="button iscriviti">Iscriviti</button>
+                        <button className="button scopri">Informazioni</button>
+                      </div>
                     </div>
                   </EventCard>
                 ))
