@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
 // Styled components
@@ -33,25 +33,25 @@ function Header({ toggleMenu, setToggleMenu }) {
               {/* <Link to="/manifesto">
                 <p>Manifesto</p>
               </Link> */}
-              <Link to="/beta">
+              <NavLink to="/beta">
                 <p>Beta</p>
-              </Link>
-              <Link to="/prezzi">
+              </NavLink>
+              <NavLink to="/prezzi">
                 <p>Prezzi</p>
-              </Link>
-              <Link to="/contatti">
+              </NavLink>
+              <NavLink to="/contatti">
                 <p>Contatti</p>
-              </Link>
+              </NavLink>
             </LinkSection>
           </FlexRow>
           <FlexRow>
             <LinkSection>
-              <Link to="/login">
+              <NavLink to="/login">
                 <p>Login</p>
-              </Link>
-              <Link to="/registrati">
+              </NavLink>
+              <NavLink to="/registrati">
                 <p>Registrati</p>
-              </Link>
+              </NavLink>
             </LinkSection>
             <Menu>
               <Hamburger

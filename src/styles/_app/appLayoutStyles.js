@@ -60,6 +60,12 @@ export const LinkSection = styled.div`
   margin-left: 20px;
   display: flex;
 
+  .active {
+    p {
+      border-bottom: 2px solid ${(props) => props.theme.text};
+    }
+  }
+
   @media (max-width: 650px) {
     display: none;
   }

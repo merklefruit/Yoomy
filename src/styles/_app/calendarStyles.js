@@ -123,6 +123,7 @@ export const EventCard = styled(motion.div)`
         display: block;
         margin-left: 5px;
 
+        ${"" /* Course name */}
         h4 {
           font-family: "Montserrat";
           letter-spacing: 1px;
@@ -131,6 +132,8 @@ export const EventCard = styled(motion.div)`
           margin-top: 2px;
           margin-bottom: 5px;
         }
+
+        ${"" /* Teacher name */}
         h3 {
           font-size: 1.25rem;
           font-weight: 500;
@@ -139,10 +142,10 @@ export const EventCard = styled(motion.div)`
           a {
             color: ${(props) => props.theme.text};
             cursor: pointer;
-            border-bottom: 1px solid ${(props) => props.theme.text};
+            opacity: 0.8;
 
             &:hover {
-              color: ${(props) => props.theme.lightgray};
+              opacity: 1;
             }
           }
         }

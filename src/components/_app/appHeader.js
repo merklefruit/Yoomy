@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
 // Redux
@@ -38,18 +38,18 @@ function AppHeader({ toggleMenu, setToggleMenu, logout, isAuthenticated }) {
           </FlexRow>
           <FlexRow>
             <LinkSection>
-              <Link to="/app/per-te">
+              <NavLink to="/app/per-te">
                 <p>Per Te</p>
-              </Link>
-              <Link to="/app/istruttori">
+              </NavLink>
+              <NavLink to="/app/istruttori">
                 <p>Istruttori</p>
-              </Link>
-              <Link to="/app/calendario">
+              </NavLink>
+              <NavLink to="/app/calendario">
                 <p>Calendario</p>
-              </Link>
-              <Link to="/app/account">
+              </NavLink>
+              <NavLink to="/app/account">
                 <p>Account</p>
-              </Link>
+              </NavLink>
               <Link to="/" onClick={() => logout()}>
                 <p>Logout</p>
               </Link>

@@ -48,4 +48,5 @@
 
 ## Authors
 
-⚒ _Nicolas Racchi_: [Website](www.nicolasracchi.com) - [Linkedin](https://www.linkedin.com/in/nicolas-racchi/)
+⚒ _Nicolas Racchi_: [Website](https://www.nicolasracchi.com) - [Linkedin](https://www.linkedin.com/in/nicolas-racchi/)
+🌳 _Andrea Carotti_: [Linkedin](https://www.linkedin.com/in/andrea-carotti-09150218a/)
