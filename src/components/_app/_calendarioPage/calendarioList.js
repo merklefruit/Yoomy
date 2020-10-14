@@ -63,16 +63,17 @@ const CalendarioList = ({ fetchDailyEvents, dailyEvents }) => {
 
             {dailyEvents && date
               ? dailyEvents.map((event) => (
-                  <EventCard
-                    animate={{ opacity: 1 }}
-                    initial={{ opacity: 0 }}
-                    transition={{
-                      duration: 0.6,
-                      ease: [0.6, 0.05, -0.01, 0.9],
-                    }}
-                    key={event.id}
-                  >
-                    <div className="left">
+                  <EventCard key={event.id}>
+                    <div className="card-time">
+                      <div className="time-square">
+                        <DayJS
+                          date={event.startDate}
+                          element="span"
+                          format="HH:mm"
+                        />
+                      </div>
+                    </div>
+                    <div className="card-info">
                       <div className="upper">
                         <div className="photo">
                           <img
@@ -83,23 +84,23 @@ const CalendarioList = ({ fetchDailyEvents, dailyEvents }) => {
                         <div className="info">
                           <h4>{event.course.name}</h4>
                           <h3>
-                            Con {event.teacher.name} {event.teacher.surname}
+                            Con{" "}
+                            <Link to={`/app/istruttore/${event.teacher.id}`}>
+                              {event.teacher.name} {event.teacher.surname}
+                            </Link>
                           </h3>
                         </div>
                       </div>
                       <div className="lower">
                         <p>Livello {event.course.level}</p>
                         <p>Intensità {event.course.intensity}</p>
-                        <p>Durata {event.duration} min</p>
+                        <p>Durata {event.duration} minuti</p>
                       </div>
                     </div>
-                    <div className="right">
-                      <div className="time-square">
-                        <DayJS
-                          date={event.startDate}
-                          element="span"
-                          format="HH:mm"
-                        />
+                    <div className="card-buttons">
+                      <div className="buttons">
+                        <button className="button iscriviti">Iscriviti</button>
+                        <button className="button scopri">Informazioni</button>
                       </div>
                     </div>
                   </EventCard>
