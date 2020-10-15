@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import DayJS from "react-dayjs";
+
+// Styled components
 import { EventCard } from "../../styles/_app/calendarStyles";
 
 const Event = ({ event }) => {
