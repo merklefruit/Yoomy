@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
-// DayJS
-import DayJS from "react-dayjs";
+// Components
+import Event from "../Event";
 
 // Nice dates
 import { format, formatISO } from "date-fns";
@@ -21,7 +20,6 @@ import { fetchDailyEvents } from "../../../actions";
 import { Container } from "../../../styles/globalStyles";
 import {
   CalendarSection,
-  EventCard,
   Picker,
   EventGridSection,
 } from "../../../styles/_app/calendarStyles.js";
@@ -63,47 +61,7 @@ const CalendarioList = ({ fetchDailyEvents, dailyEvents }) => {
 
             {dailyEvents && date
               ? dailyEvents.map((event) => (
-                  <EventCard key={event.id}>
-                    <div className="card-time">
-                      <div className="time-square">
-                        <DayJS
-                          date={event.startDate}
-                          element="span"
-                          format="HH:mm"
-                        />
-                      </div>
-                    </div>
-                    <div className="card-info">
-                      <div className="upper">
-                        <div className="photo">
-                          <img
-                            src={event.teacher.picture}
-                            alt={event.teacher.name}
-                          />
-                        </div>
-                        <div className="info">
-                          <h4>{event.course.name}</h4>
-                          <h3>
-                            Con{" "}
-                            <Link to={`/app/istruttore/${event.teacher.id}`}>
-                              {event.teacher.name} {event.teacher.surname}
-                            </Link>
-                          </h3>
-                        </div>
-                      </div>
-                      <div className="lower">
-                        <p>Livello {event.course.level}</p>
-                        <p>Intensità {event.course.intensity}</p>
-                        <p>Durata {event.duration} minuti</p>
-                      </div>
-                    </div>
-                    <div className="card-buttons">
-                      <div className="buttons">
-                        <button className="button iscriviti">Iscriviti</button>
-                        <button className="button scopri">Informazioni</button>
-                      </div>
-                    </div>
-                  </EventCard>
+                  <Event key={event.id} event={event} />
                 ))
               : " "}
           </EventGridSection>
