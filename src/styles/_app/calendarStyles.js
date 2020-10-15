@@ -65,14 +65,10 @@ export const EventCard = styled(motion.div)`
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 4px;
   color: ${(props) => props.theme.text};
-  padding: 10px;
+  padding: 12px 10px;
   max-width: 100%;
   display: flex;
   align-items: center;
-
-  @media (max-width: 550px) {
-    display: block;
-  }
 
   .card-time {
     width: auto;
@@ -82,8 +78,8 @@ export const EventCard = styled(motion.div)`
       margin-right: auto;
       position: relative;
 
-      width: 80px;
-      height: 80px;
+      width: 90px;
+      height: 90px;
       display: block;
       background: ${(props) => props.theme.beige};
       border-radius: 4px;
@@ -102,6 +98,7 @@ export const EventCard = styled(motion.div)`
   .card-info {
     width: 100%;
     margin-left: 12px;
+    margin-top: 0;
 
     .upper {
       padding-top: 0;
@@ -111,7 +108,7 @@ export const EventCard = styled(motion.div)`
       .photo {
         padding-left: 5px;
         img {
-          border: 2px solid rgba(0, 0, 0, 0.1);
+          border: 1px solid rgba(0, 0, 0, 0.25);
           width: 50px;
           height: 50px;
           border-radius: 50%;
@@ -125,12 +122,13 @@ export const EventCard = styled(motion.div)`
 
         ${"" /* Course name */}
         h4 {
+          color: #a39a76;
           font-family: "Montserrat";
           letter-spacing: 1px;
-          font-weight: 500;
-          font-size: 1rem;
+          font-weight: 600;
+          font-size: 0.9rem;
           margin-top: 2px;
-          margin-bottom: 5px;
+          margin-bottom: 8px;
         }
 
         ${"" /* Teacher name */}
@@ -154,9 +152,10 @@ export const EventCard = styled(motion.div)`
     .lower {
       width: 100%;
       display: flex;
-      margin-top: 3px;
+      margin-top: 14px;
 
       p {
+        opacity: 0.85;
         background: ${(props) => props.theme.beige};
         font-size: 0.8rem;
         margin: 0 5px;
@@ -179,23 +178,28 @@ export const EventCard = styled(motion.div)`
         background: ${(props) => props.theme.beige};
         color: ${(props) => props.theme.text};
         font-size: 0.9rem;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
         border: none;
         padding: 9px;
         margin: 0;
 
         &:hover {
           cursor: pointer;
-          box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1);
           transform: scale(1.01);
           transition: all ease-in-out 0.2s;
         }
       }
       .iscriviti {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
       }
       .scopri {
       }
     }
+  }
+
+  ${"" /* Responsive card */}
+  @media (max-width: 1100px) {
+  }
+  @media (max-width: 800px) {
   }
 `;
