@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 // Styled components
 import Head from "../../components/head";
 import { Container, Headline } from "../../styles/globalStyles";
-import { TeacherBio } from "../../styles/_app/istruttoreStyles";
+import { TeacherFirstSection } from "../../styles/_app/istruttoreStyles";
 
 import { AiOutlineHome } from "react-icons/ai";
 
@@ -38,28 +38,43 @@ const IstruttorePage = ({ teachers, match }) => {
         <div>
           <Head title={`${teacher.name} ${teacher.surname}`} />
           <Container>
-            <Headline withHr>
-              <small>
-                <AiOutlineHome />
-                <Link to="/app/per-te">Home</Link> /{" "}
-                <Link to="/app/istruttori">Istruttori</Link> /{" "}
-                <Link to={`/app/istruttore/${teacher.id}`}>
-                  {teacher.name} {teacher.surname}
-                </Link>
-              </small>
-              <h1>
-                {teacher.name} {teacher.surname}
-              </h1>
-              <hr />
-            </Headline>
+            <TeacherFirstSection>
+              <div className="flex1">
+                <Headline withHr>
+                  <small>
+                    <AiOutlineHome />
+                    <Link to="/app/per-te">Home</Link> /{" "}
+                    <Link to="/app/istruttori">Istruttori</Link> /{" "}
+                    <Link to={`/app/istruttore/${teacher.id}`}>
+                      {teacher.name} {teacher.surname}
+                    </Link>
+                  </small>
+                  <h1>
+                    {teacher.name} {teacher.surname}
+                  </h1>
+                  <h3>
+                    {teacher.courses.map((course) => (
+                      <Link to="/" key={course.id}>
+                        {course.name} &middot;{" "}
+                      </Link>
+                    ))}
+                  </h3>
+                  <hr />
+                </Headline>
+                <div className="bio">
+                  <p>{teacher.biography}</p>
+                </div>
+              </div>
+              <div className="flex2">
+                <div className="photo">
+                  <img src={teacher.picture} alt="teacher profile" />
+                </div>
+                <div className="more"></div>
+              </div>
+            </TeacherFirstSection>
           </Container>
 
-          <TeacherBio>
-            <div className="bio-container">
-              <p>{teacher.biography}</p>
-            </div>
-            <img src={teacher.picture} alt="profile" />
-          </TeacherBio>
+          <Container></Container>
         </div>
       ) : (
         ""

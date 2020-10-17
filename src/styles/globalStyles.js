@@ -163,6 +163,14 @@ export const Headline = styled.div`
     font-weight: 400;
     width: 70%;
 
+    a {
+      color: ${(props) => props.theme.text};
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
+    }
+
     @media (max-width: 650px) {
       font-size: 1rem;
       width: 100%;

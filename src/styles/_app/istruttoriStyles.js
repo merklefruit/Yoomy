@@ -29,7 +29,7 @@ export const ListContainer = styled.div`
         margin: 0;
         opacity: 0.92;
         width: 100%;
-        height: 200px;
+        height: 250px;
         object-fit: cover;
         border-radius: 2px;
 

@@ -1,69 +1,39 @@
 import styled from "styled-components";
 
-export const TeacherBio = styled.div`
-  color: ${(props) => props.theme.text};
-  display: flex;
-  justify-content: space-evenly;
-
-  z-index: 1;
-  flex-grow: 1;
-  margin: 0 auto;
-  padding: 0 25px;
-  position: relative;
-
-  height: 100%;
-
-  @media (min-width: 1024px) {
-    max-width: 960px;
-  }
-  @media (min-width: 1216px) {
-    max-width: 1152px;
-  }
-  @media (min-width: 1408px) {
-    max-width: 1244px;
+export const TeacherFirstSection = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @media (max-width: 950px) {
+    grid-template-columns: 1fr;
   }
 
-  @media (max-width: 1216px) {
-    display: block;
-  }
-  @media (max-width: 500px) {
-    padding: 0;
-  }
-
-  .bio-container {
-    min-width: 250px;
-    @media (max-width: 500px) {
-      padding: 0 25px;
+  .flex1 {
+    .bio {
+      p {
+        font-size: 1.3rem;
+        width: 88%;
+        @media (max-width: 950px) {
+          width: 100%;
+          font-size: 1.2rem;
+        }
+      }
     }
   }
 
-  img {
-    max-width: 600px;
-    height: 500px;
-    object-fit: cover;
+  .flex2 {
+    .photo {
+      margin-top: 25px;
+      position: relative;
+      background: pink;
+      display: grid;
+      place-items: end;
 
-    @media (max-width: 1216px) {
-      width: 100%;
-      height: 400px;
-      display: block;
-      margin: auto auto;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
     }
-    @media (max-width: 500px) {
-      width: 100%;
-    }
-  }
-
-  p {
-    margin-top: 0;
-    line-height: 125%;
-    margin-left: 0;
-    font-size: 1.5rem;
-    margin-right: 18px;
-    width: 95%;
-    @media (max-width: 800px) {
-      width: 100%;
-      font-size: 1.3rem;
-      margin-right: 24px;
+    .more {
     }
   }
 `;
