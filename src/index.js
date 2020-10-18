@@ -8,6 +8,7 @@ import store from "./helpers/store";
 // Additional entry point imports (e.g. Fonts)
 import "typeface-roboto";
 import "typeface-montserrat";
+import "typeface-dm-sans";
 
 ReactDOM.render(
   <Provider store={store}>

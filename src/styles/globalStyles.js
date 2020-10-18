@@ -112,12 +112,12 @@ export const Headline = styled.div`
   }
 
   h1 {
-    font-size: 3rem;
-    font-weight: 600;
+    font-family: "DM Sans";
+    font-size: 2.85rem;
+    font-weight: 400;
 
     @media (max-width: 900px) {
       font-size: 2.7rem;
-      font-weight: 500;
     }
     @media (max-width: 650px) {
       font-size: 2.4rem;

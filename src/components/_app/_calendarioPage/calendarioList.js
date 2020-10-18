@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 // Components
 import Event from "../Event";
+import EventSubscribed from "../EventSubscribed";
 
 // Nice dates
 import { format, formatISO } from "date-fns";
@@ -24,7 +25,7 @@ import {
   EventGridSection,
 } from "../../../styles/_app/calendarStyles.js";
 
-const CalendarioList = ({ fetchDailyEvents, dailyEvents }) => {
+const CalendarioList = ({ fetchDailyEvents, dailyEvents, user }) => {
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
@@ -60,9 +61,13 @@ const CalendarioList = ({ fetchDailyEvents, dailyEvents }) => {
             </h2>
 
             {dailyEvents && date
-              ? dailyEvents.map((event) => (
-                  <Event key={event.id} event={event} />
-                ))
+              ? dailyEvents.map((event) =>
+                  user.events.filter((e) => e.id === event.id).length !== 0 ? (
+                    <EventSubscribed key={event.id} event={event} />
+                  ) : (
+                    <Event key={event.id} event={event} />
+                  )
+                )
               : " "}
           </EventGridSection>
         </div>
@@ -74,10 +79,12 @@ const CalendarioList = ({ fetchDailyEvents, dailyEvents }) => {
 CalendarioList.propTypes = {
   fetchDailyEvents: PropTypes.func.isRequired,
   dailyEvents: PropTypes.array,
+  user: PropTypes.object,
 };
 
 const mapStateToProps = (state) => ({
   dailyEvents: state.api.dailyEvents,
+  user: state.auth.user,
 });
 
 export default connect(mapStateToProps, { fetchDailyEvents })(CalendarioList);

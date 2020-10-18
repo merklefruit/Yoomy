@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 // Components
 import Head from "../../components/head";
 import PerTeHero from "../../components/_app/_perTePage/perTeHero";
+import PerTeNextEvents from "../../components/_app/_perTePage/perTeNextEvents";
 import PerTeGridSection from "../../components/_app/_perTePage/perTeGridSection";
 
 const PerTePage = ({ user }) => {
@@ -14,6 +15,7 @@ const PerTePage = ({ user }) => {
     <>
       <Head title="Per te" />
       <PerTeHero user={user} />
+      <PerTeNextEvents />
       <PerTeGridSection />
     </>
   );

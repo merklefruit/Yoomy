@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
 
 export const CalendarSection = styled.div`
@@ -9,7 +9,6 @@ export const CalendarSection = styled.div`
   }
 
   .horizontal {
-    border-left: 1px solid ${(props) => props.theme.lightgray};
     padding-left: 15px;
     width: 100%;
     margin-bottom: 50px;
@@ -197,9 +196,39 @@ export const EventCard = styled(motion.div)`
     }
   }
 
-  ${"" /* Responsive card */}
+  ${"" /* //TODO Responsive card */}
   @media (max-width: 1100px) {
   }
   @media (max-width: 800px) {
   }
+
+  ${(props) =>
+    props.subscribed &&
+    css`
+      border: 1px solid rgba(88, 209, 118, 0.8);
+      position: relative;
+
+      .icon {
+        width: 0;
+        position: absolute;
+        top: 44px;
+        left: -11px;
+        z-index: 2;
+
+        svg {
+          font-size: 1.3rem;
+          color: rgba(88, 209, 118, 0.8);
+          background: ${(props) => props.theme.background};
+        }
+      }
+
+      .card-buttons {
+        .buttons {
+          .iscriviti {
+            background-color: rgba(168, 168, 146, 0.45);
+            color: black;
+          }
+        }
+      }
+    `}
 `;

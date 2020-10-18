@@ -1,31 +1,45 @@
 import React from "react";
 
-import { Container } from "../../../styles/globalStyles";
-import {
-  CardsSection,
-  SideBarSection,
-  GridContainer,
-} from "../../../styles/_app/perTeStyles";
+// Redux
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-const PerTeGridSection = () => {
+// Styled components
+import { Container } from "../../../styles/globalStyles";
+import { GridSection, GridHeading } from "../../../styles/_app/perTeStyles";
+
+// Assets
+import { CgMediaLive } from "react-icons/cg";
+
+const PerTeGridSection = ({ user }) => {
   return (
     <Container>
-      <GridContainer>
-        <CardsSection>
-          <div className="course">{/* insert live course card */}</div>
-        </CardsSection>
-        <SideBarSection>
-          <div className="sidebar-wrapper">
-            <h3>Menu</h3>
-            <p>Corsi recenti</p>
-            <p>Prossimi corsi</p>
-            <p>vedi tutto</p>
-            <p>preferiti</p>
-          </div>
-        </SideBarSection>
-      </GridContainer>
+      <GridHeading>
+        <h2>
+          <CgMediaLive /> Lezioni Live ora
+        </h2>
+      </GridHeading>
+      <GridSection>
+        <div className="live-ora">
+          <h3>Lista eventi live</h3>
+        </div>
+        <div className="crediti">
+          <h3>Crediti residui</h3>
+        </div>
+        <div className="obiettivo">
+          <h3>Obiettivo settimanale</h3>
+        </div>
+      </GridSection>
     </Container>
   );
 };
 
-export default PerTeGridSection;
+PerTeGridSection.propTypes = {
+  user: PropTypes.object,
+};
+
+const mapStateToProps = (state) => ({
+  user: state.auth.user,
+});
+
+export default connect(mapStateToProps)(PerTeGridSection);

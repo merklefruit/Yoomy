@@ -7,9 +7,9 @@ const PerTeHero = ({ user }) => {
   return (
     <Container>
       <Headline>
-        <h1>Novità per te</h1>
+        <h1>La tua home</h1>
         <h3>
-          Ciao {user ? user.username : ""}! <br />
+          Ciao <b>{user ? user.username : ""}</b>! <br />
           Dai un'occhiata ai corsi selezionati apposta per te.
         </h3>
       </Headline>

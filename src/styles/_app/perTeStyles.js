@@ -1,172 +1,141 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
 // PerTe Hero
 
-// PerTe GridSection
+// PerTe Next Events
 
-export const GridContainer = styled.div`
-  display: grid;
-  grid-template-columns: calc(100% - 150px) 150px;
+export const NextEventsHeading = styled.div`
+  margin-top: 30px;
 
-  @media (max-width: 700px) {
-    display: block;
+  svg {
+    margin-right: 8px;
+  }
+
+  h2 {
+    font-family: "Montserrat";
+    font-weight: 400;
+    color: ${(props) => props.theme.text};
   }
 `;
 
-export const SideBarSection = styled.div`
-  display: block;
+export const NextEvents = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 25%;
+  gap: 2.5rem;
 
-  @media (max-width: 700px) {
-    display: none;
-  }
-
-  color: ${(props) => props.theme.text};
-
-  .sidebar-wrapper {
-    float: right;
-    text-align: right;
-    margin-right: 0px;
-    margin-top: 0;
-    padding-right: 10px;
-    border-right: 1px solid ${(props) => props.theme.text};
+  .event-card {
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.05);
+    background: white;
+    color: ${(props) => props.theme.text};
+    display: grid;
+    grid-template-columns: 1fr 160px;
 
     h3 {
-      margin-top: 2px;
-    }
-
-    p {
-      &:hover {
-        font-weight: 600;
-        cursor: pointer;
-      }
-    }
-  }
-`;
-
-export const CardsSection = styled.div`
-  display: block;
-
-  .course {
-    background-color: ${(props) => props.theme.background};
-    border-radius: 10px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    max-width: 100%;
-    margin: 25px 0;
-    overflow: hidden;
-
-    h6 {
-      opacity: 0.7;
+      font-weight: 400;
+      line-height: 130%;
+      font-size: 1.3rem;
       margin: 0;
-      margin-top: 2px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
 
-    h2 {
-      letter-spacing: 1px;
-      margin-top: 25px;
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    p {
-      margin: 0;
-      margin-bottom: 55px;
-    }
-  }
-
-  .course-preview {
-    background-color: ${(props) => props.theme.secondary};
-    color: ${(props) => props.theme.text};
-    padding: 30px;
-    width: 180px;
-
-    a {
-      color: ${(props) => props.theme.text};
-      font-weight: 600;
-      display: inline-block;
-      font-size: 0.8rem;
-      opacity: 0.6;
-      margin-top: 55px;
-      text-decoration: none;
-    }
-  }
-
-  .course-info {
-    color: ${(props) => props.theme.text};
-    padding-right: 30px;
-    padding-left: 15px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    position: relative;
-    width: 100%;
-
-    h6 {
       span {
-        border-bottom: 1px solid ${(props) => props.theme.text};
-        opacity: 0.8;
-
-        &:hover {
-          opacity: 1;
-          cursor: pointer;
-        }
+        font-weight: 500;
       }
+    }
+
+    .picture-container {
+      display: grid;
+      place-items: center;
+
+      img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+
+    button {
+      padding: 10px 30px;
+      margin-top: 9px;
+      background: ${(props) => props.theme.beige};
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.04);
+      color: ${(props) => props.theme.text};
+      cursor: pointer;
     }
   }
 
-  .progress-container {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    text-align: right;
-    width: 120px;
-  }
-
-  .progress {
-    background-color: #ddd;
-    border-radius: 3px;
-    height: 5px;
-    width: 100%;
-  }
-
-  .progress::after {
-    border-radius: 3px;
-    background-color: ${(props) => props.theme.secondary};
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 5px;
-    width: 70%;
-  }
-
-  .progress-text {
-    font-size: 0.7rem;
-    opacity: 0.7;
-    letter-spacing: 1px;
+  .calendar {
+    background: white;
+    box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    svg {
+      margin-left: 15px;
+      width: 45%;
+    }
+    button {
+      margin-top: 8px;
+      padding: 10px;
+      width: 85%;
+      background: ${(props) => props.theme.beige};
+      border-radius: 12px;
+      border: none;
+      color: ${(props) => props.theme.text};
+      box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.04);
+      cursor: pointer;
+    }
   }
 `;
 
-export const CardButton = styled(motion.button)`
-    background-color: ${(props) => props.theme.blue};
-    border: 0;
-    opacity: 0.85;
-    border-radius: 50px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-    color: ${(props) => props.theme.background};
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 12px 25px;
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    letter-spacing: 1px;
-    cursor: pointer;
+// Per te Grid Section
 
-    &:focus {
-      outline: none;
-    }
+export const GridHeading = styled.div`
+  margin-top: 30px;
+
+  svg {
+    margin-right: 8px;
+  }
+
+  h2 {
+    font-family: "Montserrat";
+    font-weight: 400;
+    color: ${(props) => props.theme.text};
+  }
+`;
+
+export const GridSection = styled.div`
+  display: grid;
+  grid-template-columns: 60% 1fr 1fr;
+
+  .live-ora {
+    background: white;
+    box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    position: relative;
+
+    padding: 20px;
+  }
+
+  .crediti {
+    background: white;
+    box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    position: relative;
+
+    padding: 20px;
+  }
+  .obiettivo {
+    background: white;
+    box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    position: relative;
+
+    padding: 20px;
   }
 `;
