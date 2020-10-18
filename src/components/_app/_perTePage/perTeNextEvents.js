@@ -23,7 +23,7 @@ import { BsCalendar } from "react-icons/bs";
 const PerTeNextEvents = ({ user }) => {
   return (
     <Container>
-      {user.events.lentgh !== 0 && (
+      {user.events.length !== 0 && (
         <>
           <NextEventsHeading>
             <h2>
