@@ -21,9 +21,19 @@ import Calendar from "../../../assets/svg/Calendar";
 import { BsCalendar } from "react-icons/bs";
 
 const PerTeNextEvents = ({ user }) => {
+  const nextEvents = [];
+  const getNextEvents = () =>
+    user.events.map((event) => {
+      if (new Date(event.startDate) >= new Date()) {
+        nextEvents.push(event);
+      }
+      return true;
+    });
+  getNextEvents();
+
   return (
     <Container>
-      {user.events.length !== 0 && (
+      {nextEvents && nextEvents.length !== 0 && (
         <>
           <NextEventsHeading>
             <h2>
@@ -41,16 +51,15 @@ const PerTeNextEvents = ({ user }) => {
                   </span>
                   <br />
                   La tua prossima lezione è{" "}
-                  <span>{user.events[0].course.name}</span> con{" "}
+                  <span>{nextEvents[0].course.name}</span> con{" "}
                   <span>
-                    {user.events[0].teacher.name}{" "}
-                    {user.events[0].teacher.surname}
+                    {nextEvents[0].teacher.name} {nextEvents[0].teacher.surname}
                   </span>
                   . <br />
                   Inizia{" "}
                   <span>
                     {formatDistance(
-                      new Date(user.events[0].startDate),
+                      new Date(nextEvents[0].startDate),
                       new Date(),
                       { addSuffix: true, locale: it }
                     )}
@@ -62,7 +71,7 @@ const PerTeNextEvents = ({ user }) => {
                 </button>
               </div>
               <div className="picture-container">
-                <img src={user.events[0].teacher.picture} alt="" />
+                <img src={nextEvents[0].teacher.picture} alt="" />
               </div>
             </div>
             <div className="calendar">

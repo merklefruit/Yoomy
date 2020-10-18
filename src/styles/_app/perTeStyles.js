@@ -34,6 +34,9 @@ export const NextEvents = styled.div`
     color: ${(props) => props.theme.text};
     display: grid;
     grid-template-columns: 1fr 160px;
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr;
+    }
 
     h3 {
       font-weight: 400;
@@ -44,6 +47,12 @@ export const NextEvents = styled.div`
       @media (max-width: 1100px) {
         font-size: 1.2rem;
       }
+      @media (max-width: 700px) {
+        font-size: 1.1rem;
+      }
+      @media (max-width: 450px) {
+        font-size: 1rem;
+      }
 
       span {
         font-weight: 500;
@@ -51,6 +60,10 @@ export const NextEvents = styled.div`
     }
 
     .picture-container {
+      @media (max-width: 700px) {
+        display: none;
+      }
+
       display: grid;
       place-items: center;
 
@@ -64,6 +77,9 @@ export const NextEvents = styled.div`
 
     button {
       padding: 10px 30px;
+      @media (max-width: 700px) {
+        padding: 7px 25px;
+      }
       margin-top: 9px;
       background: ${(props) => props.theme.beige};
       border-radius: 12px;
@@ -99,6 +115,9 @@ export const NextEvents = styled.div`
     button {
       margin-top: 8px;
       padding: 10px;
+      @media (max-width: 700px) {
+        padding: 7px 25px;
+      }
       width: 85%;
       background: ${(props) => props.theme.beige};
       border-radius: 12px;
@@ -133,6 +152,10 @@ export const GridHeading = styled.div`
 export const GridSection = styled.div`
   display: grid;
   grid-template-columns: 45% 1fr 1fr;
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr;
+  }
+
   gap: 2.5rem;
   color: ${(props) => props.theme.text};
 
@@ -150,6 +173,9 @@ export const GridSection = styled.div`
 
     button {
       padding: 10px;
+      @media (max-width: 700px) {
+        padding: 7px 25px;
+      }
       width: 80%;
       border: none;
       border-radius: 12px;
@@ -163,8 +189,6 @@ export const GridSection = styled.div`
     .event {
       border-radius: 12px;
       margin-bottom: 10px;
-      padding-left: 20px;
-      padding-right: 20px;
 
       display: flex;
       align-items: center;
@@ -176,6 +200,7 @@ export const GridSection = styled.div`
       }
 
       h4 {
+        margin-right: 5px;
         font-weight: 400;
       }
     }
