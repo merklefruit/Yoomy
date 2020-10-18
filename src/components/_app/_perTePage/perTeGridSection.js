@@ -26,34 +26,38 @@ const PerTeGridSection = ({ user }) => {
       <GridSection>
         <div className="live-ora card">
           {/* map ongoing events here */}
-          <div className="event">
-            <h4>
-              {user.events[0].teacher.name} {user.events[0].teacher.surname}:{" "}
-              <b>{user.events[0].course.name}</b> dalle{" "}
-              {format(new Date(user.events[0].startDate), "HH:mm", {
-                locale: it,
-              })}{" "}
-              alle{" "}
-              {format(new Date(user.events[0].endDate), "HH:mm", {
-                locale: it,
-              })}
-            </h4>
-            <button>Unisciti</button>
-          </div>
-          <div className="event">
-            <h4>
-              {user.events[0].teacher.name} {user.events[0].teacher.surname}:{" "}
-              <b>{user.events[0].course.name}</b> dalle{" "}
-              {format(new Date(user.events[0].startDate), "HH:mm", {
-                locale: it,
-              })}{" "}
-              alle{" "}
-              {format(new Date(user.events[0].endDate), "HH:mm", {
-                locale: it,
-              })}
-            </h4>
-            <button>Unisciti</button>
-          </div>
+          {user.events.length !== 0 && (
+            <div>
+              <div className="event">
+                <h4>
+                  {user.events[0].teacher.name} {user.events[0].teacher.surname}
+                  : <b>{user.events[0].course.name}</b> dalle{" "}
+                  {format(new Date(user.events[0].startDate), "HH:mm", {
+                    locale: it,
+                  })}{" "}
+                  alle{" "}
+                  {format(new Date(user.events[0].endDate), "HH:mm", {
+                    locale: it,
+                  })}
+                </h4>
+                <button>Unisciti</button>
+              </div>
+              <div className="event">
+                <h4>
+                  {user.events[0].teacher.name} {user.events[0].teacher.surname}
+                  : <b>{user.events[0].course.name}</b> dalle{" "}
+                  {format(new Date(user.events[0].startDate), "HH:mm", {
+                    locale: it,
+                  })}{" "}
+                  alle{" "}
+                  {format(new Date(user.events[0].endDate), "HH:mm", {
+                    locale: it,
+                  })}
+                </h4>
+                <button>Unisciti</button>
+              </div>
+            </div>
+          )}
         </div>
         <div className="crediti card">
           <h3>Crediti residui</h3>
