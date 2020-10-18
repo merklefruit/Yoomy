@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Redux
 import { connect } from "react-redux";
@@ -34,7 +35,11 @@ const PerTeNextEvents = ({ user }) => {
             <div className="event-card">
               <div>
                 <h3>
-                  Buongiorno {user.username}! <br />
+                  Buongiorno{" "}
+                  <span role="img" aria-label="stars">
+                    ✨{" "}
+                  </span>
+                  <br />
                   La tua prossima lezione è{" "}
                   <span>{user.events[0].course.name}</span> con{" "}
                   <span>
@@ -62,9 +67,11 @@ const PerTeNextEvents = ({ user }) => {
             </div>
             <div className="calendar">
               <Calendar />
-              <button>
-                Vai al <b>calendario</b>
-              </button>
+              <Link to="/app/calendario">
+                <button>
+                  Vai al <b>calendario</b>
+                </button>
+              </Link>
             </div>
           </NextEvents>
         </>

@@ -20,7 +20,7 @@ const PerTeGridSection = ({ user }) => {
     <Container>
       <GridHeading>
         <h2>
-          <CgMediaLive /> Lezioni Live ora
+          <CgMediaLive className="live-icon" /> Lezioni Live ora
         </h2>
       </GridHeading>
       <GridSection>
@@ -59,12 +59,14 @@ const PerTeGridSection = ({ user }) => {
           <h3>Crediti residui</h3>
           <div className="inner">
             <h4>{user.credits}</h4>
+            <button>Ricarica</button>
           </div>
         </div>
         <div className="obiettivo card">
           <h3>Obiettivo settimanale</h3>
           <div className="inner">
             <h4>1/3h</h4>
+            <button>Personalizza</button>
           </div>
         </div>
       </GridSection>

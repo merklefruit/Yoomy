@@ -25,6 +25,9 @@ import {
   EventGridSection,
 } from "../../../styles/_app/calendarStyles.js";
 
+// Assets
+import Empty from "../../../assets/svg/Empty";
+
 const CalendarioList = ({ fetchDailyEvents, dailyEvents, user }) => {
   const [date, setDate] = useState(new Date());
 
@@ -59,6 +62,12 @@ const CalendarioList = ({ fetchDailyEvents, dailyEvents, user }) => {
                   )}.`}
               {!date && "Seleziona un giorno sul calendario"}
             </h2>
+
+            {dailyEvents && dailyEvents.length === 0 && (
+              <div className="empty">
+                <Empty />
+              </div>
+            )}
 
             {dailyEvents && date
               ? dailyEvents.map((event) =>

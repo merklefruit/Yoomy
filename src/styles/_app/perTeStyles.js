@@ -22,10 +22,13 @@ export const NextEvents = styled.div`
   display: grid;
   grid-template-columns: 1fr 25%;
   gap: 2.5rem;
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr;
+  }
 
   .event-card {
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 4px;
     box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.05);
     background: white;
     color: ${(props) => props.theme.text};
@@ -37,6 +40,10 @@ export const NextEvents = styled.div`
       line-height: 130%;
       font-size: 1.3rem;
       margin: 0;
+
+      @media (max-width: 1100px) {
+        font-size: 1.2rem;
+      }
 
       span {
         font-weight: 500;
@@ -68,9 +75,13 @@ export const NextEvents = styled.div`
   }
 
   .calendar {
+    @media (max-width: 1100px) {
+      display: none;
+    }
+
     background: white;
     box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.05);
-    border-radius: 12px;
+    border-radius: 4px;
     position: relative;
     display: grid;
     place-items: center;
@@ -79,6 +90,12 @@ export const NextEvents = styled.div`
       margin-left: 15px;
       width: 45%;
     }
+
+    a {
+      width: 100%;
+      text-align: center;
+    }
+
     button {
       margin-top: 8px;
       padding: 10px;
@@ -107,6 +124,10 @@ export const GridHeading = styled.div`
     font-weight: 400;
     color: ${(props) => props.theme.text};
   }
+
+  .live-icon {
+    color: red;
+  }
 `;
 
 export const GridSection = styled.div`
@@ -118,7 +139,7 @@ export const GridSection = styled.div`
   .card {
     background: white;
     box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.05);
-    border-radius: 12px;
+    border-radius: 4px;
     position: relative;
     padding: 20px;
 
@@ -140,7 +161,6 @@ export const GridSection = styled.div`
 
   .live-ora {
     .event {
-      background: rgba(0, 0, 0, 0.05);
       border-radius: 12px;
       margin-bottom: 10px;
       padding-left: 20px;

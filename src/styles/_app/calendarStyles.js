@@ -52,9 +52,16 @@ export const Picker = styled.div`
 
 export const EventGridSection = styled.div`
   h2 {
+    color: ${(props) => props.theme.text};
     margin-top: 0;
-    font-family: "Montserrat";
+    font-family: "DM Sans";
     font-weight: 500;
+  }
+  .empty {
+    svg {
+      margin-top: 20px;
+      max-width: 400px;
+    }
   }
 `;
 
