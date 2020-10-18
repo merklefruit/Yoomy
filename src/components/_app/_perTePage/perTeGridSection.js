@@ -4,6 +4,10 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
+// Dates
+import { format } from "date-fns";
+import { it } from "date-fns/locale";
+
 // Styled components
 import { Container } from "../../../styles/globalStyles";
 import { GridSection, GridHeading } from "../../../styles/_app/perTeStyles";
@@ -20,14 +24,48 @@ const PerTeGridSection = ({ user }) => {
         </h2>
       </GridHeading>
       <GridSection>
-        <div className="live-ora">
-          <h3>Lista eventi live</h3>
+        <div className="live-ora card">
+          {/* map ongoing events here */}
+          <div className="event">
+            <h4>
+              {user.events[0].teacher.name} {user.events[0].teacher.surname}:{" "}
+              <b>{user.events[0].course.name}</b> dalle{" "}
+              {format(new Date(user.events[0].startDate), "HH:mm", {
+                locale: it,
+              })}{" "}
+              alle{" "}
+              {format(new Date(user.events[0].endDate), "HH:mm", {
+                locale: it,
+              })}
+            </h4>
+            <button>Unisciti</button>
+          </div>
+          <div className="event">
+            <h4>
+              {user.events[0].teacher.name} {user.events[0].teacher.surname}:{" "}
+              <b>{user.events[0].course.name}</b> dalle{" "}
+              {format(new Date(user.events[0].startDate), "HH:mm", {
+                locale: it,
+              })}{" "}
+              alle{" "}
+              {format(new Date(user.events[0].endDate), "HH:mm", {
+                locale: it,
+              })}
+            </h4>
+            <button>Unisciti</button>
+          </div>
         </div>
-        <div className="crediti">
+        <div className="crediti card">
           <h3>Crediti residui</h3>
+          <div className="inner">
+            <h4>{user.credits}</h4>
+          </div>
         </div>
-        <div className="obiettivo">
+        <div className="obiettivo card">
           <h3>Obiettivo settimanale</h3>
+          <div className="inner">
+            <h4>1/3h</h4>
+          </div>
         </div>
       </GridSection>
     </Container>

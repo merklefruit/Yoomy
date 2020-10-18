@@ -111,31 +111,70 @@ export const GridHeading = styled.div`
 
 export const GridSection = styled.div`
   display: grid;
-  grid-template-columns: 60% 1fr 1fr;
+  grid-template-columns: 45% 1fr 1fr;
+  gap: 2.5rem;
+  color: ${(props) => props.theme.text};
 
-  .live-ora {
+  .card {
     background: white;
     box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.05);
     border-radius: 12px;
     position: relative;
-
     padding: 20px;
+
+    h3 {
+      margin: 0;
+      font-weight: 500;
+    }
+
+    button {
+      padding: 10px;
+      width: 80%;
+      border: none;
+      border-radius: 12px;
+      color: ${(props) => props.theme.text};
+      background: ${(props) => props.theme.beige};
+      cursor: pointer;
+    }
+  }
+
+  .live-ora {
+    .event {
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 12px;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      display: flex;
+      align-items: center;
+
+      button {
+        width: 100px;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      h4 {
+        font-weight: 400;
+      }
+    }
   }
 
   .crediti {
-    background: white;
-    box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.05);
-    border-radius: 12px;
-    position: relative;
-
-    padding: 20px;
   }
-  .obiettivo {
-    background: white;
-    box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.05);
-    border-radius: 12px;
-    position: relative;
 
-    padding: 20px;
+  .obiettivo {
+  }
+
+  .inner {
+    text-align: center;
+    h4 {
+      color: ${(props) => props.theme.primary};
+      margin-top: 15px;
+      margin-bottom: 15px;
+      font-size: 3rem;
+      font-weight: 400;
+    }
   }
 `;
