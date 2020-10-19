@@ -33,7 +33,7 @@ const App = ({ isAuthenticated, loading, user }) => {
   return (
     <>
       <Helmet>
-        <title>Yooga.</title>
+        <title>Yoomy.</title>
         <meta charSet="utf-8" />
       </Helmet>
       <React.Suspense fallback={<FullPageSpinner />}>
