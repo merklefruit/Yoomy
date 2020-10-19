@@ -42,7 +42,7 @@ export const HeaderNav = styled.div`
 `;
 
 export const LinkSection = styled.div`
-  font-family: "Montserrat";
+  font-family: "DM Sans";
   margin-left: 20px;
   z-index: 100;
   display: flex;

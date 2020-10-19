@@ -30,12 +30,12 @@ function Header({ toggleMenu, setToggleMenu }) {
               </Link>
             </motion.div>
             <LinkSection>
-              {/* <Link to="/manifesto">
+              {/* <NavLink to="/manifesto">
                 <p>Manifesto</p>
-              </Link> */}
+              </NavLink> 
               <NavLink to="/beta">
                 <p>Beta</p>
-              </NavLink>
+              </NavLink>*/}
               <NavLink to="/prezzi">
                 <p>Prezzi</p>
               </NavLink>

@@ -36,7 +36,7 @@ export const PriceCards = styled.div`
   }
 
   .price-card {
-    background: #fffcf7;
+    background: #fff;
     height: 500px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 2px 2px rgba(0, 0, 0, 0.04),
       0 3px 3px rgba(0, 0, 0, 0.04), 0 5px 5px rgba(0, 0, 0, 0.04),
@@ -167,85 +167,8 @@ export const PriceCards = styled.div`
   }
 `;
 
-// Banner
+// Features
 
-export const Banner = styled.div`
-  position: relative;
-  color: ${(props) => props.theme.text};
-  width: 100%;
-  margin-top: 40px;
-  background: #f0fffe;
-
-  .features {
-    margin-top: 50px;
-
-    .feature {
-      padding-top: 50px;
-      padding-bottom: 50px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      border: none;
-
-      @media (max-width: 1000px) {
-        grid-template-columns: 1fr;
-        padding-bottom: 0;
-      }
-
-      .feat-part {
-        height: 400px;
-      }
-
-      .image {
-        svg {
-          max-width: 400px;
-        }
-
-        text-align: center;
-      }
-
-      .text {
-        @media (max-width: 1000px) {
-          margin-top: 0;
-        }
-
-        h2 {
-          margin-top: 0;
-          padding-top: 150px;
-        }
-        h3 {
-          margin-top: 0;
-
-          font-size: 1.55rem;
-          font-weight: 400;
-        }
-      }
-    }
-  }
-
-  .cta {
-    position: absolute;
-    display: flex;
-    align-content: center;
-    top: 70px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    font-size: 1.15rem;
-
-    p {
-      a {
-        margin-left: 10px;
-        color: ${(props) => props.theme.primaryDarker};
-        border-bottom: 1px solid ${(props) => props.theme.primaryDarker};
-        padding-bottom: 1px;
-
-        &:hover {
-          color: black;
-          border-color: black;
-          cursor: pointer;
-        }
-      }
-    }
-  }
+export const Feature1 = styled.div`
+  height: 200px;
 `;

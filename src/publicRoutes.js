@@ -19,11 +19,11 @@ function Routes() {
     <Layout>
       <Switch>
         <Route exact path="/" component={homePage} />
-        <Route exact path="/manifesto" component={manifestoPage} />
         <Route exact path="/prezzi" component={prezziPage} />
         <Route exact path="/contatti" component={contattiPage} />
 
         <Route exact path="/beta" component={BetaPage} />
+        <Route exact path="/manifesto" component={manifestoPage} />
 
         <Route exact path="/login" component={Login} />
         <Route exact path="/registrati" component={Registrati} />

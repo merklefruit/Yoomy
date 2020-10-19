@@ -286,6 +286,9 @@ export const Card = styled(motion.div)`
   @media (max-width: 900px) {
     width: 100%;
     margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  @media (max-width: 500px) {
     margin-bottom: 20px;
   }
 
@@ -295,9 +298,11 @@ export const Card = styled(motion.div)`
     object-fit: cover;
 
     @media (max-width: 900px) {
-      width: 85%;
-      opacity: 1;
-      z-index: 0;
+      display: none;
+    }
+    @media (max-width: 500px) {
+      display: block;
+      width: 100%;
     }
   }
 

@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // Components
 import Header from "./header";
 import Navigation from "./navigation";
+import MainFooter from "./mainFooter";
 
 // Global style definition
 const GlobalStyle = createGlobalStyle`
@@ -51,32 +52,6 @@ const variants = {
 };
 
 const Layout = ({ children }) => {
-  // const lightTheme = {
-  //   primary: "#264653",
-  //   secondary: "#aed9e0",
-  //   yellow: "#FBE064",
-  //   orange: "#f4a261",
-  //   darkblue: "#1d3557",
-  //   blue: "#457b9d",
-  //   text: "#3C3838",
-  //   background: "#fbfefb",
-  //   violet: "#2A265F",
-  //   lightgray: "#737373",
-  // };
-
-  // const warmTheme = {
-  //   primary: "#5e6472",
-  //   secondary: "#efe5dc",
-  //   yellow: "#FBE064",
-  //   orange: "#d69f7e",
-  //   darkblue: "#efe5dc",
-  //   blue: "#d0b8ac",
-  //   text: "#454545",
-  //   background: "#fbfefb",
-  //   violet: "#2A265F",
-  //   lightgray: "#737373",
-  // };
-
   const lightTheme = {
     primary: "#264653",
     primaryDarker: "#1d3557",
@@ -110,6 +85,7 @@ const Layout = ({ children }) => {
           {children}
         </motion.main>
       </AnimatePresence>
+      <MainFooter />
     </ThemeProvider>
   );
 };
