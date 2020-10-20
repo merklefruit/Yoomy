@@ -57,6 +57,9 @@ const MacbookSection = () => {
               <br />
               Richiedi ora l’accesso anticipato per usufruire di uno sconto*.
             </h3>
+            <p>
+              * -20% sull'acquisto dei pacchetti per tutto il periodo di Beta
+            </p>
           </div>
         </Container>
       </Background>
@@ -68,15 +71,7 @@ export default MacbookSection;
 
 const MBSection = styled.div`
   overflow-x: hidden;
-
-  margin-top: 80px;
-
-  @media (max-width: 800px) {
-    margin-top: 50px;
-  }
-  @media (max-width: 500px) {
-    margin-top: 35px;
-  }
+  margin-top: 30px;
 `;
 
 const Heading = styled.div`
@@ -163,6 +158,7 @@ const Background = styled.div`
     }
 
     h3 {
+      margin-bottom: 0;
       font-family: "DM Sans";
       font-weight: 300;
       font-size: 2.5rem;

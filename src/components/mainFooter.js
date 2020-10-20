@@ -44,11 +44,6 @@ const columns = [
         url: "/termini-e-condizioni",
         openExternal: false,
       },
-      {
-        title: "Home 2",
-        url: "/",
-        openExternal: false,
-      },
     ],
   },
   {

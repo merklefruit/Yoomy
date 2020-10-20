@@ -9,12 +9,15 @@ const FreeTrial = () => {
     <Container>
       <TrialSection>
         <div className="pic">
-          <p>Foto di qualcuno che fa yoga col computer davanti</p>
+          <img
+            src={require("../../assets/images/HomeYogaIllustration.png")}
+            alt="online yoga at home"
+          />
         </div>
         <div className="text">
           <h2>Prova una lezione gratuita</h2>
           <h3>
-            <span>12</span> crediti gratis per te!
+            <span>12</span> crediti gratis se ti iscrivi adesso.
           </h3>
           <small>(invece di 0,99€ ciascuno)</small>
         </div>
@@ -26,19 +29,39 @@ const FreeTrial = () => {
 export default FreeTrial;
 
 const TrialSection = styled.div`
+  margin-top: 35px;
+  margin-bottom: 35px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  place-items: center;
+  grid-template-columns: 55% 45%;
+  gap: 1rem;
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr;
+  }
+
   color: ${(props) => props.theme.text};
   min-height: 400px;
 
   .pic {
+    @media (max-width: 1000px) {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
     img {
       max-width: 100%;
+      @media (max-width: 1000px) {
+        width: auto;
+      }
     }
   }
   .text {
+    margin-left: 35px;
+    @media (max-width: 1000px) {
+      margin-left: 0;
+    }
+
     h2 {
+      font-family: "DM Sans";
       font-size: 2rem;
       margin: 0;
       font-weight: 500;
