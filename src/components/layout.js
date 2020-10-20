@@ -61,6 +61,7 @@ const Layout = ({ children }) => {
     accent: "#2b2d42",
     accent_variant: "#8d99ae",
     background: "#fbfefb",
+    background2: "#f5f4f0",
     text: "#454545",
     lightgray: "#D4D6D5",
     pastelBlue: "#caf0f8",

@@ -5,10 +5,13 @@ import Layout from "./components/layout";
 
 // Marketing Routes
 import homePage from "./pages/homePage";
-import manifestoPage from "./pages/manifestoPage";
 import prezziPage from "./pages/prezziPage";
 import contattiPage from "./pages/contattiPage";
+
+// Temporary Routes
+import manifestoPage from "./pages/manifestoPage";
 import BetaPage from "./pages/betaPage";
+import HomePage2 from "./pages/homePage2";
 
 // Additional Routes
 import PrivacyPage from "./pages/privacyPage";
@@ -34,6 +37,8 @@ function Routes() {
 
         <Route exact path="/login" component={Login} />
         <Route exact path="/registrati" component={Registrati} />
+
+        <Route exact path="/2" component={HomePage2} />
 
         <Route>
           <Redirect to="/" />
