@@ -31,6 +31,7 @@ function PrivateRoutes({ fetchTeachers, fetchCourses, user }) {
     fetchCourses();
   });
 
+  // Analytics: User tracking:
   useEffect(() => {
     if (user) {
       window.splitbee.user.set({ displayName: user.username });

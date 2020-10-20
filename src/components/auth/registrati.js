@@ -119,6 +119,7 @@ const Registrati = ({ register, isAuthenticated }) => {
                     whileTap={{ scale: 0.98 }}
                     type="submit"
                     disabled={isSubmitting}
+                    data-splitbee-event="User Signup"
                   >
                     Registrati
                   </LoginButton>

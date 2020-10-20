@@ -80,6 +80,7 @@ const Login = ({ login, isAuthenticated }) => {
                     whileTap={{ scale: 0.98 }}
                     type="submit"
                     disabled={isSubmitting}
+                    data-splitbee-event="User Login"
                   >
                     Login
                   </LoginButton>

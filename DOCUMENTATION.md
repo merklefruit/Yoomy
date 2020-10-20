@@ -96,3 +96,13 @@ useEffect(() => {
 **Note:** _privateRoutes_ and _publicRoutes_ are two different routers, and only one router gets loaded each time the user visits the website, based on the requested page. This boosts performance a lot, especially for the marketing pages.
 
 **Important:** this app uses _multiple layouts_. The main layout is found in /components/layout.js and is responsible for the layout of the marketing pages. The app has its own custom layout defined in /components/\_app/layout.js and the teacher UI has its own, in /components/\_teachers/layout.js.
+
+## Analytics
+
+Yoomy makes use of Splitbee as analytics provider.
+We use this information to track users and what they do.
+
+In particular, we currently track these Events:
+
+- "User Signup"
+- "User Login"
