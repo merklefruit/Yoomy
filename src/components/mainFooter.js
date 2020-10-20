@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // rc-footer
 import Footer from "rc-footer";
@@ -119,7 +120,11 @@ function MainFooter() {
       style={{ fontFamily: "DM Sans" }}
       theme="light"
       backgroundColor="#e9ecef"
-      bottom={<b>Yoomy ©2020. Tutti i diritti riservati.</b>}
+      bottom={
+        <b>
+          <Link to="/home2">Yoomy</Link> ©2020. Tutti i diritti riservati.
+        </b>
+      }
     />
   );
 }

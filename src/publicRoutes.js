@@ -10,12 +10,12 @@ import contattiPage from "./pages/contattiPage";
 
 // Temporary Routes
 import manifestoPage from "./pages/manifestoPage";
-import BetaPage from "./pages/betaPage";
-import HomePage2 from "./pages/homePage2";
+import betaPage from "./pages/betaPage";
+import homePage2 from "./pages/homePage2";
 
 // Additional Routes
-import PrivacyPage from "./pages/privacyPage";
-import TermsPage from "./pages/termsPage";
+import privacyPage from "./pages/privacyPage";
+import termsPage from "./pages/termsPage";
 
 // Auth Routes
 import Login from "./components/auth/login";
@@ -25,16 +25,16 @@ function Routes() {
   return (
     <Layout>
       <Switch>
-        <Route exact path="/" component={homePage} />
+        <Route exact path="/" component={homePage2} />
         <Route exact path="/prezzi" component={prezziPage} />
         <Route exact path="/contatti" component={contattiPage} />
 
-        <Route exact path="/beta" component={BetaPage} />
+        <Route exact path="/beta" component={betaPage} />
         <Route exact path="/manifesto" component={manifestoPage} />
-        <Route exact path="/home2" component={HomePage2} />
+        <Route exact path="/home2" component={homePage} />
 
-        <Route exact path="/privacy" component={PrivacyPage} />
-        <Route exact path="/termini-e-condizioni" component={TermsPage} />
+        <Route exact path="/privacy" component={privacyPage} />
+        <Route exact path="/termini-e-condizioni" component={termsPage} />
 
         <Route exact path="/login" component={Login} />
         <Route exact path="/registrati" component={Registrati} />
