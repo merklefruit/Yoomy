@@ -42,6 +42,9 @@ function Header({ toggleMenu, setToggleMenu }) {
               <NavLink to="/contatti">
                 <p>Contatti</p>
               </NavLink>
+              <NavLink to="/home2">
+                <p>Home nuova</p>
+              </NavLink>
             </LinkSection>
           </FlexRow>
           <FlexRow>
