@@ -31,14 +31,13 @@ function Routes() {
 
         <Route exact path="/beta" component={BetaPage} />
         <Route exact path="/manifesto" component={manifestoPage} />
+        <Route exact path="/2" component={HomePage2} />
 
         <Route exact path="/privacy" component={PrivacyPage} />
         <Route exact path="/termini-e-condizioni" component={TermsPage} />
 
         <Route exact path="/login" component={Login} />
         <Route exact path="/registrati" component={Registrati} />
-
-        <Route exact path="/2" component={HomePage2} />
 
         <Route>
           <Redirect to="/" />
