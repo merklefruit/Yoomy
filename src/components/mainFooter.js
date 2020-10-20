@@ -24,11 +24,6 @@ const columns = [
     title: "Piattaforma",
     items: [
       {
-        title: "Home",
-        url: "/",
-        openExternal: false,
-      },
-      {
         title: "Beta",
         url: "/beta",
         openExternal: false,
@@ -36,6 +31,16 @@ const columns = [
       {
         title: "Prezzi",
         url: "/prezzi",
+        openExternal: false,
+      },
+      {
+        title: "Politica di Privacy",
+        url: "/privacy",
+        openExternal: false,
+      },
+      {
+        title: "Termini e Condizioni",
+        url: "/termini-e-condizioni",
         openExternal: false,
       },
     ],

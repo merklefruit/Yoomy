@@ -10,6 +10,10 @@ import prezziPage from "./pages/prezziPage";
 import contattiPage from "./pages/contattiPage";
 import BetaPage from "./pages/betaPage";
 
+// Additional Routes
+import PrivacyPage from "./pages/privacyPage";
+import TermsPage from "./pages/termsPage";
+
 // Auth Routes
 import Login from "./components/auth/login";
 import Registrati from "./components/auth/registrati";
@@ -24,6 +28,9 @@ function Routes() {
 
         <Route exact path="/beta" component={BetaPage} />
         <Route exact path="/manifesto" component={manifestoPage} />
+
+        <Route exact path="/privacy" component={PrivacyPage} />
+        <Route exact path="/termini-e-condizioni" component={TermsPage} />
 
         <Route exact path="/login" component={Login} />
         <Route exact path="/registrati" component={Registrati} />
