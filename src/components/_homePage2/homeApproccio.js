@@ -44,7 +44,7 @@ const HomeApproccio = () => {
               <StepsLine />
             </div>
             <div className="content">
-              <p>Invita i tuoi amici e allenatevi assieme</p>
+              <p>Invita i tuoi amici per allenarvi assieme</p>
             </div>
           </div>
 
@@ -53,7 +53,7 @@ const HomeApproccio = () => {
               <span>4</span>
             </div>
             <div className="content">
-              <p>Entra nella stanza virtuale e svolgi la lezione comodamente</p>
+              <p>Entra nella stanza virtuale e svolgi la lezione</p>
             </div>
           </div>
         </div>

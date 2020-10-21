@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import Live from "../../assets/svg/Live";
 
 // Styled components
@@ -14,7 +15,13 @@ const HomeHero = () => {
             <h1>
               Fai Yoga da casa e interagisci con gli istruttori, con semplicità{" "}
             </h1>
-            <button>Prova Gratis</button>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.1 }}
+            >
+              Prova Gratis
+            </motion.button>
             <Live />
           </div>
           <div className="heroyoga">
@@ -69,6 +76,7 @@ const Hero = styled.div`
     }
 
     button {
+      cursor: pointer;
       padding: 11px 45px;
       background: #ea6e6b;
       border: none;
@@ -79,6 +87,9 @@ const Hero = styled.div`
       box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.07);
       @media (max-width: 830px) {
         font-size: 1rem;
+      }
+      &:focus {
+        outline: none;
       }
     }
   }
