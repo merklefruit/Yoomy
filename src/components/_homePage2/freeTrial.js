@@ -4,15 +4,15 @@ import styled from "styled-components";
 // Styled components
 import { Container } from "../../styles/globalStyles";
 
+// Assets
+import HomeYoga from "../../assets/svg/HomeYoga";
+
 const FreeTrial = () => {
   return (
     <Container>
       <TrialSection>
         <div className="pic">
-          <img
-            src={require("../../assets/images/HomeYogaIllustration.png")}
-            alt="online yoga at home"
-          />
+          <HomeYoga />
         </div>
         <div className="text">
           <h2>Prova una lezione gratuita</h2>
@@ -47,7 +47,7 @@ const TrialSection = styled.div`
       margin-bottom: 20px;
     }
 
-    img {
+    svg {
       max-width: 100%;
       @media (max-width: 1000px) {
         width: auto;
