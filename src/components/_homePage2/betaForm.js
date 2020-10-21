@@ -16,7 +16,7 @@ const BetaForm = () => {
           </h2>
         </div>
         <BForm>
-          <form data-netlify="true">
+          <form name="beta" data-netlify="true">
             <input type="text" name="nome" placeholder="Il tuo nome:" />
             <input type="email" name="email" placeholder="La tua email:" />
             <motion.button
