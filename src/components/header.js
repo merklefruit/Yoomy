@@ -39,9 +39,9 @@ function Header({ toggleMenu, setToggleMenu }) {
               <NavLink to="/prezzi">
                 <p>Prezzi</p>
               </NavLink>
-              <NavLink to="/contatti">
+              {/* <NavLink to="/contatti">
                 <p>Contatti</p>
-              </NavLink>
+              </NavLink> */}
             </LinkSection>
           </FlexRow>
           <FlexRow>

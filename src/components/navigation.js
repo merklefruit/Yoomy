@@ -79,7 +79,7 @@ function Navigation({ toggleMenu, setToggleMenu }) {
                     </Link>
                   </motion.li> */}
 
-                  <motion.li>
+                  {/* <motion.li>
                     <Link to="/beta" onClick={() => setToggleMenu(!toggleMenu)}>
                       <motion.div
                         className="link"
@@ -105,7 +105,7 @@ function Navigation({ toggleMenu, setToggleMenu }) {
                         Beta
                       </motion.div>
                     </Link>
-                  </motion.li>
+                  </motion.li> */}
 
                   <motion.li>
                     <Link
@@ -138,7 +138,7 @@ function Navigation({ toggleMenu, setToggleMenu }) {
                     </Link>
                   </motion.li>
 
-                  <motion.li>
+                  {/* <motion.li>
                     <Link
                       to="/contatti"
                       onClick={() => setToggleMenu(!toggleMenu)}
@@ -167,7 +167,7 @@ function Navigation({ toggleMenu, setToggleMenu }) {
                         Contatti
                       </motion.div>
                     </Link>
-                  </motion.li>
+                  </motion.li> */}
 
                   <motion.li>
                     <Link
