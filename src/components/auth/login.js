@@ -29,7 +29,7 @@ const Login = ({ login, isAuthenticated }) => {
         <AuthCard>
           <BackgroundImage>
             <img
-              src={require("../../assets/images/hero-image.jpg")}
+              src={require("../../assets/images/login-image.jpg")}
               alt="login-hero"
             />
           </BackgroundImage>

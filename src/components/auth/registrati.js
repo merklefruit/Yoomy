@@ -28,7 +28,7 @@ const Registrati = ({ register, isAuthenticated }) => {
         <AuthCard>
           <BackgroundImage>
             <img
-              src={require("../../assets/images/login-image.jpg")}
+              src={require("../../assets/images/signup-image.jpg")}
               alt="register-hero"
             />
           </BackgroundImage>
