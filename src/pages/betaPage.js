@@ -26,7 +26,7 @@ const BetaPage = () => {
       </BetaHero>
       <BetaForm>
         <Container>
-          <form name="beta-signup" netlify>
+          <form name="beta-signup" method="POST" data-netlify="true">
             <p>
               <label>
                 Nome: <input type="text" name="nome" />
@@ -34,7 +34,7 @@ const BetaPage = () => {
             </p>
             <p>
               <label>
-                Cognome: <input type="text" name="nome" />
+                Cognome: <input type="text" name="cognome" />
               </label>
             </p>
             <p>
@@ -45,7 +45,7 @@ const BetaPage = () => {
             <p>
               <label>
                 Telefono:
-                <input type="number" name="referral" />
+                <input type="number" name="telefono" />
               </label>
             </p>
             <p>

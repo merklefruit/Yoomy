@@ -58,6 +58,7 @@ const Layout = ({ children }) => {
     secondary: "#e9ecef",
     banners: "#457b9d",
     buttons: "#FBE064",
+    buttons2: "#ea6e6b",
     accent: "#2b2d42",
     accent_variant: "#8d99ae",
     background: "#fbfefb",

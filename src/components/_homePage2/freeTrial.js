@@ -15,11 +15,18 @@ const FreeTrial = () => {
           <HomeYoga />
         </div>
         <div className="text">
-          <h2>Prova una lezione gratuita</h2>
-          <h3>
-            <span>12</span> crediti gratis se ti iscrivi adesso.
-          </h3>
-          <small>(invece di 0,99€ ciascuno)</small>
+          <div>
+            <h2>Inizia Gratis</h2>
+            <h3>
+              Per il periodo di Beta, offriamo lezioni gratis per testare la
+              piattaforma.
+            </h3>
+            <h3>
+              Se ti interessa, puoi scriverci a{" "}
+              <a href="mailto:beta@yoomy.it">beta@yoomy.it</a> oppure lasciaci
+              la tua email nel form <a href="#form">qui sotto</a>.
+            </h3>
+          </div>
         </div>
       </TrialSection>
     </Container>
@@ -55,18 +62,21 @@ const TrialSection = styled.div`
     }
   }
   .text {
+    display: grid;
+    place-items: center;
+
     margin-left: 35px;
     @media (max-width: 1000px) {
       margin-left: 0;
     }
 
     h2 {
+      margin: 0;
       font-family: "DM Sans";
       font-size: 2rem;
-      margin: 0;
       font-weight: 500;
-      @media (max-width: 500px) {
-        font-size: 1.8rem;
+      @media (max-width: 700px) {
+        font-size: 1.7rem;
       }
     }
 
@@ -74,11 +84,18 @@ const TrialSection = styled.div`
       margin: 0;
       margin-top: 10px;
       font-size: 1.5rem;
+      @media (max-width: 700px) {
+        font-size: 1.3rem;
+      }
       font-weight: 400;
+      line-height: 150%;
 
-      span {
-        font-size: 2.4rem;
-        margin-right: 2px;
+      a {
+        color: ${(props) => props.theme.primary};
+        font-weight: 500;
+        &:hover {
+          color: black;
+        }
       }
     }
     small {

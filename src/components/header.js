@@ -36,9 +36,9 @@ function Header({ toggleMenu, setToggleMenu }) {
               <NavLink to="/beta">
                 <p>Beta</p>
               </NavLink>*/}
-              <NavLink to="/prezzi">
+              {/* <NavLink to="/prezzi">
                 <p>Prezzi</p>
-              </NavLink>
+              </NavLink> */}
               {/* <NavLink to="/contatti">
                 <p>Contatti</p>
               </NavLink> */}

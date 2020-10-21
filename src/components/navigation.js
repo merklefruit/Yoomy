@@ -107,7 +107,7 @@ function Navigation({ toggleMenu, setToggleMenu }) {
                     </Link>
                   </motion.li> */}
 
-                  <motion.li>
+                  {/* <motion.li>
                     <Link
                       to="/prezzi"
                       onClick={() => setToggleMenu(!toggleMenu)}
@@ -136,7 +136,7 @@ function Navigation({ toggleMenu, setToggleMenu }) {
                         Prezzi
                       </motion.div>
                     </Link>
-                  </motion.li>
+                  </motion.li> */}
 
                   {/* <motion.li>
                     <Link

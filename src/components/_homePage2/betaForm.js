@@ -1,42 +1,31 @@
 import React from "react";
 import styled from "styled-components";
-import { Container } from "../../styles/globalStyles";
+import { motion } from "framer-motion";
 
 // Styled components
+import { Container } from "../../styles/globalStyles";
 
 const BetaForm = () => {
   return (
     <Background>
-      <Container>
+      <Container id="form">
         <div className="cta">
-          <h2>Ottieni l'accesso anticipato!</h2>
+          <h2>
+            Aggiungiti alle <b>5245</b> persone che hanno già richiesto
+            l'accesso anticipato a Yoomy.
+          </h2>
         </div>
         <BForm>
-          <form>
-            <input
-              type="text"
-              name="name"
-              className="question"
-              id="nme"
-              required
-              autoComplete="off"
-            />
-            <label htmlFor="nme">
-              <span>Il tuo nome:</span>
-            </label>
-            <input
-              type="email"
-              name="email"
-              className="question email"
-              id="email"
-              required
-              autoComplete="off"
-            />
-            <label htmlFor="email">
-              <span>La tua email:</span>
-            </label>
-
-            <input type="submit" value="Richiedi l'accesso" />
+          <form data-netlify="true">
+            <input type="text" name="nome" placeholder="Il tuo nome:" />
+            <input type="email" name="email" placeholder="La tua email:" />
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              type="submit"
+            >
+              Richiedi accesso
+            </motion.button>
           </form>
         </BForm>
       </Container>
@@ -54,159 +43,79 @@ const Background = styled.div`
     padding-top: 40px;
 
     h2 {
+      text-align: center;
       margin: 0;
       font-family: "DM Sans";
-      font-size: 2.5rem;
+      font-size: 2.4rem;
       font-weight: 500;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
 
-      @media (max-width: 500px) {
+      @media (max-width: 750px) {
+        font-size: 2.2rem;
+      }
+
+      @media (max-width: 600px) {
         font-size: 2rem;
+      }
+
+      @media (max-width: 400px) {
+        font-size: 1.8rem;
       }
     }
   }
 `;
 
 const BForm = styled.div`
-  padding-top: 50px;
+  color: ${(props) => props.theme.text};
+  margin-top: 30px;
   padding-bottom: 50px;
 
-  input,
-  span,
-  label,
-  textarea {
-    font-family: "Ubuntu", sans-serif;
-    display: block;
-    margin: 10px;
-    padding: 5px;
-    border: none;
-    font-size: 22px;
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
   }
+  input {
+    font-family: "DM Sans";
 
-  textarea:focus,
-  input:focus {
-    outline: 0;
+    font-size: 1.1rem;
+    padding: 7px 10px;
+    margin: 9px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+
+    &:focus {
+      outline-color: ${(props) => props.theme.primary};
+    }
   }
-  /* Question */
-
-  input.question,
-  textarea.question {
-    font-size: 48px;
-    font-weight: 300;
-    border-radius: 2px;
-    margin: 0;
-    border: none;
-    width: 80%;
-    background: rgba(0, 0, 0, 0);
-    transition: padding-top 0.2s ease, margin-top 0.2s ease;
-    overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+  label {
+    font-size: 1.2rem;
   }
-  /* Underline and Placeholder */
+  button {
+    margin-top: 9px;
 
-  input.question + label,
-  textarea.question + label {
-    display: block;
-    position: relative;
-    white-space: nowrap;
-    padding: 0;
-    margin: 0;
-    width: 10%;
-    border-top: 1px solid red;
-    -webkit-transition: width 0.4s ease;
-    transition: width 0.4s ease;
-    height: 0px;
-  }
-
-  input.question:focus + label,
-  textarea.question:focus + label {
-    width: 100%;
-  }
-
-  input.question:focus,
-  input.question:valid {
-    padding-top: 35px;
-  }
-
-  textarea.question:valid,
-  textarea.question:focus {
-    margin-top: 35px;
-  }
-
-  input.question:focus + label > span,
-  input.question:valid + label > span {
-    top: -100px;
-    font-size: 22px;
-    color: #333;
-  }
-
-  textarea.question:focus + label > span,
-  textarea.question:valid + label > span {
-    top: -150px;
-    font-size: 22px;
-    color: #333;
-  }
-
-  input.question:valid + label,
-  textarea.question:valid + label {
-    border-color: green;
-  }
-
-  input.question:invalid,
-  textarea.question:invalid {
-    box-shadow: none;
-  }
-
-  input.question + label > span,
-  textarea.question + label > span {
-    font-weight: 300;
-    margin: 0;
-    position: absolute;
-    color: #8f8f8f;
-    font-size: 48px;
-    top: -66px;
-    left: 0px;
-    z-index: -1;
-    -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
-    transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
-  }
-
-  input[type="submit"] {
-    -webkit-transition: opacity 0.2s ease, background 0.2s ease;
-    transition: opacity 0.2s ease, background 0.2s ease;
-    display: block;
-    opacity: 0;
-    margin: 10px 0 0 0;
-    padding: 10px;
     cursor: pointer;
-  }
-
-  input[type="submit"]:hover {
-    background: #eee;
-  }
-
-  input[type="submit"]:active {
-    background: #999;
-  }
-
-  input.question:valid ~ input[type="submit"],
-  textarea.question:valid ~ input[type="submit"] {
-    -webkit-animation: appear 1s forwards;
-    animation: appear 1s forwards;
-  }
-
-  input.question:invalid ~ input[type="submit"],
-  textarea.question:invalid ~ input[type="submit"] {
-    display: none;
-  }
-
-  @-webkit-keyframes appear {
-    100% {
-      opacity: 1;
+    padding: 11px 0;
+    background: ${(props) => props.theme.buttons2};
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: 500;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.07);
+    @media (max-width: 830px) {
+      font-size: 1rem;
     }
-  }
-
-  @keyframes appear {
-    100% {
-      opacity: 1;
+    &:focus {
+      outline: none;
     }
+
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
   }
 `;

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 // Styled components
 import { Container } from "../../styles/globalStyles";
@@ -30,26 +31,38 @@ const MacbookSection = () => {
       <Background>
         <Container>
           <div className="bullets">
-            <div className="bullet">
+            <motion.div
+              whileHover={{ translateX: 50 }}
+              transition={{ duration: 0.4 }}
+              className="bullet"
+            >
               <div className="arrow">
                 <Arrow />
               </div>
               <h4>Desktop</h4>
-            </div>
+            </motion.div>
 
-            <div className="bullet">
+            <motion.div
+              whileHover={{ translateX: 50 }}
+              transition={{ duration: 0.4 }}
+              className="bullet"
+            >
               <div className="arrow">
                 <Arrow />
               </div>
               <h4>Tablet</h4>
-            </div>
+            </motion.div>
 
-            <div className="bullet">
+            <motion.div
+              whileHover={{ translateX: 50 }}
+              transition={{ duration: 0.4 }}
+              className="bullet"
+            >
               <div className="arrow">
                 <Arrow />
               </div>
               <h4>Mobile</h4>
-            </div>
+            </motion.div>
           </div>
           <div className="cta">
             <h3>

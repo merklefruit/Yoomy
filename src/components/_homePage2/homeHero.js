@@ -78,7 +78,7 @@ const Hero = styled.div`
     button {
       cursor: pointer;
       padding: 11px 45px;
-      background: #ea6e6b;
+      background: ${(props) => props.theme.buttons2};
       border: none;
       border-radius: 12px;
       color: white;

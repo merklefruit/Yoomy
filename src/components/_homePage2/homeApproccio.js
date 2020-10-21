@@ -1,14 +1,54 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 // Styled components
 import { Container } from "../../styles/globalStyles";
 
+// Scroll behavior
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
+
 // Assets
 import StepsLine from "../../assets/svg/StepsLine";
 import StepsLine2 from "../../assets/svg/StepsLine2";
 
+const variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const child = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.7,
+    },
+  },
+};
+
 const HomeApproccio = () => {
+  const animation = useAnimation();
+  const [Ref, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-100px",
+  });
+
+  useEffect(() => {
+    if (inView) {
+      animation.start("show");
+    }
+  }, [animation, inView]);
+
   return (
     <Container>
       <Approccio>
@@ -17,18 +57,24 @@ const HomeApproccio = () => {
             L'approccio <span>Yoomy</span>
           </h2>
         </div>
-        <div className="steps">
-          <div className="child">
-            <div className="flex c1">
+        <motion.div
+          ref={Ref}
+          variants={variants}
+          initial="hidden"
+          animate={animation}
+          className="steps"
+        >
+          <motion.div className="child">
+            <motion.div variants={child} className="flex c1">
               <span>1</span>
               <StepsLine />
-            </div>
+            </motion.div>
             <div className="content">
               <p>Scegli un corso che ti interessa tra le decine disponibili</p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="child">
+          <motion.div variants={child} className="child">
             <div className="flex c2">
               <span>2</span>
               <StepsLine2 />
@@ -36,9 +82,9 @@ const HomeApproccio = () => {
             <div className="content">
               <p>Iscriviti a una lezione che soddisfa le tue esigenze</p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="child">
+          <motion.div variants={child} className="child">
             <div className="flex c1">
               <span>3</span>
               <StepsLine />
@@ -46,17 +92,17 @@ const HomeApproccio = () => {
             <div className="content">
               <p>Invita i tuoi amici per allenarvi assieme</p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="child">
+          <motion.div variants={child} className="child">
             <div className="flex c2">
               <span>4</span>
             </div>
             <div className="content">
               <p>Entra nella stanza virtuale e svolgi la lezione</p>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </Approccio>
     </Container>
   );
