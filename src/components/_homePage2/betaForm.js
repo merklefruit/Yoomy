@@ -16,7 +16,12 @@ const BetaForm = () => {
           </h2>
         </div>
         <BForm>
-          <form name="beta" data-netlify="true" netlify-honeypot="bot-field">
+          <form
+            name="beta"
+            method="post"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
             <input type="hidden" name="form-name" value="beta" />
             <input
               type="text"
