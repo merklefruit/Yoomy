@@ -16,9 +16,20 @@ const BetaForm = () => {
           </h2>
         </div>
         <BForm>
-          <form name="beta" data-netlify="true">
-            <input type="text" name="nome" placeholder="Il tuo nome:" />
-            <input type="email" name="email" placeholder="La tua email:" />
+          <form name="beta" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="beta" />
+            <input
+              type="text"
+              name="nome"
+              placeholder="Il tuo nome:"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="La tua email:"
+              required
+            />
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
