@@ -117,7 +117,7 @@ const BetaCard = styled.div`
     }
     button {
       margin-top: 20px;
-      background: black;
+      background: ${(props) => props.theme.text};
       color: lightgray;
       font-size: 1.1rem;
       font-weight: 500;

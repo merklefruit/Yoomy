@@ -11,6 +11,12 @@ import { motion, useAnimation } from "framer-motion";
 // Assets
 import StepsLine from "../../assets/svg/StepsLine";
 import StepsLine2 from "../../assets/svg/StepsLine2";
+import {
+  FaRegCalendarAlt,
+  FaRegCalendarCheck,
+  FaUserFriends,
+} from "react-icons/fa";
+import { GrYoga } from "react-icons/gr";
 
 const variants = {
   hidden: { opacity: 0 },
@@ -66,7 +72,9 @@ const HomeApproccio = () => {
         >
           <motion.div className="child">
             <motion.div variants={child} className="flex c1">
-              <span>1</span>
+              <span>
+                <FaRegCalendarAlt />
+              </span>
               <StepsLine />
             </motion.div>
             <div className="content">
@@ -76,7 +84,9 @@ const HomeApproccio = () => {
 
           <motion.div variants={child} className="child">
             <div className="flex c2">
-              <span>2</span>
+              <span>
+                <FaRegCalendarCheck />
+              </span>
               <StepsLine2 />
             </div>
             <div className="content">
@@ -86,7 +96,9 @@ const HomeApproccio = () => {
 
           <motion.div variants={child} className="child">
             <div className="flex c1">
-              <span>3</span>
+              <span>
+                <FaUserFriends />
+              </span>
               <StepsLine />
             </div>
             <div className="content">
@@ -96,7 +108,9 @@ const HomeApproccio = () => {
 
           <motion.div variants={child} className="child">
             <div className="flex c2">
-              <span>4</span>
+              <span>
+                <GrYoga />
+              </span>
             </div>
             <div className="content">
               <p>Entra nella stanza virtuale e svolgi la lezione</p>
@@ -173,14 +187,17 @@ const Approccio = styled.div`
       }
 
       span {
-        font-family: "DM Sans";
-        font-size: 3.5rem;
-        color: ${(props) => props.theme.primary};
+        font-size: 2.3rem;
+        color: black;
         background: ${(props) => props.theme.secondary};
         border-radius: 50%;
         width: 50px;
         height: 50px;
         text-align: center;
+
+        svg {
+          display: block !important;
+        }
       }
     }
   }
