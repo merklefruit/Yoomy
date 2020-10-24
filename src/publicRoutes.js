@@ -14,6 +14,7 @@ import betaPage from "./pages/_marketing/betaPage";
 // Additional Routes
 import privacyPage from "./pages/privacyPage";
 import termsPage from "./pages/termsPage";
+import OpenStartup from "./pages/openStartup";
 
 // Auth Components
 import Login from "./components/auth/login";
@@ -33,6 +34,7 @@ function Routes() {
 
         <Route exact path="/privacy" component={privacyPage} />
         <Route exact path="/termini-e-condizioni" component={termsPage} />
+        <Route exact path="/open" component={OpenStartup} />
 
         <Route exact path="/login" component={Login} />
         <Route exact path="/registrati" component={Registrati} />
