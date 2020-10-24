@@ -18,7 +18,7 @@ export const API_END = "API_END";
 export const ACCESS_DENIED = "ACCESS_DENIED";
 export const API_ERROR = "API_ERROR";
 
-// Specific API calls
+// Specific API Calls
 export const FETCH_TEACHERS = "FETCH_TEACHERS";
 export const SET_TEACHERS = "SET_TEACHERS";
 

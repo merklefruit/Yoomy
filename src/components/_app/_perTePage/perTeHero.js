@@ -9,7 +9,7 @@ const PerTeHero = ({ user }) => {
       <Headline>
         <h1>La tua home</h1>
         <h3>
-          Ciao <b>{user ? user.username : ""}</b>! <br />
+          Ciao <b>{user ? user.name : ""}</b>! <br />
           Dai un'occhiata ai corsi selezionati apposta per te.
         </h3>
       </Headline>

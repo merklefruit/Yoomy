@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
+
+// Redux
 import { connect } from "react-redux";
 import { register } from "../../actions/auth";
 import PropTypes from "prop-types";
@@ -36,8 +38,8 @@ const Registrati = ({ register, isAuthenticated }) => {
             <h2>Registrati</h2>
             <Formik
               initialValues={{
-                nome: "",
-                cognome: "",
+                name: "",
+                surname: "",
                 email: "",
                 password: "",
                 terms: false,
@@ -51,23 +53,27 @@ const Registrati = ({ register, isAuthenticated }) => {
                 ) {
                   errors.email = "Email non valida";
                 }
-                if (!values.nome) {
-                  errors.nome = "Campo richiesto";
+                if (!values.name) {
+                  errors.name = "Campo richiesto";
+                }
+                if (!values.surname) {
+                  errors.surname = "Campo richiesto";
                 }
                 if (!values.password) {
                   errors.password = "Campo richiesto";
                 }
                 if (!values.terms) {
-                  errors.terms = "Per favore accetta i termini e condizioni";
+                  errors.terms = "Per favore accetta i Termini e le Condizioni";
                 }
                 return errors;
               }}
               onSubmit={(values, { setSubmitting }) => {
                 setTimeout(() => {
                   setSubmitting(false);
-                  const { nome, email, password } = values;
+                  const { name, surname, email, password } = values;
                   register({
-                    username: nome,
+                    name,
+                    surname,
                     email,
                     password,
                   });
@@ -77,10 +83,20 @@ const Registrati = ({ register, isAuthenticated }) => {
               {({ isSubmitting }) => (
                 <Form>
                   <div className="label-div">
-                    <label>Username:</label>
+                    <label>Nome:</label>
                   </div>
-                  <Field type="text" name="nome" />
-                  <ErrorMessage name="nome" component="div" className="error" />
+                  <Field type="text" name="name" />
+                  <ErrorMessage name="name" component="div" className="error" />
+
+                  <div className="label-div">
+                    <label>Cognome:</label>
+                  </div>
+                  <Field type="text" name="surname" />
+                  <ErrorMessage
+                    name="surname"
+                    component="div"
+                    className="error"
+                  />
 
                   <div className="label-div">
                     <label>Email:</label>
@@ -106,7 +122,12 @@ const Registrati = ({ register, isAuthenticated }) => {
                     <div className="checkbox">
                       <Field type="checkbox" name="terms" />
                     </div>
-                    <p className="discrete">Accetto i termini e condizioni</p>
+                    <p className="discrete">
+                      Accetto i{" "}
+                      <Link to="/termini-e-condizioni">
+                        termini & condizioni
+                      </Link>
+                    </p>
                     <ErrorMessage
                       name="terms"
                       component="div"

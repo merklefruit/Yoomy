@@ -33,14 +33,16 @@ export const loadUser = () => async (dispatch) => {
 };
 
 // Register User
-export const register = ({ username, email, password }) => async (dispatch) => {
+export const register = ({ name, surname, email, password }) => async (
+  dispatch
+) => {
   const config = {
     headers: {
       "Content-Type": "application/json",
     },
   };
 
-  const body = JSON.stringify({ username, email, password });
+  const body = JSON.stringify({ name, surname, email, password });
 
   try {
     const registerUrl = USERS_URL + "/register";

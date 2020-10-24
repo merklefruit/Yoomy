@@ -19,9 +19,9 @@ const PerTeBetaCard = () => {
           <div className="inner">
             <h3>Guida per Iniziare</h3>
             <p>
-              Stai utilizzando la Beta di Yoomy. Abbiamo preparato una veloce
-              guida in cui spieghiamo come iniziare. Se riscontri un qualsiasi
-              problema, non esitare a contattarci!
+              Abbiamo preparato una guida rapida in cui spieghiamo come usare
+              Yoomy. Se riscontri un qualsiasi problema, non esitare a
+              contattarci!
             </p>
             <p>#YoomyFamily</p>
             <Link to="/app/guida-per-iniziare">
@@ -118,12 +118,16 @@ const BetaCard = styled.div`
     button {
       margin-top: 20px;
       background: ${(props) => props.theme.text};
-      color: lightgray;
+      color: rgba(255, 255, 255, 0.9);
       font-size: 1.1rem;
       font-weight: 500;
       padding: 9px 30px;
       border-radius: 20px;
       cursor: pointer;
+
+      @media (max-width: 600px) {
+        font-size: 1rem;
+      }
 
       &:focus {
         outline: none;

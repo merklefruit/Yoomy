@@ -11,7 +11,8 @@ const ContactHero = ({ user }) => {
       </Headline>
       {user && (
         <p>
-          Username: {user.username} <br />
+          Nome: {user.name} <br />
+          Cognome: {user.surname} <br />
           Email: {user.email} <br />
         </p>
       )}
