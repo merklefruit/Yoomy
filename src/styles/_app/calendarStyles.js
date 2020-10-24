@@ -54,13 +54,15 @@ export const EventGridSection = styled.div`
   h2 {
     color: ${(props) => props.theme.text};
     margin-top: 0;
+    text-align: center;
     font-family: "DM Sans";
     font-weight: 500;
   }
   .empty {
+    text-align: center;
     svg {
       margin-top: 20px;
-      max-width: 400px;
+      max-width: 350px;
     }
   }
 `;
