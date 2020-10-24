@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 // Styled components
@@ -22,8 +23,10 @@ const PerTeBetaCard = () => {
               guida in cui spieghiamo come iniziare. Se riscontri un qualsiasi
               problema, non esitare a contattarci!
             </p>
-            <p>Forza #YoomyFamily</p>
-            <button>Leggi la guida</button>
+            <p>#YoomyFamily</p>
+            <Link to="/app/guida-per-iniziare">
+              <button>Leggi la guida</button>
+            </Link>
           </div>
         </div>
       </BetaCard>

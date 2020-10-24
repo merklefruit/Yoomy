@@ -24,6 +24,7 @@ import TeachersEvents from "./pages/_teachers/teachersEvents";
 import TeachersPagamenti from "./pages/_teachers/teachersPagamenti";
 import TeachersSettings from "./pages/_teachers/teachersSettins";
 import TeachersSupport from "./pages/_teachers/teachersSupport";
+import GuidaPerIniziare from "./pages/_app/guidaPerIniziare";
 
 function PrivateRoutes({ fetchTeachers, fetchCourses, user }) {
   useEffect(() => {
@@ -48,9 +49,14 @@ function PrivateRoutes({ fetchTeachers, fetchCourses, user }) {
             <Route exact path="/app/per-te" component={PerTePage} />
             <Route exact path="/app/istruttori" component={IstruttoriPage} />
             <Route path="/app/istruttore/:id" component={IstruttorePage} />
-
             <Route exact path="/app/calendario" component={CalendarioPage} />
             <Route exact path="/app/account" component={AccountPage} />
+
+            <Route
+              exact
+              path="/app/guida-per-iniziare"
+              component={GuidaPerIniziare}
+            />
 
             {/* Fallback */}
             <Route>
