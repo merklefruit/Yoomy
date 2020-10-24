@@ -56,6 +56,7 @@ function AppHeader({ toggleMenu, setToggleMenu, logout, isAuthenticated }) {
             </LinkSection>
             <Menu>
               <Hamburger
+                aria-label="hamburger menu"
                 direction="right"
                 toggled={toggleMenu}
                 toggle={setToggleMenu}

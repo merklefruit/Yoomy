@@ -4,20 +4,18 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Layout from "./components/layout";
 
 // Marketing Routes
-import homePage from "./pages/homePage";
-import prezziPage from "./pages/prezziPage";
-import contattiPage from "./pages/contattiPage";
-
-// Temporary Routes
-import manifestoPage from "./pages/manifestoPage";
-import betaPage from "./pages/betaPage";
-import homePage2 from "./pages/homePage2";
+import homePage from "./pages/_marketing/homePage";
+import homePage2 from "./pages/_marketing/homePage2";
+import prezziPage from "./pages/_marketing/prezziPage";
+import contattiPage from "./pages/_marketing/contattiPage";
+import manifestoPage from "./pages/_marketing/manifestoPage";
+import betaPage from "./pages/_marketing/betaPage";
 
 // Additional Routes
 import privacyPage from "./pages/privacyPage";
 import termsPage from "./pages/termsPage";
 
-// Auth Routes
+// Auth Components
 import Login from "./components/auth/login";
 import Registrati from "./components/auth/registrati";
 

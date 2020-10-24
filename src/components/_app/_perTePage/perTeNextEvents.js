@@ -1,10 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// Redux
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-
 // Dates
 import { formatDistance } from "date-fns";
 import { it } from "date-fns/locale";
@@ -89,12 +85,4 @@ const PerTeNextEvents = ({ user }) => {
   );
 };
 
-PerTeNextEvents.propTypes = {
-  user: PropTypes.object,
-};
-
-const mapStateToProps = (state) => ({
-  user: state.auth.user,
-});
-
-export default connect(mapStateToProps)(PerTeNextEvents);
+export default PerTeNextEvents;

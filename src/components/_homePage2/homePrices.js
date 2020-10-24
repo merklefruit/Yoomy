@@ -71,8 +71,8 @@ export default HomePrices;
 
 const Prices = styled.div`
   color: ${(props) => props.theme.text};
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 
   .title {
     text-align: center;

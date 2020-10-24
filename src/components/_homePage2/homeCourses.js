@@ -84,7 +84,7 @@ const HomeCourses = () => {
             </div>
           </div>
           <div className="footer">
-            <p>... E molti altri in arrivo!</p>
+            <p>... E molte altre in arrivo!</p>
           </div>
         </CoursesDisplay>
       </Container>
@@ -139,17 +139,16 @@ const CoursesDisplay = styled.div`
         flex: 0 1 180px;
       }
       @media (max-width: 450px) {
-        flex: 0 1 130px;
+        flex: 0 1 150px;
       }
 
-      margin-top: 0;
-      margin-bottom: 1rem;
-      margin-left: 1rem;
-      margin-right: 1rem;
+      margin: 0 1rem 1rem 1rem;
+      @media (max-width: 600px) {
+        margin: 0 1rem 0.5rem 0.5rem;
+      }
 
       img {
         width: 100%;
-        box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.05);
       }
       h3 {
         margin: 0;

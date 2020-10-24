@@ -55,6 +55,7 @@ function Header({ toggleMenu, setToggleMenu }) {
             </LinkSection>
             <Menu>
               <Hamburger
+                aria-label="hamburger menu"
                 direction="right"
                 toggled={toggleMenu}
                 toggle={setToggleMenu}

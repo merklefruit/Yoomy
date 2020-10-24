@@ -15,7 +15,7 @@ const PerTePage = ({ user }) => {
     <>
       <Head title="Per te" />
       <PerTeHero user={user} />
-      <PerTeNextEvents />
+      <PerTeNextEvents user={user} />
       <PerTeGridSection />
     </>
   );

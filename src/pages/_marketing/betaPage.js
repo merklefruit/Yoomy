@@ -4,10 +4,10 @@ import React from "react";
 import styled from "styled-components";
 
 // Components
-import Head from "../components/head";
+import Head from "../../components/head";
 
 // Styled components :: temporary
-import { Container, Headline } from "../styles/globalStyles";
+import { Container, Headline } from "../../styles/globalStyles";
 
 const BetaPage = () => {
   return (

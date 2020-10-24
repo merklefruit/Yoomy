@@ -23,16 +23,11 @@ const BetaForm = () => {
             netlify-honeypot="bot-field"
           >
             <input type="hidden" name="form-name" value="beta" />
-            <input
-              type="text"
-              name="nome"
-              placeholder="Il tuo nome:"
-              required
-            />
+            <input type="text" name="nome" placeholder="Il tuo nome" required />
             <input
               type="email"
               name="email"
-              placeholder="La tua email:"
+              placeholder="La tua email"
               required
             />
             <motion.button
