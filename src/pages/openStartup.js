@@ -25,7 +25,7 @@ const OpenStartup = () => {
       <Headline>
         <h1>I dati di Yoomy</h1>
         <h3>
-          Yoomy è una Open Startup ™, il che significa che opera in modo
+          Yoomy è una Open Startup™, il che significa che opera in modo
           completamente trasparente e condivide le sue metriche, inclusi ricavi,
           costi, utenti e traffico.
         </h3>
