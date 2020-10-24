@@ -1,8 +1,6 @@
-import React from "react";
-
-// Redux
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { EVENTS_URL } from "../../../helpers/config";
 
 // Dates
 import { format } from "date-fns";
@@ -16,6 +14,25 @@ import { GridSection, GridHeading } from "../../../styles/_app/perTeStyles";
 import { CgMediaLive } from "react-icons/cg";
 
 const PerTeGridSection = ({ user }) => {
+  const [ongoingEvents, setOngoingEvents] = useState(null);
+  useEffect(() => {
+    try {
+      const url = EVENTS_URL + "/ongoing";
+      const getOngoingEvents = () => {
+        axios
+          .get(url)
+          .then((events) => {
+            if (events.status === 200) setOngoingEvents(events.data);
+          })
+          .catch((err) => setOngoingEvents(null));
+      };
+
+      getOngoingEvents();
+    } catch (err) {
+      console.log(err.response);
+    }
+  }, [user]);
+
   return (
     <Container>
       <GridHeading>
@@ -25,37 +42,26 @@ const PerTeGridSection = ({ user }) => {
       </GridHeading>
       <GridSection>
         <div className="live-ora card">
-          {/* map ongoing events here */}
-          {user.events.length !== 0 && (
+          {ongoingEvents !== null ? (
+            ongoingEvents.map((event) => (
+              <div className="event" key={event.id}>
+                <h4>
+                  {event.teacher.name} {event.teacher.surname}:{" "}
+                  <b>{event.course.name}</b> dalle{" "}
+                  {format(new Date(event.startDate), "HH:mm", {
+                    locale: it,
+                  })}{" "}
+                  alle{" "}
+                  {format(new Date(event.endDate), "HH:mm", {
+                    locale: it,
+                  })}
+                </h4>
+                <button>Unisciti</button>
+              </div>
+            ))
+          ) : (
             <div>
-              <div className="event">
-                <h4>
-                  {user.events[0].teacher.name} {user.events[0].teacher.surname}
-                  : <b>{user.events[0].course.name}</b> dalle{" "}
-                  {format(new Date(user.events[0].startDate), "HH:mm", {
-                    locale: it,
-                  })}{" "}
-                  alle{" "}
-                  {format(new Date(user.events[0].endDate), "HH:mm", {
-                    locale: it,
-                  })}
-                </h4>
-                <button>Unisciti</button>
-              </div>
-              <div className="event">
-                <h4>
-                  {user.events[0].teacher.name} {user.events[0].teacher.surname}
-                  : <b>{user.events[0].course.name}</b> dalle{" "}
-                  {format(new Date(user.events[0].startDate), "HH:mm", {
-                    locale: it,
-                  })}{" "}
-                  alle{" "}
-                  {format(new Date(user.events[0].endDate), "HH:mm", {
-                    locale: it,
-                  })}
-                </h4>
-                <button>Unisciti</button>
-              </div>
+              <h4>Nessuna lezione live al momento.</h4>
             </div>
           )}
         </div>
@@ -78,12 +84,4 @@ const PerTeGridSection = ({ user }) => {
   );
 };
 
-PerTeGridSection.propTypes = {
-  user: PropTypes.object,
-};
-
-const mapStateToProps = (state) => ({
-  user: state.auth.user,
-});
-
-export default connect(mapStateToProps)(PerTeGridSection);
+export default PerTeGridSection;
