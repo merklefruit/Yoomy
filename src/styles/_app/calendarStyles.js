@@ -205,56 +205,9 @@ export const EventCard = styled(motion.div)`
     }
   }
 
-  ${"" /* //TODO Responsive card */}
+  /* //TODO: FIX RESPONSIVE CARDS */
   @media (max-width: 1100px) {
-  }
-  @media (max-width: 800px) {
-    .card-time {
-      .time-square {
-        span {
-
-        }
-      }
-    }
-
-    .card-info {
-      .upper {
-        .photo {
-          img {
-
-          }
-        }
-        .info {
-          h4 {
-
-          }
-          h3 {
-
-          }
-          a {
-
-          }
-        }
-      }
-      .lower {
-        p {
-
-        }
-      }
-    }
-    .card-buttons {
-      .buttons {
-        .button {
-
-        }
-        .iscriviti {
-
-        }
-        .scopri {
-          
-        }
-      }
-    }
+    display: none;
   }
 
   ${(props) =>
