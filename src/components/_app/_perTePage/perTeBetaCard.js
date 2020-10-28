@@ -124,6 +124,7 @@ const BetaCard = styled.div`
       padding: 9px 30px;
       border-radius: 20px;
       cursor: pointer;
+      border: none;
 
       @media (max-width: 600px) {
         font-size: 1rem;

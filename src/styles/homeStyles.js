@@ -131,6 +131,7 @@ export const HeroCol1 = styled.div`
       outline: none;
     }
   }
+  }
 `;
 
 export const HeroCol2 = styled.div`
@@ -344,10 +345,9 @@ export const InnerBannerSection = styled.div`
   justify-content: center;
 
   @media (max-width: 800px) {
-        justify-content: space-evenly;
-      }
-    }
-
+  justify-content: space-evenly;
+  }    
+  
   div {
     &.banner-cards {
       display: flex;
@@ -357,6 +357,7 @@ export const InnerBannerSection = styled.div`
       }
     }
   }
+
 `;
 
 export const BannerCard = styled.div`

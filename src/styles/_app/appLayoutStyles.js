@@ -6,9 +6,13 @@ import { motion } from "framer-motion";
 export const CustomHeader = styled(motion.header)`
   z-index: 1;
   ${"" /* background-color: ${(props) => props.theme.darkblue}; */}
-  background:
+  ${'' /* 
+        LINEAR GRADIENT BACKGROUND:
+      background:
         linear-gradient(to left top, rgba(255,243,217,1) 0%, rgba(216,227,232,0.5) 50% , rgba(216,227,232,1) 100% ),
-        linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+        linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)); */}
+  
+  background-color: white;
 `;
 
 export const HeaderNav = styled.div`
@@ -18,6 +22,10 @@ export const HeaderNav = styled.div`
   ${"" /* padding-bottom: 20px; 
           padding-top: 20px;
     */}
+
+  .logo {
+    color: ${props => props.theme.blue};
+  }
 
   @media (max-width: 650px) {
     padding-top: 20px;
@@ -59,6 +67,7 @@ export const HeaderNav = styled.div`
 export const LinkSection = styled.div`
   margin-left: 20px;
   display: flex;
+  align-items: center;
 
   .active {
     p {
@@ -77,6 +86,18 @@ export const LinkSection = styled.div`
         display: flex !important;
       }
     `}
+
+
+
+  .sb-avatar {
+    margin-left: 20px;
+
+    span {
+      font-size: 19px;
+      font-family: "Montserrat";
+      font-weight: 600;
+    }
+  }
 `;
 
 export const Menu = styled.div`

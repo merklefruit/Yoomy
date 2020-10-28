@@ -60,7 +60,7 @@ const AppLayout = ({ children }) => {
     darkblue: "#1d3557",
     blue: "#457b9d",
     text: "#3C3838",
-    background: "#FAFAFA",
+    background: "#f7f7f7",
     violet: "#2A265F",
     lightgray: "#737373",
     beige: "#f5f1e4",

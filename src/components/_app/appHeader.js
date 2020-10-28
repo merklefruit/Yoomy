@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+import Avatar from "react-avatar";
 
 // Redux
 import { connect } from "react-redux";
@@ -19,7 +20,7 @@ import {
 // Hamburger Menu
 import { Spiral as Hamburger } from "hamburger-react";
 
-function AppHeader({ toggleMenu, setToggleMenu, logout, isAuthenticated }) {
+function AppHeader({ toggleMenu, setToggleMenu, logout, user }) {
   return (
     <CustomHeader
       animate={{ y: 0, opacity: 1 }}
@@ -31,7 +32,7 @@ function AppHeader({ toggleMenu, setToggleMenu, logout, isAuthenticated }) {
           <FlexRow>
             <motion.div whileHover={{ scale: 0.95 }} whileTap={{ scale: 0.9 }}>
               <Link to="/">
-                <span>Yoomy.</span>
+                <span className="logo">Yoomy.</span>
               </Link>
             </motion.div>
             <LinkSection></LinkSection>
@@ -47,12 +48,11 @@ function AppHeader({ toggleMenu, setToggleMenu, logout, isAuthenticated }) {
               <NavLink to="/app/calendario">
                 <p>Calendario</p>
               </NavLink>
-              <NavLink to="/app/account">
-                <p>Account</p>
-              </NavLink>
-              <Link to="/" onClick={() => logout()}>
-                <p>Logout</p>
-              </Link>
+              <div className="avatar">
+                <Link to="/app/account">
+                  <Avatar name={`${user.name[0]} ${user.surname[0]}`} size="45" color="#BCE0E6" round={true} />
+                </Link>
+              </div>
             </LinkSection>
             <Menu>
               <Hamburger
@@ -71,11 +71,11 @@ function AppHeader({ toggleMenu, setToggleMenu, logout, isAuthenticated }) {
 
 AppHeader.propTypes = {
   logout: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool,
+  user: PropTypes.object,
 };
 
 const mapStateToProps = (state) => ({
-  isAuthenticated: state.auth.isAuthenticated,
+  user: state.auth.user
 });
 
 export default connect(mapStateToProps, { logout })(AppHeader);

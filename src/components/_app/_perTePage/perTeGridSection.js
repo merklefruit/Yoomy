@@ -60,10 +60,10 @@ const PerTeGridSection = ({ user }) => {
               </div>
             ))
           ) : (
-            <div>
-              <h4>Nessuna lezione live al momento.</h4>
-            </div>
-          )}
+              <div>
+                <h4>Nessuna lezione live al momento.</h4>
+              </div>
+            )}
         </div>
         <div className="crediti card">
           <h3>Crediti residui</h3>

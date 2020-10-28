@@ -81,4 +81,12 @@ export const ListContainer = styled.div`
       min-height: 80px;
     }
   }
+
+  .lastCard {
+    h3 {
+      padding-top: 25px;
+    }
+    display: grid;
+    place-items: center;
+  }
 `;

@@ -17,34 +17,43 @@ const IstruttoriList = ({ isLoadingTeachers, teachers }) => {
         {!isLoadingTeachers
           ? teachers
             ? teachers.map((teacher) => (
-                <motion.div
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 1 }}
-                  transition={{ duration: 0.2 }}
-                  key={teacher.id}
-                  className="card"
-                >
+              <motion.div
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 1 }}
+                transition={{ duration: 0.2 }}
+                key={teacher.id}
+                className="card"
+              >
+                <Link to={`/app/istruttore/${teacher.id}`}>
+                  <img src={teacher.picture} alt="profile" />
+                </Link>
+                <div className="card-content">
                   <Link to={`/app/istruttore/${teacher.id}`}>
-                    <img src={teacher.picture} alt="profile" />
+                    <h3>
+                      {teacher.name} {teacher.surname}
+                    </h3>
                   </Link>
-                  <div className="card-content">
-                    <Link to={`/app/istruttore/${teacher.id}`}>
-                      <h3>
-                        {teacher.name} {teacher.surname}
-                      </h3>
-                    </Link>
-                    <div className="courses">
-                      {teacher.courses.map((course) => (
-                        <Link to="/" key={course.id}>
-                          <p key={course.id}>{course.name}</p>
-                        </Link>
-                      ))}
-                    </div>
+                  <div className="courses">
+                    {teacher.courses.map((course) => (
+                      <Link to="/" key={course.id}>
+                        <p key={course.id}>{course.name}</p>
+                      </Link>
+                    ))}
                   </div>
-                </motion.div>
-              ))
+                </div>
+              </motion.div>
+            ))
             : "Errore nel caricamento ... "
           : "Caricamento Istruttori ... "}
+        <motion.div
+          whileHover={{ scale: 1.01 }}
+          whileTap={{ scale: 1 }}
+          transition={{ duration: 0.2 }}
+          className="card lastCard"
+        >
+          <h3>Molti altri in arrivo</h3>
+          <h4>Stay Tuned</h4>
+        </motion.div>
       </ListContainer>
     </Container>
   );
