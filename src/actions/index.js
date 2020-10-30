@@ -10,8 +10,17 @@ import {
   FETCH_DAILY_EVENTS,
   CREATE_EVENT,
   EVENT_CREATION_SUCCESS,
+  SUBSCRIBE_USER,
+  SUBSCRIBE_USER_SUCCESS,
+  UNSUBSCRIBE_USER,
+  UNSUBSCRIBE_USER_SUCCESS,
 } from "./types";
-import { TEACHERS_URL, COURSES_URL, EVENTS_URL } from "../helpers/config";
+import {
+  TEACHERS_URL,
+  COURSES_URL,
+  EVENTS_URL,
+  SUBSCRIPTIONS_URL,
+} from "../helpers/config";
 
 function apiAction({
   url = "",
@@ -119,6 +128,44 @@ export function createEvent(event) {
 function newEventSuccess(data) {
   return {
     type: EVENT_CREATION_SUCCESS,
+    payload: data,
+  };
+}
+
+// Add user to an event
+// params: IDs of teacher, user and course
+export function subscribeUser(params) {
+  return apiAction({
+    url: `${SUBSCRIPTIONS_URL}/add`,
+    method: "POST",
+    data: params,
+    onSuccess: subscribeUserSuccess,
+    onFailure: (error) => console.log(`Error adding user to event: ${error}`),
+    label: SUBSCRIBE_USER,
+  });
+}
+function subscribeUserSuccess(data) {
+  return {
+    type: SUBSCRIBE_USER_SUCCESS,
+    payload: data,
+  };
+}
+
+// Remove user to an event
+// params: IDs of teacher, user and course
+export function unsubscribeUser(params) {
+  return apiAction({
+    url: `${SUBSCRIPTIONS_URL}/remove`,
+    method: "POST",
+    data: params,
+    onSuccess: unsubscribeUserSuccess,
+    onFailure: (error) => console.log(`Error removing user to event: ${error}`),
+    label: UNSUBSCRIBE_USER,
+  });
+}
+function unsubscribeUserSuccess(data) {
+  return {
+    type: UNSUBSCRIBE_USER_SUCCESS,
     payload: data,
   };
 }

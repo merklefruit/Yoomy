@@ -198,9 +198,9 @@ export const EventCard = styled(motion.div)`
         }
       }
       .iscriviti {
-        margin-bottom: 15px;
       }
       .scopri {
+        margin-top: 15px;
       }
     }
   }

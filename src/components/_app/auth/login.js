@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // Redux
 import { connect } from "react-redux";
@@ -18,11 +18,7 @@ import { Container } from "../../../styles/globalStyles";
 // Form Handling
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
-const Login = ({ login, isAuthenticated }) => {
-  if (isAuthenticated) {
-    return <Redirect to="/app/per-te" />;
-  }
-
+const Login = ({ login }) => {
   return (
     <>
       <Container>
@@ -99,11 +95,8 @@ const Login = ({ login, isAuthenticated }) => {
 
 Login.propTypes = {
   login: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool,
 };
 
-const mapStateToProps = (state) => ({
-  isAuthenticated: state.auth.isAuthenticated,
-});
+const mapStateToProps = (state) => ({});
 
 export default connect(mapStateToProps, { login })(Login);

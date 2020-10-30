@@ -27,7 +27,7 @@ function TeacherRoutes({ fetchTeachers, fetchCourses, teacher }) {
 
   // Analytics tracking
   useEffect(() => {
-    if (teacher & process.env.NODE_ENV !== "DEVELOPMENT") {
+    if (teacher & (process.env.REACT_APP_NODE_ENV !== "development")) {
       window.splitbee.user.set({ displayName: teacher.name });
       window.splitbee.user.set({ email: teacher.email });
       window.splitbee.user.set({ userKind: "teacher" });

@@ -18,7 +18,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 // Conditional routes
 const AppRoutes = React.lazy(() =>
-  import(/* webpackPrefetch: true */ "./routes/appRoutes"));
+  import(/* webpackPrefetch: true */ "./routes/appRoutes")
+);
 const TeacherRoutes = React.lazy(() => import("./routes/teacherRoutes"));
 const MarketingRoutes = React.lazy(() => import("./routes/marketingRoutes"));
 
@@ -36,6 +37,9 @@ const App = ({ loading, user, teacher }) => {
       <Helmet>
         <title>Yoomy.</title>
         <meta charSet="utf-8" />
+        {process.env.REACT_APP_NODE_ENV !== "development" && (
+          <script async src="https://cdn.splitbee.io/sb.js"></script>
+        )}
       </Helmet>
       <React.Suspense fallback={<FullPageSpinner />}>
         <ToastContainer />
@@ -47,8 +51,8 @@ const App = ({ loading, user, teacher }) => {
           ) : teacher ? (
             <TeacherRoutes />
           ) : (
-                  <MarketingRoutes />
-                )}
+            <MarketingRoutes />
+          )}
         </Router>
       </React.Suspense>
     </>
@@ -58,13 +62,13 @@ const App = ({ loading, user, teacher }) => {
 App.propTypes = {
   loading: PropTypes.bool,
   user: PropTypes.object,
-  teacher: PropTypes.object
+  teacher: PropTypes.object,
 };
 
 const mapStateToProps = (state) => ({
   loading: state.auth.loading,
   user: state.auth.user,
-  teacher: state.auth.teacher
+  teacher: state.auth.teacher,
 });
 
 export default connect(mapStateToProps)(App);

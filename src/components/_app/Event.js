@@ -1,11 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import DayJS from "react-dayjs";
+import { format } from "date-fns";
+import { it } from "date-fns/locale";
+import Modal from "../modal";
 
 // Styled components
 import { EventCard } from "../../styles/_app/calendarStyles";
 
-const Event = ({ event }) => {
+// Redux
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { subscribeUser } from "../../actions";
+
+const Event = ({ user, event, subscribeUser }) => {
+  const handleModal = () => {
+    subscribeUser({
+      user_id: user.id,
+      event_id: event.id,
+      teacher_id: event.teacher.id,
+    });
+  };
+
   return (
     <EventCard key={event.id}>
       <div className="card-time">
@@ -36,7 +52,25 @@ const Event = ({ event }) => {
       </div>
       <div className="card-buttons">
         <div className="buttons">
-          <button className="button iscriviti">Iscriviti</button>
+          <Modal
+            className="button iscriviti"
+            trigger="Iscriviti"
+            title="Confermi l'iscrizione?"
+            actionText="Conferma iscrizione"
+            action={() => handleModal()}
+            content={`Sei sicuro di volerti iscrivere a: "${
+              event.course.name
+            }" del ${format(new Date(event.startDate), "dd MMMM", {
+              locale: it,
+            })} alle ${format(new Date(event.startDate), "HH:mm", {
+              locale: it,
+            })}?
+            Confermando l'iscrizione, verranno scalati ${
+              event.credits
+            } crediti dal tuo account.
+            30 minuti prima dell'inizio della lezione riceverai il link per partecipare all'evento.
+            `}
+          />
           <button className="button scopri">Informazioni</button>
         </div>
       </div>
@@ -44,4 +78,14 @@ const Event = ({ event }) => {
   );
 };
 
-export default Event;
+Event.propTypes = {
+  subscribeUser: PropTypes.func.isRequired,
+  user: PropTypes.object,
+  event: PropTypes.object,
+};
+
+const mapStateToProps = (state) => ({
+  user: state.auth.user,
+});
+
+export default connect(mapStateToProps, { subscribeUser })(Event);

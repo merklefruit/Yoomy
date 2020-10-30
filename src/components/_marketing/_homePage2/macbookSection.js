@@ -1,12 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
 // Styled components
 import { Container } from "../../../styles/globalStyles";
-
-// Assets
-import Arrow from "../../../assets/svg/Arrow";
 
 const MacbookSection = () => {
   return (
@@ -15,8 +11,8 @@ const MacbookSection = () => {
         <Heading>
           <div>
             <h2>
-              In arrivo sul
-              <br /> piccolo schermo
+              Lo Yoga online
+              <br /> che funziona
             </h2>
           </div>
           <div className="macbook">
@@ -30,49 +26,12 @@ const MacbookSection = () => {
 
       <Background>
         <Container>
-          <div className="bullets">
-            <motion.div
-              whileHover={{ translateX: 50 }}
-              transition={{ duration: 0.4 }}
-              className="bullet"
-            >
-              <div className="arrow">
-                <Arrow />
-              </div>
-              <h4>Desktop</h4>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ translateX: 50 }}
-              transition={{ duration: 0.4 }}
-              className="bullet"
-            >
-              <div className="arrow">
-                <Arrow />
-              </div>
-              <h4>Tablet</h4>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ translateX: 50 }}
-              transition={{ duration: 0.4 }}
-              className="bullet"
-            >
-              <div className="arrow">
-                <Arrow />
-              </div>
-              <h4>Mobile</h4>
-            </motion.div>
-          </div>
           <div className="cta">
             <h3>
-              Lasciati coinvolgere dalla migliore qualità dei corsi su Yoomy.{" "}
-              <br />
-              Richiedi ora l’accesso anticipato per usufruire di uno sconto*.
+              Lasciati coinvolgere dalla qualità dei corsi su Yoomy. <br />
+              Iscrivendoti adesso risparmi su tutte le lezioni fino al lancio
+              ufficiale!
             </h3>
-            <p>
-              * -20% sull'acquisto dei pacchetti per tutto il periodo di Beta
-            </p>
           </div>
         </Container>
       </Background>
@@ -109,7 +68,7 @@ const Heading = styled.div`
     img {
       position: absolute;
       bottom: -300px;
-      right: -100px;
+      /* right: -100px; */
       width: 700px;
       @media (max-width: 1100px) {
         width: 600px;
@@ -160,11 +119,11 @@ const Background = styled.div`
   }
 
   .cta {
-    padding-top: 120px;
+    padding-top: 300px;
     padding-bottom: 50px;
 
     @media (max-width: 900px) {
-      padding-top: 80px;
+      padding-top: 270px;
     }
     @media (max-width: 600px) {
       padding-top: 250px;
@@ -174,13 +133,13 @@ const Background = styled.div`
       margin-bottom: 0;
       font-family: "DM Sans";
       font-weight: 300;
-      font-size: 2.5rem;
+      font-size: 2.3rem;
 
       @media (max-width: 1100px) {
-        font-size: 2.3rem;
+        font-size: 2.1rem;
       }
       @media (max-width: 900px) {
-        font-size: 2.1rem;
+        font-size: 2rem;
       }
       @media (max-width: 700px) {
         font-size: 1.8rem;

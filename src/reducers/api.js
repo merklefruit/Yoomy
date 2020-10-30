@@ -12,6 +12,10 @@ import {
   FETCH_DAILY_EVENTS,
   CREATE_EVENT,
   EVENT_CREATION_SUCCESS,
+  SUBSCRIBE_USER,
+  SUBSCRIBE_USER_SUCCESS,
+  UNSUBSCRIBE_USER,
+  UNSUBSCRIBE_USER_SUCCESS,
 } from "../actions/types";
 
 const initialState = [];
@@ -46,10 +50,29 @@ export default function (state = initialState, action) {
       return {
         ...state,
       };
+    case SUBSCRIBE_USER_SUCCESS:
+      toast.success("Iscrizione confermata");
+      return {
+        ...state,
+      };
+    case UNSUBSCRIBE_USER_SUCCESS:
+      toast.success("Iscrizione rimossa con successo");
+      return {
+        ...state,
+      };
 
     // API LOGIC ::
+    //TODO: implement nested switch(case):
     case API_START:
-      if (payload === CREATE_EVENT) {
+      if (payload === UNSUBSCRIBE_USER) {
+        return {
+          ...state,
+        };
+      } else if (payload === SUBSCRIBE_USER) {
+        return {
+          ...state,
+        };
+      } else if (payload === CREATE_EVENT) {
         return {
           ...state,
         };
@@ -77,7 +100,15 @@ export default function (state = initialState, action) {
       break;
 
     case API_END:
-      if (payload === CREATE_EVENT) {
+      if (payload === UNSUBSCRIBE_USER) {
+        return {
+          ...state,
+        };
+      } else if (payload === SUBSCRIBE_USER) {
+        return {
+          ...state,
+        };
+      } else if (payload === CREATE_EVENT) {
         return {
           ...state,
         };

@@ -28,7 +28,7 @@ function PrivateRoutes({ fetchTeachers, fetchCourses, user }) {
 
   // Analytics: User tracking:
   useEffect(() => {
-    if (user & process.env.NODE_ENV !== "DEVELOPMENT") {
+    if (user & (process.env.REAC_APP_NODE_ENV !== "development")) {
       window.splitbee.user.set({ displayName: user.name });
       window.splitbee.user.set({ email: user.email });
       window.splitbee.user.set({ userKind: "user" });

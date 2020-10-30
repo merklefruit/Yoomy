@@ -21,7 +21,6 @@ export const HeaderNav = styled.div`
 
   span {
     font-size: 1.9rem;
-    text-transform: uppercase;
     color: ${(props) => props.theme.text};
     letter-spacing: 1px;
     font-weight: 600;

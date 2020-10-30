@@ -25,11 +25,6 @@ const columns = [
     title: "Piattaforma",
     items: [
       {
-        title: "Beta",
-        url: "/beta",
-        openExternal: false,
-      },
-      {
         title: "Prezzi",
         url: "/prezzi",
         openExternal: false,

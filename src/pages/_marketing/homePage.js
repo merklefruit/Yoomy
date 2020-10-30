@@ -2,23 +2,27 @@ import React from "react";
 
 // Components
 import Head from "../../components/head";
-import HomeHero from "../../components/_marketing/_homePage/homeHero";
-import HomeContent from "../../components/_marketing/_homePage/homeContent";
-import HomeFeatures from "../../components/_marketing/_homePage/homeFeatures";
-import HomeBanner from "../../components/_marketing/_homePage/homeBanner";
-import HomeBanner2 from "../../components/_marketing/_homePage/homeBanner2";
+import BetaForm from "../../components/_marketing/_homePage2/betaForm";
+import FreeTrial from "../../components/_marketing/_homePage2/freeTrial";
+import HomeApproccio from "../../components/_marketing/_homePage2/homeApproccio";
+import HomeHero from "../../components/_marketing/_homePage2/homeHero";
+import HomePrices from "../../components/_marketing/_homePage2/homePrices";
+import MacbookSection from "../../components/_marketing/_homePage2/macbookSection";
+// import HomeCourses from "../../components/_homePage2/homeCourses";
 
-function homePage() {
+function HomePage2() {
   return (
     <>
       <Head title="Home" />
       <HomeHero />
-      <HomeContent />
-      <HomeBanner />
-      <HomeFeatures />
-      <HomeBanner2 />
+      <HomeApproccio />
+      <MacbookSection />
+      <FreeTrial />
+      {/* <HomeCourses /> */}
+      <HomePrices />
+      <BetaForm />
     </>
   );
 }
 
-export default homePage;
+export default HomePage2;
