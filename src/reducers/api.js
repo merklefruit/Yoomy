@@ -18,13 +18,15 @@ import {
   UNSUBSCRIBE_USER_SUCCESS,
 } from "../actions/types";
 
-const initialState = [];
+//? API REDUCER
+// This reducer is responsible for all API actions
 
+const initialState = [];
 export default function (state = initialState, action) {
   const { type, payload } = action;
 
+  //? API SPECIFIC ACTIONS:
   switch (type) {
-    // API SPECIFIC ACTIONS:
     case SET_TEACHERS:
       return {
         ...state,
@@ -62,76 +64,52 @@ export default function (state = initialState, action) {
       };
 
     // API LOGIC ::
-    //TODO: implement nested switch(case):
+    // Important: for every API call, there is an action for API start and one for API end.
     case API_START:
-      if (payload === UNSUBSCRIBE_USER) {
-        return {
-          ...state,
-        };
-      } else if (payload === SUBSCRIBE_USER) {
-        return {
-          ...state,
-        };
-      } else if (payload === CREATE_EVENT) {
-        return {
-          ...state,
-        };
-      } else if (payload === FETCH_TEACHERS) {
-        return {
-          ...state,
-          isLoadingTeachers: true,
-        };
-      } else if (payload === FETCH_COURSES) {
-        return {
-          ...state,
-          isLoadingCourses: true,
-        };
-      } else if (payload === FETCH_EVENTS) {
-        return {
-          ...state,
-          isLoadingEvents: true,
-        };
-      } else if (payload === FETCH_DAILY_EVENTS) {
-        return {
-          ...state,
-          isLoadingDailyEvents: true,
-        };
+      switch (payload) {
+        //? API Calls that don't enforce a state change. 1st part: start.
+        case UNSUBSCRIBE_USER:
+        case SUBSCRIBE_USER:
+        case CREATE_EVENT:
+          return {
+            ...state,
+          };
+
+        //? API Calls that require loading data. 1st part: start.
+        case FETCH_TEACHERS:
+        case FETCH_COURSES:
+        case FETCH_EVENTS:
+        case FETCH_DAILY_EVENTS:
+          return {
+            ...state,
+            isLoadingData: true,
+          };
+        default:
+          break;
       }
       break;
 
     case API_END:
-      if (payload === UNSUBSCRIBE_USER) {
-        return {
-          ...state,
-        };
-      } else if (payload === SUBSCRIBE_USER) {
-        return {
-          ...state,
-        };
-      } else if (payload === CREATE_EVENT) {
-        return {
-          ...state,
-        };
-      } else if (payload === FETCH_TEACHERS) {
-        return {
-          ...state,
-          isLoadingTeachers: false,
-        };
-      } else if (payload === FETCH_COURSES) {
-        return {
-          ...state,
-          isLoadingCourses: false,
-        };
-      } else if (payload === FETCH_EVENTS) {
-        return {
-          ...state,
-          isLoadingEvents: false,
-        };
-      } else if (payload === FETCH_DAILY_EVENTS) {
-        return {
-          ...state,
-          isLoadingDailyEvents: false,
-        };
+      switch (payload) {
+        //? API Calls that don't enforce a state change. 2nd part: end.
+        case UNSUBSCRIBE_USER:
+        case SUBSCRIBE_USER:
+        case CREATE_EVENT:
+          return {
+            ...state,
+          };
+
+        //? API Calls that require loading data. 2nd part: end.
+        case FETCH_TEACHERS:
+        case FETCH_COURSES:
+        case FETCH_EVENTS:
+        case FETCH_DAILY_EVENTS:
+          return {
+            ...state,
+            isLoadingData: false,
+          };
+        default:
+          break;
       }
       break;
 
