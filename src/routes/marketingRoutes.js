@@ -22,7 +22,7 @@ import Login from "../components/_app/auth/login";
 import Registrati from "../components/_app/auth/registrati";
 
 // Teacher Auth Components
-//TODO: add teacher auth comps
+import TeacherLogin from "../components/_teachers/auth/login";
 
 function Routes() {
   return (
@@ -40,9 +40,14 @@ function Routes() {
         <Route exact path="/termini-e-condizioni" component={termsPage} />
         <Route exact path="/open" component={OpenStartup} />
 
+        {/* App authentication */}
         <Route exact path="/login" component={Login} />
         <Route exact path="/registrati" component={Registrati} />
 
+        {/* Teachers authentication */}
+        <Route exact path="/istruttori/login" component={TeacherLogin} />
+
+        {/* Fallback */}
         <Route>
           <Redirect to="/" />
         </Route>

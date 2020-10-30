@@ -84,6 +84,11 @@ const columns = [
         url: "/istruttori/contatti",
         openExternal: false,
       },
+      {
+        title: "Login",
+        url: "/istruttori/login",
+        openExternal: false,
+      },
     ],
   },
   {
