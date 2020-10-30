@@ -1,5 +1,9 @@
 import React from "react";
 
+// Dates
+import { format } from "date-fns";
+import { it } from "date-fns/locale";
+
 // Styled components
 import { TeacherSection } from "../../../styles/_teachers/teachersHomeStyles";
 import { EditContainer } from "../../../styles/_teachers/teacherEventStyles";
@@ -8,8 +12,8 @@ const EditEvent = ({ currentlyEditing, setCurrentlyEditing }) => {
   const event = currentlyEditing;
   const {
     course,
-    // startDate,
-    // endDate,
+    startDate,
+    endDate,
     duration,
     description,
     participants,
@@ -19,7 +23,11 @@ const EditEvent = ({ currentlyEditing, setCurrentlyEditing }) => {
   return (
     <div style={{ marginTop: "25px" }}>
       <TeacherSection>
-        <h2>{name} del x dalle x alle x</h2>
+        <h2>
+          {name} di {format(new Date(startDate), "iiii d MMMM", { locale: it })}{" "}
+          dalle {format(new Date(startDate), "HH:mm", { locale: it })} alle{" "}
+          {format(new Date(endDate), "HH:mm", { locale: it })}
+        </h2>
       </TeacherSection>
       <EditContainer>
         <p>Durata: {duration} minuti</p>
@@ -30,7 +38,9 @@ const EditEvent = ({ currentlyEditing, setCurrentlyEditing }) => {
             <ul>
               {participants.map((p) => (
                 <li>
-                  <p>ID: {p}</p>
+                  <p>
+                    Nome: {p.name} {p.surname}
+                  </p>
                 </li>
               ))}
             </ul>

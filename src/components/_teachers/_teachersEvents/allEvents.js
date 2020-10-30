@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import DayJS from "react-dayjs";
+import { motion } from "framer-motion";
 
 // Redux
 import { connect } from "react-redux";
@@ -10,7 +11,7 @@ import { fetchEvents } from "../../../actions";
 import { TeacherSection } from "../../../styles/_teachers/teachersHomeStyles";
 import { EventList } from "../../../styles/_teachers/teacherEventStyles";
 
-const AllEvents = ({ user, events, fetchEvents, setCurrentlyEditing }) => {
+const AllEvents = ({ teacher, events, fetchEvents, setCurrentlyEditing }) => {
   useEffect(() => {
     fetchEvents();
   }, [fetchEvents]);
@@ -23,12 +24,12 @@ const AllEvents = ({ user, events, fetchEvents, setCurrentlyEditing }) => {
           Premi sul pulsante{" "}
           <span role="img" aria-label="lens">
             🔍
-          </span>
+          </span>{" "}
           per vedere e modificare le informazioni di un evento.
         </p>
       </TeacherSection>
       <EventList>
-        {events && user && (
+        {events && teacher && (
           <table>
             <thead>
               <tr>
@@ -36,13 +37,12 @@ const AllEvents = ({ user, events, fetchEvents, setCurrentlyEditing }) => {
                 <th>Data di inizio</th>
                 <th>Durata</th>
                 <th>Partecipanti</th>
-                <th></th>
+                <th>Modifica</th>
               </tr>
             </thead>
             <tbody>
               {events
-                .filter((event) => event.teacher.id === user.teacher_id)
-                .reverse()
+                .filter((event) => event.teacher.id === teacher.id)
                 .map((event) => (
                   <tr key={event.id}>
                     <td>{event.course.name}</td>
@@ -60,7 +60,10 @@ const AllEvents = ({ user, events, fetchEvents, setCurrentlyEditing }) => {
                     <td>{event.participants.length}</td>
 
                     <td>
-                      <button
+                      <motion.button
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="lens"
                         onClick={() => {
                           setCurrentlyEditing(null);
                           setCurrentlyEditing(event);
@@ -69,7 +72,7 @@ const AllEvents = ({ user, events, fetchEvents, setCurrentlyEditing }) => {
                         <span role="img" aria-label="lens">
                           🔍
                         </span>
-                      </button>
+                      </motion.button>
                     </td>
                   </tr>
                 ))}
@@ -82,13 +85,13 @@ const AllEvents = ({ user, events, fetchEvents, setCurrentlyEditing }) => {
 };
 
 AllEvents.propTypes = {
-  user: PropTypes.object,
+  teacher: PropTypes.object,
   events: PropTypes.array,
   fetchEvents: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  user: state.auth.user,
+  teacher: state.auth.teacher,
   events: state.api.events,
 });
 

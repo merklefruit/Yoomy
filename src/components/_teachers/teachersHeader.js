@@ -7,7 +7,6 @@ import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
 
 // Styled components
-import { Headline } from "../../styles/globalStyles";
 import {
   HeaderFlex,
   TeacherHeaderContainer,
@@ -21,23 +20,29 @@ import { FaLock } from "react-icons/fa";
 const TeachersHeader = ({ teacher, logout }) => {
   return (
     <TeacherHeaderContainer>
-      <Headline>
-        <HeaderFlex>
-          <div className="flex">
-            <Avatar name={`${teacher.name[0]} ${teacher.surname[0]}`} size="45" color="#447A9C" round={true} />
-            <h2>Buongiorno, {teacher.name} {teacher.surname}</h2>
-          </div>
-          <div className="right">
-            <button onClick={logout}>Logout</button>
-          </div>
-        </HeaderFlex>
-        <TeacherStatus>
-          <GoVerified />
-          <p>Istruttore</p>
-          <FaLock />
-          <p>Autenticato</p>
-        </TeacherStatus>
-      </Headline>
+      <HeaderFlex>
+        <div className="flex">
+          <Avatar
+            name={`${teacher.name[0]} ${teacher.surname[0]}`}
+            size="45"
+            color="#f4a261"
+            className="avatar"
+            round={true}
+          />
+          <h2>
+            Buongiorno, {teacher.name} {teacher.surname}
+          </h2>
+        </div>
+        <div className="right">
+          <button onClick={logout}>Logout</button>
+        </div>
+      </HeaderFlex>
+      <TeacherStatus>
+        <GoVerified />
+        <p>Istruttore</p>
+        <FaLock />
+        <p>Autenticato</p>
+      </TeacherStatus>
     </TeacherHeaderContainer>
   );
 };
