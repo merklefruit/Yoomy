@@ -1,7 +1,7 @@
 import axios from "axios";
 import { setAlert } from "./alert";
-import { USERS_URL } from "../helpers/config";
 import setAuthToken from "../helpers/setAuthToken";
+import { API_URL, TEACHERS_URL, USERS_URL } from "../helpers/config";
 import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
@@ -10,21 +10,33 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
+  TEACHER_LOADED,
 } from "./types";
 
-// Load User
-export const loadUser = () => async (dispatch) => {
+// Load Auth
+// Calls API to load user or teacher based on token
+export const loadAuth = () => async (dispatch) => {
   if (localStorage.token) {
     setAuthToken(localStorage.token);
   }
   try {
-    const loadUrl = USERS_URL + "/current";
+    const loadUrl = API_URL + "/current";
     const res = await axios.get(loadUrl);
 
-    dispatch({
-      type: USER_LOADED,
-      payload: res.data,
-    });
+    if (res.data.user) {
+      dispatch({
+        type: USER_LOADED,
+        payload: res.data.user,
+      });
+    } else if (res.data.teacher) {
+      dispatch({
+        type: TEACHER_LOADED,
+        payload: res.data.teacher,
+      });
+    } else {
+      console.error("ACTIONS/AUTH: API should return a user kind");
+    };
+
   } catch (error) {
     dispatch({
       type: AUTH_ERROR,
@@ -51,7 +63,7 @@ export const register = ({ name, surname, email, password }) => async (
       type: REGISTER_SUCCESS,
       payload: res.data,
     });
-    dispatch(loadUser());
+    dispatch(loadAuth());
   } catch (err) {
     const error = err.response
       ? err.response.data.message
@@ -80,7 +92,7 @@ export const login = (email, password) => async (dispatch) => {
       type: LOGIN_SUCCESS,
       payload: res.data,
     });
-    dispatch(loadUser());
+    dispatch(loadAuth());
   } catch (err) {
     const error = err.response
       ? err.response.data.message
@@ -91,6 +103,34 @@ export const login = (email, password) => async (dispatch) => {
     });
   }
 };
+
+// Login Teacher
+export const teacherLogin = (email, password) => async (dispatch) => {
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  const body = JSON.stringify({ email, password });
+
+  try {
+    const loginUrl = TEACHERS_URL + "/authenticate";
+    const res = await axios.post(loginUrl, body, config);
+    dispatch({
+      type: LOGIN_SUCCESS,
+      payload: res.data,
+    });
+    dispatch(loadAuth());
+  } catch (err) {
+    const error = err.response
+      ? err.response.data.message
+      : "Errore Interno. Riprova più tardi.";
+    dispatch(setAlert(error, "", "error"));
+    dispatch({
+      type: LOGIN_FAIL,
+    });
+  }
+}
 
 // Logout User
 export const logout = () => (dispatch) => {

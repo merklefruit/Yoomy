@@ -8,7 +8,7 @@ import store from "./helpers/store";
 
 // Helpers
 import setAuthToken from "./helpers/setAuthToken";
-import { loadUser } from "./actions/auth";
+import { loadAuth } from "./actions/auth";
 import { Helmet } from "react-helmet";
 import FullPageSpinner from "./components/fullPageSpinner";
 
@@ -28,7 +28,7 @@ if (localStorage.token) {
 
 const App = ({ loading, user, teacher }) => {
   useEffect(() => {
-    store.dispatch(loadUser());
+    store.dispatch(loadAuth());
   }, []);
 
   return (

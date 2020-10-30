@@ -1,4 +1,5 @@
 import React from "react";
+import Avatar from "react-avatar";
 
 // Redux
 import { connect } from "react-redux";
@@ -17,14 +18,14 @@ import {
 import { GoVerified } from "react-icons/go";
 import { FaLock } from "react-icons/fa";
 
-const TeachersHeader = ({ user, logout }) => {
+const TeachersHeader = ({ teacher, logout }) => {
   return (
     <TeacherHeaderContainer>
       <Headline>
         <HeaderFlex>
           <div className="flex">
-            <span>{user.username.charAt(0)}</span>
-            <h2>Buongiorno, {user.username}</h2>
+            <Avatar name={`${teacher.name[0]} ${teacher.surname[0]}`} size="45" color="#447A9C" round={true} />
+            <h2>Buongiorno, {teacher.name} {teacher.surname}</h2>
           </div>
           <div className="right">
             <button onClick={logout}>Logout</button>
@@ -42,12 +43,12 @@ const TeachersHeader = ({ user, logout }) => {
 };
 
 TeachersHeader.propTypes = {
-  user: PropTypes.object,
+  teacher: PropTypes.object,
   logout: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  user: state.auth.user,
+  teacher: state.auth.teacher,
 });
 
 export default connect(mapStateToProps, { logout })(TeachersHeader);

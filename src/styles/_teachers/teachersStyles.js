@@ -27,21 +27,7 @@ export const HeaderFlex = styled.div`
     margin-left: 10px;
   }
 
-  span {
-    text-transform: uppercase;
-    border-radius: 100%;
-    width: 36px;
-    height: 36px;
-    padding: 8px;
 
-    background: #fff;
-    border: 2px solid ${(props) => props.theme.text};
-    text-align: center;
-    font-size: 1.9rem;
-    font-weight: 400;
-
-    transform: scale(0.8) translateY(-15px);
-  }
 
   .right {
     button {
