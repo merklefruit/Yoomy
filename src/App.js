@@ -16,16 +16,17 @@ import FullPageSpinner from "./components/fullPageSpinner";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const PrivateRoutes = React.lazy(() =>
-  import(/* webpackPrefetch: true */ "./privateRoutes")
-);
-const PublicRoutes = React.lazy(() => import("./publicRoutes"));
+// Conditional routes
+const AppRoutes = React.lazy(() =>
+  import(/* webpackPrefetch: true */ "./routes/appRoutes"));
+const TeacherRoutes = React.lazy(() => import("./routes/teacherRoutes"));
+const MarketingRoutes = React.lazy(() => import("./routes/marketingRoutes"));
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
-const App = ({ isAuthenticated, loading, user }) => {
+const App = ({ loading, user, teacher }) => {
   useEffect(() => {
     store.dispatch(loadUser());
   }, []);
@@ -41,11 +42,13 @@ const App = ({ isAuthenticated, loading, user }) => {
         <Router>
           {loading ? (
             <FullPageSpinner />
-          ) : isAuthenticated ? (
-            <PrivateRoutes />
+          ) : user ? (
+            <AppRoutes />
+          ) : teacher ? (
+            <TeacherRoutes />
           ) : (
-            <PublicRoutes />
-          )}
+                  <MarketingRoutes />
+                )}
         </Router>
       </React.Suspense>
     </>
@@ -53,15 +56,15 @@ const App = ({ isAuthenticated, loading, user }) => {
 };
 
 App.propTypes = {
-  isAuthenticated: PropTypes.bool,
   loading: PropTypes.bool,
   user: PropTypes.object,
+  teacher: PropTypes.object
 };
 
 const mapStateToProps = (state) => ({
-  isAuthenticated: state.auth.isAuthenticated,
   loading: state.auth.loading,
   user: state.auth.user,
+  teacher: state.auth.teacher
 });
 
 export default connect(mapStateToProps)(App);
