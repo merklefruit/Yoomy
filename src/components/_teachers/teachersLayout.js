@@ -61,7 +61,7 @@ const TeachersLayout = ({ children }) => {
     blue: "#457b9d",
     lightblue: "#5995ba",
     text: "#3C3838",
-    background: "#fbfefb",
+    background: "#fafafa",
     violet: "#2A265F",
     lightgray: "#737373",
     verylightgray: "#f5f5f5",
@@ -115,7 +115,7 @@ const Grid = styled.div`
     "side content"
     "side footer";
 
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 250px 1fr;
   grid-template-rows: auto 1fr 50px;
 
   nav {

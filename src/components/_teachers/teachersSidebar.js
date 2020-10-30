@@ -19,25 +19,30 @@ const TeachersSidebar = () => {
       </Logo>
       <Menu>
         <NavLink to="/teachers/home">
-          <AiOutlineHome />
-          <p>Home</p>
+          <span>
+            <AiOutlineHome /> <p>Home</p>
+          </span>
         </NavLink>
         <NavLink to="/teachers/eventi">
-          <MdEventNote />
-          <p>Eventi</p>
+          <span>
+            <MdEventNote /> <p>Eventi</p>
+          </span>
         </NavLink>
         <NavLink to="/teachers/pagamenti">
-          <MdPayment />
-          <p>Pagamenti</p>
+          <span>
+            <MdPayment /> <p>Pagamenti</p>
+          </span>
         </NavLink>
         <hr />
         <NavLink to="/teachers/preferenze">
-          <FiSettings />
-          <p>Preferenze</p>
+          <span>
+            <FiSettings /> <p>Preferenze</p>
+          </span>
         </NavLink>
         <NavLink to="/teachers/supporto">
-          <BiSupport />
-          <p>Supporto</p>
+          <span>
+            <BiSupport /> <p>Supporto</p>
+          </span>
         </NavLink>
       </Menu>
     </Container>
@@ -45,3 +50,39 @@ const TeachersSidebar = () => {
 };
 
 export default TeachersSidebar;
+
+/*
+
+<div>
+          <NavLink to="/teachers/home">
+            <AiOutlineHome />
+            <p>Home</p>
+          </NavLink>
+        </div>
+        <div>
+          <NavLink to="/teachers/eventi">
+            <MdEventNote />
+            <p>Eventi</p>
+          </NavLink>
+        </div>
+        <div>
+          <NavLink to="/teachers/pagamenti">
+            <MdPayment />
+            <p>Pagamenti</p>
+          </NavLink>
+        </div>
+        <hr />
+        <div>
+          <NavLink to="/teachers/preferenze">
+            <FiSettings />
+            <p>Preferenze</p>
+          </NavLink>
+        </div>
+        <div>
+          <NavLink to="/teachers/supporto">
+            <BiSupport />
+            <p>Supporto</p>
+          </NavLink>
+        </div>
+
+*/

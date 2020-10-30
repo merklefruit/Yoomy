@@ -144,6 +144,12 @@ export const EventList = styled.div`
       }
     }
   }
+
+  .lens {
+    &:focus {
+      outline: none;
+    }
+  }
 `;
 
 // Edit event

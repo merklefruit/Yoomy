@@ -12,6 +12,12 @@ export const TeacherSection = styled.div`
     color: ${(props) => props.theme.text};
     margin-top: 10px;
     padding-left: 25px;
+
+    span {
+      font-size: 1.2rem;
+      margin-left: 3px;
+      margin-right: 3px;
+    }
   }
 
   h2 {

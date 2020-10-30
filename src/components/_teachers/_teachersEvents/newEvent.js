@@ -19,7 +19,7 @@ import { TeacherSection } from "../../../styles/_teachers/teachersHomeStyles";
 import { EventForm } from "../../../styles/_teachers/teacherEventStyles";
 
 const NewEvent = ({
-  user,
+  teacher,
   teachers,
   courses,
   createEvent,
@@ -30,23 +30,22 @@ const NewEvent = ({
   const [selectCourses, setSelectCourses] = useState(null);
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [description, setDescription] = useState("");
+  const [credits, setCredits] = useState(null);
 
   useEffect(() => {
     const getCourses = () => {
       const courses_options = [];
-      teachers
-        .filter((teacher) => user.teacher_id === teacher.id)[0]
-        .courses.map((course) => {
-          courses_options.push({ value: course.id, label: course.name });
-          return 1;
-        });
+      teacher.courses.map((course) => {
+        courses_options.push({ value: course.id, label: course.name });
+        return true;
+      });
       setSelectCourses(courses_options);
     };
 
-    if (user && teachers && courses) {
+    if (teacher && teachers && courses) {
       getCourses();
     }
-  }, [teachers, courses, user]);
+  }, [teachers, courses, teacher]);
 
   const startTimeInputProps = useDateInput({
     date: startDate,
@@ -77,9 +76,14 @@ const NewEvent = ({
       return toast.error("Per favore, specifica la data");
     }
 
+    if (credits === null) {
+      return toast.error("Per favore, inserisci il prezzo in crediti");
+    }
+
     const new_event = {
       course: selectedCourse.value,
-      teacher: user.teacher_id,
+      credits: credits,
+      teacher: teacher.id,
       startDate: formatISO(startDate),
       endDate: formatISO(endTime),
       description: description,
@@ -97,7 +101,7 @@ const NewEvent = ({
         sito!
       </p>
       <EventForm>
-        {user && teachers && courses ? (
+        {teacher && teachers && courses ? (
           <form>
             <hr />
             <div className="flex">
@@ -164,6 +168,20 @@ const NewEvent = ({
               </div>
             </div>
             <hr />
+            <div className="flex" style={{ paddingBottom: "15px" }}>
+              <h3 style={{ position: "absolute" }}>Crediti:</h3>
+
+              <div className="wrapper">
+                <input
+                  style={{ marginTop: "8px" }}
+                  name="credits"
+                  type="number"
+                  placeholder="esempio: 4"
+                  onChange={(e) => setCredits(parseInt(e.target.value))}
+                />
+              </div>
+            </div>
+            <hr />
             <button type="submit" onClick={handleSubmit}>
               Crea Evento
             </button>
@@ -177,14 +195,14 @@ const NewEvent = ({
 };
 
 NewEvent.propTypes = {
-  user: PropTypes.object,
+  teacher: PropTypes.object,
   teachers: PropTypes.array,
   courses: PropTypes.array,
   createEvent: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  user: state.auth.user,
+  teacher: state.auth.teacher,
   teachers: state.api.teachers,
   courses: state.api.courses,
 });
