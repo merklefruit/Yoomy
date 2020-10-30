@@ -2,11 +2,11 @@ import React from "react";
 
 // Components
 import Head from "../../components/head";
-import HomeHero from "../../components/_homePage/homeHero";
-import HomeContent from "../../components/_homePage/homeContent";
-import HomeFeatures from "../../components/_homePage/homeFeatures";
-import HomeBanner from "../../components/_homePage/homeBanner";
-import HomeBanner2 from "../../components/_homePage/homeBanner2";
+import HomeHero from "../../components/_marketing/_homePage/homeHero";
+import HomeContent from "../../components/_marketing/_homePage/homeContent";
+import HomeFeatures from "../../components/_marketing/_homePage/homeFeatures";
+import HomeBanner from "../../components/_marketing/_homePage/homeBanner";
+import HomeBanner2 from "../../components/_marketing/_homePage/homeBanner2";
 
 function homePage() {
   return (

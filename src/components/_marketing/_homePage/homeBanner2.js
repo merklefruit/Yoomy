@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // Styled components
-import { Container, Button } from "../../styles/globalStyles";
-import { Banner2 } from "../../styles/homeStyles";
+import { Container, Button } from "../../../styles/globalStyles";
+import { Banner2 } from "../../../styles/_marketing/homeStyles";
 
 const HomeBanner2 = () => {
   return (

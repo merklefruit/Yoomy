@@ -2,15 +2,15 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 
 // Styled components
-import { Container } from "../../styles/globalStyles";
+import { Container } from "../../../styles/globalStyles";
 
 // Scroll behavior
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 
 // Assets
-import StepsLine from "../../assets/svg/StepsLine";
-import StepsLine2 from "../../assets/svg/StepsLine2";
+import StepsLine from "../../../assets/svg/StepsLine";
+import StepsLine2 from "../../../assets/svg/StepsLine2";
 import {
   FaRegCalendarAlt,
   FaRegCalendarCheck,

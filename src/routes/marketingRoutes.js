@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 // Layout
-import Layout from "../components/layout";
+import Layout from "../components/_marketing/layout";
 
 // Marketing Routes
 import homePage from "../pages/_marketing/homePage";
@@ -18,8 +18,8 @@ import termsPage from "../pages/termsPage";
 import OpenStartup from "../pages/openStartup";
 
 // App Auth Components
-import Login from "../components/auth/login";
-import Registrati from "../components/auth/registrati";
+import Login from "../components/_app/auth/login";
+import Registrati from "../components/_app/auth/registrati";
 
 // Teacher Auth Components
 //TODO: add teacher auth comps

@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // Styled components
-import { Container, Button } from "../../styles/globalStyles";
-import { FeaturesSection, Card } from "../../styles/homeStyles";
+import { Container, Button } from "../../../styles/globalStyles";
+import { FeaturesSection, Card } from "../../../styles/_marketing/homeStyles";
 
 // Scroll behavior
 import { useInView } from "react-intersection-observer";
@@ -76,7 +76,7 @@ const HomeFeatures = () => {
           </Card>
           <Card style={{ textAlign: "center" }}>
             <img
-              src={require("../../assets/images/feature-1.jpg")}
+              src={require("../../../assets/images/feature-1.jpg")}
               alt="featured-1"
             />
           </Card>

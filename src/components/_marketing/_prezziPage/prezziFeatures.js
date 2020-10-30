@@ -1,8 +1,8 @@
 import React from "react";
 
 // Styled components
-import { Container } from "../../styles/globalStyles";
-import { Feature1 } from "../../styles/priceStyles";
+import { Container } from "../../../styles/globalStyles";
+import { Feature1 } from "../../../styles/_marketing/priceStyles";
 
 // import Feat1Img from "../../assets/svg/Feat1Img";
 

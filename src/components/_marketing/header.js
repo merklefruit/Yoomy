@@ -3,13 +3,13 @@ import { Link, NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
 // Styled components
-import { Container, FlexRow } from "../styles/globalStyles";
+import { Container, FlexRow } from "../../styles/globalStyles";
 import {
   CustomHeader,
   HeaderNav,
   LinkSection,
   Menu,
-} from "../styles/layoutStyles";
+} from "../../styles/_marketing/layoutStyles";
 
 // Hamburger Menu
 import { Spiral as Hamburger } from "hamburger-react";

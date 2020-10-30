@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 // Styled components
-import { Container } from "../../styles/globalStyles";
+import { Container } from "../../../styles/globalStyles";
 
 // Assets
-import Arrow from "../../assets/svg/Arrow";
+import Arrow from "../../../assets/svg/Arrow";
 
 const MacbookSection = () => {
   return (
@@ -21,7 +21,7 @@ const MacbookSection = () => {
           </div>
           <div className="macbook">
             <img
-              src={require("../../assets/images/macbookpro.png")}
+              src={require("../../../assets/images/macbookpro.png")}
               alt="macbook"
             />
           </div>

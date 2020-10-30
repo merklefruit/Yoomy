@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 // Styled components
-import { Container } from "../../styles/globalStyles";
+import { Container } from "../../../styles/globalStyles";
 
 const HomeCourses = () => {
   return (
@@ -132,7 +132,7 @@ const CoursesDisplay = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
+ 
     .course {
       flex: 0 1 220px;
       @media (max-width: 600px) {

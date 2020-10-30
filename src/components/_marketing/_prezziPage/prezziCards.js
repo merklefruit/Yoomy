@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 // Styled components
-import { Container } from "../../styles/globalStyles";
-import { PriceCards } from "../../styles/priceStyles";
+import { Container } from "../../../styles/globalStyles";
+import { PriceCards } from "../../../styles/_marketing/priceStyles";
 
 // Icons
 import { GrYoga, GrGrow, GrSync } from "react-icons/gr";

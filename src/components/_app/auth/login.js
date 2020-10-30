@@ -4,7 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 // Redux
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { login } from "../../actions/auth";
+import { login } from "../../../actions/auth";
 
 // Styled components
 import {
@@ -12,8 +12,8 @@ import {
   LoginForm,
   LoginButton,
   BackgroundImage,
-} from "../../styles/authStyles";
-import { Container } from "../../styles/globalStyles";
+} from "../../../styles/authStyles";
+import { Container } from "../../../styles/globalStyles";
 
 // Form Handling
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -29,7 +29,7 @@ const Login = ({ login, isAuthenticated }) => {
         <AuthCard>
           <BackgroundImage>
             <img
-              src={require("../../assets/images/login-image.jpg")}
+              src={require("../../../assets/images/login-image.jpg")}
               alt="login-hero"
             />
           </BackgroundImage>

@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Styled components
-import { Container } from "../styles/globalStyles";
-import { Nav, NavList } from "../styles/layoutStyles";
+import { Container } from "../../styles/globalStyles";
+import { Nav, NavList } from "../../styles/_marketing/layoutStyles";
 
 function Navigation({ toggleMenu, setToggleMenu }) {
   return (

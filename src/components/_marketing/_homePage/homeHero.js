@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 // Styled components
-import { Container, Button } from "../../styles/globalStyles";
-import { HomeRow, HeroCol1, HeroCol2 } from "../../styles/homeStyles";
+import { Container, Button } from "../../../styles/globalStyles";
+import { HomeRow, HeroCol1, HeroCol2 } from "../../../styles/_marketing/homeStyles";
 
 // SVG
-import HeroImg from "../../assets/svg/HeroImg";
+import HeroImg from "../../../assets/svg/HeroImg";
 
 function HomeHero() {
   return (

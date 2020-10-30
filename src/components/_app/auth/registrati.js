@@ -3,7 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 
 // Redux
 import { connect } from "react-redux";
-import { register } from "../../actions/auth";
+import { register } from "../../../actions/auth";
 import PropTypes from "prop-types";
 
 // Styled components
@@ -13,8 +13,8 @@ import {
   LoginButton,
   Terms,
   BackgroundImage,
-} from "../../styles/authStyles";
-import { Container } from "../../styles/globalStyles";
+} from "../../../styles/authStyles";
+import { Container } from "../../../styles/globalStyles";
 
 // Form Handling
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -30,7 +30,7 @@ const Registrati = ({ register, isAuthenticated }) => {
         <AuthCard>
           <BackgroundImage>
             <img
-              src={require("../../assets/images/signup-image.jpg")}
+              src={require("../../../assets/images/signup-image.jpg")}
               alt="register-hero"
             />
           </BackgroundImage>

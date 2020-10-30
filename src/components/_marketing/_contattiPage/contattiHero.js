@@ -1,7 +1,7 @@
 import React from "react";
 
 // Styled components
-import { Container, Headline } from "../../styles/globalStyles";
+import { Container, Headline } from "../../../styles/globalStyles";
 
 const ContattiHero = () => {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 
 // Styled components
-import { Container } from "../../styles/globalStyles";
-import { Row, Content } from "../../styles/homeStyles";
+import { Container } from "../../../styles/globalStyles";
+import { Row, Content } from "../../../styles/_marketing/homeStyles";
 
 function HomeContent() {
   return (

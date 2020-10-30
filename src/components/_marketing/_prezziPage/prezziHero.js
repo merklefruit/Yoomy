@@ -1,8 +1,8 @@
 import React from "react";
 
 // Styled components
-import { Container, Headline } from "../../styles/globalStyles";
-import { HeroContent } from "../../styles/priceStyles";
+import { Container, Headline } from "../../../styles/globalStyles";
+import { HeroContent } from "../../../styles/_marketing/priceStyles";
 
 const PrezziHero = () => {
   return (

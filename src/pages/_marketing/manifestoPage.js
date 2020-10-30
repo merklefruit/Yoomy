@@ -2,7 +2,7 @@ import React from "react";
 
 // Components
 import Head from "../../components/head";
-import ManifestoHero from "../../components/_manifestoPage/manifestoHero";
+import ManifestoHero from "../../components/_marketing/_manifestoPage/manifestoHero";
 
 const ManifestoPage = () => {
   return (

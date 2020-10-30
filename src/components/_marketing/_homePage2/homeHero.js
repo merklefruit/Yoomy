@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import Live from "../../assets/svg/Live";
+import Live from "../../../assets/svg/Live";
 
 // Styled components
-import { Container } from "../../styles/globalStyles";
+import { Container } from "../../../styles/globalStyles";
 
 const HomeHero = () => {
   return (
@@ -25,7 +25,7 @@ const HomeHero = () => {
             <Live />
           </div>
           <div className="heroyoga">
-            <img src={require("../../assets/images/heroyoga.png")} alt="hero" />
+            <img src={require("../../../assets/images/heroyoga.png")} alt="hero" />
           </div>
         </Hero>
       </Container>

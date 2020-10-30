@@ -1,12 +1,12 @@
 import React from "react";
 
 // Styled components
-import { Container } from "../../styles/globalStyles";
+import { Container } from "../../../styles/globalStyles";
 import {
   Banner,
   BannerCard,
   InnerBannerSection,
-} from "../../styles/homeStyles";
+} from "../../../styles/_marketing/homeStyles";
 
 // Icons
 import {

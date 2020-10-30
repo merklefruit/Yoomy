@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 // Styled components
-import { Container } from "../../styles/globalStyles";
+import { Container } from "../../../styles/globalStyles";
 
 // Assets
-import HomeYoga from "../../assets/svg/HomeYoga";
+import HomeYoga from "../../../assets/svg/HomeYoga";
 
 const FreeTrial = () => {
   return (
@@ -69,7 +69,7 @@ const TrialSection = styled.div`
     @media (max-width: 1000px) {
       margin-left: 0;
     }
-
+ 
     h2 {
       margin: 0;
       font-family: "DM Sans";

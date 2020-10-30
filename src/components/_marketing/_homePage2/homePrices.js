@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 // Styled components
-import { Container } from "../../styles/globalStyles";
+import { Container } from "../../../styles/globalStyles";
 
 const HomePrices = () => {
   return (

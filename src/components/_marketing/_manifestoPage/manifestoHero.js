@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 
 // Styled components
-import { Container, Headline } from "../../styles/globalStyles";
+import { Container, Headline } from "../../../styles/globalStyles";
 
 const ScopriHero = () => {
   return (
