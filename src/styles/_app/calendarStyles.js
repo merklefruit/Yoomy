@@ -207,7 +207,6 @@ export const EventCard = styled(motion.div)`
 
   /* //TODO: FIX RESPONSIVE CARDS */
   @media (max-width: 1100px) {
-    display: none;
   }
 
   ${(props) =>
