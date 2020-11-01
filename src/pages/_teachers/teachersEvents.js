@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 // Components
 import Head from "../../components/head";
 import NewEvent from "../../components/_teachers/_teachersEvents/newEvent";
-import AllEvents from "../../components/_teachers/_teachersEvents/allEvents";
+import AllEvents from "../../components/_teachers/_teachersEvents/allEvents2";
 import EditEvent from "../../components/_teachers/_teachersEvents/editEvent";
 
 const TeachersEvents = () => {
