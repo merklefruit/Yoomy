@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 // Components
 import Head from "../../components/head";
 import NewEvent from "../../components/_teachers/_teachersEvents/newEvent";
-import AllEvents from "../../components/_teachers/_teachersEvents/allEvents";
+import AllEvents from "../../components/_teachers/_teachersEvents/allEvents2";
 import EditEvent from "../../components/_teachers/_teachersEvents/editEvent";
 
 const TeachersEvents = () => {
   // conditional functionality :: aka buttons to expose different functionality
   const [showNewEvent, setShowNewEvent] = useState(false);
-  const [showAllEvents, setShowAllEvents] = useState(false);
+  const [showAllEvents, setShowAllEvents] = useState(true);
 
   // ID of the event in "editing mode"
   const [currentlyEditing, setCurrentlyEditing] = useState(null);
