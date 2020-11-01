@@ -11,7 +11,7 @@ import EditEvent from "../../components/_teachers/_teachersEvents/editEvent";
 const TeachersEvents = () => {
   // conditional functionality :: aka buttons to expose different functionality
   const [showNewEvent, setShowNewEvent] = useState(false);
-  const [showAllEvents, setShowAllEvents] = useState(true);
+  const [showAllEvents, setShowAllEvents] = useState(false);
 
   // ID of the event in "editing mode"
   const [currentlyEditing, setCurrentlyEditing] = useState(null);
