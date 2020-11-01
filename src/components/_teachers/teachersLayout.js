@@ -54,12 +54,13 @@ const variants = {
 const TeachersLayout = ({ children }) => {
   const lightTheme = {
     primary: "#264653",
-    secondary: "#A9CAD9",
+    secondary: "#b3def2",
     yellow: "#FBE064",
     orange: "#f4a261",
     darkblue: "#1d3557",
     blue: "#457b9d",
-    lightblue: "#5995ba",
+    lightblue: "#8fd5ff",
+    green: "#56c248",
     text: "#3C3838",
     background: "#fafafa",
     violet: "#2A265F",
@@ -94,7 +95,9 @@ const TeachersLayout = ({ children }) => {
           </motion.main>
         </AnimatePresence>
 
-        <footer></footer>
+        <footer>
+          <h3>© 2020, Yoomy Italia - Area Privata Istruttore v 0.2</h3>
+        </footer>
       </Grid>
     </ThemeProvider>
   );
@@ -120,19 +123,34 @@ const Grid = styled.div`
 
   nav {
     grid-area: side;
-    background: ${(props) => props.theme.blue};
+    background: ${({ theme }) => theme.white};
   }
 
   header {
     grid-area: header;
+    background: ${({ theme }) => theme.white};
   }
 
   main {
     grid-area: content;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-top: 20px;
   }
 
   footer {
     grid-area: footer;
+    background: ${({ theme }) => theme.white};
+    display: flex;
+    align-items: center;
+    h3 {
+      margin-left: 25px;
+      color: ${({ theme }) => theme.text};
+      font-family: "DM Sans";
+      font-weight: 400;
+      font-size: 1rem;
+    }
   }
 
   @media (max-width: 768px) {

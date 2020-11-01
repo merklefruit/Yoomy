@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 // Components
 import Head from "../../components/head";
@@ -16,50 +17,67 @@ const TeachersEvents = () => {
   const [currentlyEditing, setCurrentlyEditing] = useState(null);
 
   return (
-    <div>
+    <>
       <Head title="Eventi" />
-      <div style={{ paddingLeft: "25px", marginBottom: "30px" }}>
-        <Button
-          onClick={() => {
-            setShowNewEvent(!showNewEvent);
-            setShowAllEvents(false);
-          }}
-        >
-          Crea un evento
-        </Button>
-        <Button
-          onClick={() => {
-            setShowAllEvents(!showAllEvents);
-            setShowNewEvent(false);
-          }}
-        >
-          Visualizza i tuoi prossimi eventi
-        </Button>
-      </div>
-      {showNewEvent && <NewEvent setShowNewEvent={setShowNewEvent} />}
-      {showAllEvents && <AllEvents setCurrentlyEditing={setCurrentlyEditing} />}
-      {showAllEvents && currentlyEditing !== null && (
-        <EditEvent
-          currentlyEditing={currentlyEditing}
-          setCurrentlyEditing={setCurrentlyEditing}
-        />
-      )}
-    </div>
+      <EventsWrapper>
+        <h2 className="title">Azioni disponibili</h2>
+        <div style={{ paddingLeft: "25px", marginBottom: "30px" }}>
+          <Button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => {
+              setShowNewEvent(!showNewEvent);
+              setShowAllEvents(false);
+            }}
+          >
+            Crea un evento
+          </Button>
+          <Button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => {
+              setShowAllEvents(!showAllEvents);
+              setShowNewEvent(false);
+            }}
+          >
+            Visualizza i tuoi prossimi eventi
+          </Button>
+        </div>
+        {showNewEvent && <NewEvent setShowNewEvent={setShowNewEvent} />}
+        {showAllEvents && (
+          <AllEvents setCurrentlyEditing={setCurrentlyEditing} />
+        )}
+        {showAllEvents && currentlyEditing !== null && (
+          <EditEvent
+            currentlyEditing={currentlyEditing}
+            setCurrentlyEditing={setCurrentlyEditing}
+          />
+        )}
+      </EventsWrapper>
+    </>
   );
 };
 
 export default TeachersEvents;
 
-const Button = styled.button`
-  padding: 10px 15px;
-  background: ${(props) => props.theme.yellow};
+const EventsWrapper = styled.div`
+  .title {
+    margin: 0 0 15px 25px;
+    font-weight: 500;
+    font-size: 1.4rem;
+  }
+`;
+
+const Button = styled(motion.button)`
+  padding: 10px 20px;
+  background: ${(props) => props.theme.lightblue};
   border: 1px solid lightgray;
   box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.08);
-  border-radius: 3px;
+  border-radius: 16px;
   margin-right: 20px;
 
   &:hover {
-    box-shadow: none;
+    cursor: pointer;
   }
   &:focus {
     outline: none;

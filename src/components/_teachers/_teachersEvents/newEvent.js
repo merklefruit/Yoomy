@@ -183,7 +183,7 @@ const NewEvent = ({
             </div>
             <hr />
             <button type="submit" onClick={handleSubmit}>
-              Crea Evento
+              Crea evento e Salva
             </button>
           </form>
         ) : (

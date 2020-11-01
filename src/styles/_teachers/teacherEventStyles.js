@@ -78,10 +78,11 @@ export const EventForm = styled.div`
 
   button {
     margin-top: 20px;
-    padding: 8px 15px;
-    border-radius: 3px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    background-color: ${(props) => props.theme.yellow};
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: none;
+    color: ${({ theme }) => theme.white};
+    background-color: ${(props) => props.theme.green};
     box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
 
     &:hover {
