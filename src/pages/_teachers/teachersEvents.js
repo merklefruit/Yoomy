@@ -21,7 +21,7 @@ const TeachersEvents = () => {
       <Head title="Eventi" />
       <EventsWrapper>
         <h2 className="title">Azioni disponibili</h2>
-        <div style={{ paddingLeft: "25px", marginBottom: "30px" }}>
+        <div className="buttons">
           <Button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -66,13 +66,22 @@ const EventsWrapper = styled.div`
     font-weight: 500;
     font-size: 1.4rem;
   }
+
+  .buttons {
+    position: relative;
+    margin-left: 25px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
 `;
 
 const Button = styled(motion.button)`
   padding: 10px 20px;
-  background: ${(props) => props.theme.lightblue};
+  background: ${(props) => props.theme.lightgray};
   border: 1px solid lightgray;
-  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.04);
   border-radius: 16px;
   margin-right: 20px;
 

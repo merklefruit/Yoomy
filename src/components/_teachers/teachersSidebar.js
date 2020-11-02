@@ -147,6 +147,7 @@ const Menu = styled.div`
     span {
       border-radius: 10px;
       background: ${({ theme }) => theme.secondary};
+
       box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.05);
       color: ${({ theme }) => theme.text};
     }

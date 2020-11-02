@@ -14,27 +14,50 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 
 const TeachersHeader = ({ teacher, logout }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
   return (
     <Header>
       <div className="flex">
-        <BiBell />
-        <motion.button
+        <motion.div
+          className="svg"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => {
+            setShowNotifications(!showNotifications);
+            setShowMenu(false);
+          }}
+        >
+          <BiBell />
+        </motion.div>
+
+        <motion.div
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           className="flex inner"
-          onClick={() => setShowMenu(!showMenu)}
+          onClick={() => {
+            setShowMenu(!showMenu);
+            setShowNotifications(false);
+          }}
         >
           <RiArrowDropDownLine />
           <h4>
             {teacher.name} {teacher.surname}
           </h4>
-        </motion.button>
+        </motion.div>
+
         {showMenu && (
           <div className="dropdown">
             <div className="item">
               <Link to="/" onClick={logout}>
                 Logout
               </Link>
+            </div>
+          </div>
+        )}
+        {showNotifications && (
+          <div className="dropdown notifications">
+            <div className="item">
+              <Link to="/">Nessuna notifica</Link>
             </div>
           </div>
         )}
@@ -57,8 +80,9 @@ export default connect(mapStateToProps, { logout })(TeachersHeader);
 const Header = styled.div`
   margin: 0;
   display: flex;
-  align-items: center;
   float: right;
+  align-items: center;
+  position: relative;
 
   .flex {
     display: flex;
@@ -66,7 +90,17 @@ const Header = styled.div`
     float: right;
 
     svg {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      padding-right: 2px;
+      cursor: pointer;
+    }
+
+    .svg {
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
     }
 
     h4 {
@@ -81,8 +115,8 @@ const Header = styled.div`
     height: 35px;
     margin: 15px 25px 15px 20px;
     padding: 0 25px 0 15px;
-    background: ${({ theme }) => theme.secondary};
-    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
+    /* background: ${({ theme }) => theme.secondary};
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1); */
     border-radius: 12px;
     cursor: pointer;
     border: none;
@@ -93,14 +127,16 @@ const Header = styled.div`
   }
 
   .dropdown {
+    text-align: center;
     z-index: 2;
     position: absolute;
     top: 55px;
-    width: 160px;
+    width: 120px;
     right: 25px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
     background: ${({ theme }) => theme.white};
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.05);
     padding: 15px;
 
     .item {
@@ -109,9 +145,13 @@ const Header = styled.div`
         font-family: "DM Sans";
         font-weight: 400;
         font-size: 1.1rem;
-        padding: 5px;
       }
       margin-bottom: 13px;
     }
+  }
+
+  .notifications {
+    width: 170px;
+    right: 185px;
   }
 `;

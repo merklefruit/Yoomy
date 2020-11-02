@@ -25,7 +25,6 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: "Roboto";
-    background: ${(props) => props.theme.background};
     overscroll-behavior: none;
     overflow-x: hidden;
   }
@@ -64,7 +63,7 @@ const TeachersLayout = ({ children }) => {
     text: "#3C3838",
     background: "#fafafa",
     violet: "#2A265F",
-    lightgray: "#737373",
+    lightgray: "#f1f1f1",
     verylightgray: "#f5f5f5",
     beige: "#fff7f0",
     white: "#ffffff",
@@ -123,7 +122,13 @@ const Grid = styled.div`
 
   nav {
     grid-area: side;
-    background: ${({ theme }) => theme.white};
+    /* background: ${({ theme }) => theme.white}; */
+    background: rgb(232, 233, 233);
+    background: linear-gradient(
+      301deg,
+      rgba(232, 233, 233, 0) 0%,
+      rgba(239, 236, 252, 1) 100%
+    );
   }
 
   header {
@@ -133,9 +138,9 @@ const Grid = styled.div`
 
   main {
     grid-area: content;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    /* border-top: 1px solid rgba(0, 0, 0, 0.2);
     border-left: 1px solid rgba(0, 0, 0, 0.2);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); */
     padding-top: 20px;
   }
 

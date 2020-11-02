@@ -90,15 +90,6 @@ const AllEvents2 = ({ teacher, events, fetchEvents, setCurrentlyEditing }) => {
       <MaterialTable
         title="Tutti i tuoi eventi pianificati"
         icons={tableIcons}
-        // actions={[
-        //   {
-        //     icon: () => <Edit />,
-        //     tooltip: "Modifica",
-        //     onClick: (event, rowData) => {
-        //       //TODO Edit operation
-        //     },
-        //   },
-        // ]}
         columns={[
           { title: "Corso", field: "course.name" },
           { title: "Data di inizio", field: "startDate", type: "date" },
